@@ -1,0 +1,17 @@
+RTOSS|seq=379|tick=385927|rx=129|skip=251|sample_tick=385081|age=846|temp=2553|hum=4355|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=382|tick=388942|rx=130|skip=253|sample_tick=388129|age=813|temp=2554|hum=4349|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=385|tick=391957|rx=131|skip=255|sample_tick=391177|age=780|temp=2556|hum=4295|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=388|tick=394972|rx=132|skip=257|sample_tick=394225|age=747|temp=2557|hum=4267|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=389|tick=397987|rx=133|skip=257|sample_tick=395241|age=2746|temp=2556|hum=4281|txerr=0|stack_a=202|stack_b=380|fail=2|last=2|fail_stage=1|fail_status=2
+SHTSTAT|tick=403002|state=no_new_data|fail=7|last=2|fail_stage=1|fail_status=2
+SHTSTAT|tick=408009|state=no_new_data|fail=12|last=2|fail_stage=1|fail_status=2
+SHTSTAT|tick=413016|state=no_new_data|fail=17|last=2|fail_stage=1|fail_status=2
+SHTSTAT|tick=418023|state=no_new_data|fail=22|last=2|fail_stage=1|fail_status=2
+RTOSS|seq=390|tick=421030|rx=134|skip=257|sample_tick=420257|age=773|temp=2560|hum=4364|txerr=0|stack_a=202|stack_b=380|fail=24|last=0|fail_stage=1|fail_status=2
+RTOSS|seq=393|tick=424045|rx=135|skip=259|sample_tick=423305|age=740|temp=2563|hum=4268|txerr=0|stack_a=202|stack_b=380|fail=24|last=0|fail_stage=1|fail_status=2
+RTOSS|seq=396|tick=427060|rx=136|skip=261|sample_tick=426353|age=707|temp=2566|hum=4193|txerr=0|stack_a=202|stack_b=380|fail=24|last=0|fail_stage=1|fail_status=2
+RTOSS|seq=399|tick=430075|rx=137|skip=263|sample_tick=429401|age=674|temp=2564|hum=4190|txerr=0|stack_a=202|stack_b=380|fail=24|last=0|fail_stage=1|fail_status=2
+RTOSS|seq=402|tick=433090|rx=138|skip=265|sample_tick=432449|age=641|temp=2566|hum=4185|txerr=0|stack_a=202|stack_b=380|fail=24|last=0|fail_stage=1|fail_status=2
+RTOSS|seq=405|tick=436105|rx=139|skip=267|sample_tick=435497|age=608|temp=2564|hum=4186|txerr=0|stack_a=202|stack_b=380|fail=24|last=0|fail_stage=1|fail_status=2
+RTOSS|seq=408|tick=439120|rx=140|skip=269|sample_tick=438545|age=575|temp=2570|hum=4217|txerr=0|stack_a=202|stack_b=380|fail=24|last=0|fail_stage=1|fail_status=2
+RTOSS|seq=411|tick=442135|rx=141|skip=271|sample_tick=441593|age=542|temp=2569|hum=4352|txerr=0|stack_a=202|stack_b=380|fail=24|last=0|fail_stage=1|fail_status=2

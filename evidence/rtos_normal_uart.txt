@@ -1,0 +1,14 @@
+RTOSS|seq=5|tick=6045|rx=3|skip=3|sample_tick=5097|age=948|temp=2484|hum=4278|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=8|tick=9059|rx=4|skip=5|sample_tick=8145|age=914|temp=2485|hum=4242|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=11|tick=12073|rx=5|skip=7|sample_tick=11193|age=880|temp=2487|hum=4258|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=14|tick=15087|rx=6|skip=9|sample_tick=14241|age=846|temp=2484|hum=4252|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=17|tick=18101|rx=7|skip=11|sample_tick=17289|age=812|temp=2485|hum=4232|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=20|tick=21115|rx=8|skip=13|sample_tick=20337|age=778|temp=2484|hum=4234|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=23|tick=24129|rx=9|skip=15|sample_tick=23385|age=744|temp=2482|hum=4307|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=26|tick=27143|rx=10|skip=17|sample_tick=26433|age=710|temp=2485|hum=4296|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=29|tick=30158|rx=11|skip=19|sample_tick=29481|age=677|temp=2484|hum=4270|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=32|tick=33173|rx=12|skip=21|sample_tick=32529|age=644|temp=2487|hum=4277|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=35|tick=36188|rx=13|skip=23|sample_tick=35577|age=611|temp=2488|hum=4283|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=38|tick=39203|rx=14|skip=25|sample_tick=38625|age=578|temp=2488|hum=4345|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=41|tick=42218|rx=15|skip=27|sample_tick=41673|age=545|temp=2490|hum=4453|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
+RTOSS|seq=44|tick=45233|rx=16|skip=29|sample_tick=44721|age=512|temp=2492|hum=4644|txerr=0|stack_a=202|stack_b=380|fail=0|last=0|fail_stage=0|fail_status=0
