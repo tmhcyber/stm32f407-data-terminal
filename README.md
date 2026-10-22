@@ -4,7 +4,7 @@
 
 **一个STM32终端：采集温湿度，通过串口、RS485和CAN与电脑通信，并记录通信异常和程序故障。**
 
-我负责通信规则、代表性核心逻辑、实板联调和故障定位；另以独立FreeRTOS固件实现“持续采集、只上报最新数据”的任务协作。
+我设计RS485状态、超时与恢复规则，编写CAN校验、编码与队列核心逻辑，并完成实板联调和时间下溢故障定位；在FreeRTOS固件中设计最新值邮箱策略，编写采集与失败记录流程。
 
 **怎么复现：** 下载[`v1.0-bench`](https://github.com/tmhcyber/stm32f407-data-terminal/tree/v1.0-bench)，按[接线与运行说明](docs/BUILD.md)用Keil编译下载，再运行PC工具观察采样与请求应答。
 
@@ -31,7 +31,13 @@
 源码与实测记录归档于 **`v1.0-bench`**。表中保留测试当天的提交状态，实测固件与标签内文件的对应关系见[版本映射](SNAPSHOT.md)。
 <!-- TEST_RESULTS_END -->
 
-## 硬件接线示意
+## 硬件组成与接线
+
+![硬件组成与接线实物](evidence/hardware-setup.jpg)
+
+*硬件组成与接线实物*
+
+STM32F407ZG开发板、SHT30、UTS-T02串口适配器、UTC-T01 CAN适配器与fireDAP调试器。各接口与引脚对应如下。
 
 ```mermaid
 flowchart LR
@@ -41,7 +47,7 @@ flowchart LR
     MCU <-->|"CAN2 · PB13 TX / PB12 RX<br/>500 kbit/s"| C["板载 CAN 收发器 · J13<br/>CANH / CANL / 共地 → USB-CAN → PC"]
 ```
 
-接线前断电。J40供电与RS485跳帽、引脚复用、CAN端接要求见[接线表与运行说明](docs/BUILD.md#已记录的接线)；本图为连接关系示意。
+J40供电与RS485跳帽、引脚复用及CAN端接配置见[接线与运行说明](docs/BUILD.md#已记录的接线)。
 
 ## 实板波形与调试截图
 

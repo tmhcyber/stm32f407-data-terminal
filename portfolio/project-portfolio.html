@@ -50,7 +50,7 @@ code { font-family:Consolas,"Microsoft YaHei",monospace; font-size:.95em; }
 <p class="eyebrow">01 / 项目概览</p><h1>STM32F407ZG<br>数据采集与通信终端</h1>
 <p class="lead">把采集、通信和故障诊断连成可观察、可验证的闭环。<br>个人项目 · C / HAL / Keil · 2026.07 至今</p>
 <div class="tags"><span>C / Cortex-M4</span><span>I2C / UART</span><span>RS485 / 经典CAN</span><span>Fault / IWDG</span><span>FreeRTOS</span></div>
-<div class="bar"><h3>我的主要工作</h3><p class="small">主导RS485状态、超时与恢复规则，结合波形和Watch独立定位时间下溢根因；编写CAN校验、编码和队列核心逻辑；围绕数据新鲜度选择FreeRTOS最新值邮箱，编写测量与失败记录流程。</p></div>
+<div class="bar"><h3>我的主要工作</h3><p class="small">设计RS485状态、超时与恢复规则，结合波形和Watch独立定位时间下溢根因；编写CAN校验、编码和队列核心逻辑；围绕数据新鲜度选择FreeRTOS最新值邮箱，编写测量与失败记录流程。</p></div>
 <div class="section"><h3>裸机采集与通信主线</h3><div class="flow"><div class="node"><b>SHT30</b>I2C / CRC</div><span class="arrow">→</span><div class="node"><b>周期采集</b>重试 / 恢复</div><span class="arrow">→</span><div class="node"><b>统一快照</b>质量 / 时间 / 序号</div><span class="arrow">→</span><div class="node"><b>USART1</b>PC上行解析</div></div></div>
 <div class="grid"><div class="card"><h3>通信与系统诊断</h3><p class="small">USART2/RS485处理CRLF成帧、超时与重同步，TC后释放半双工方向；CAN2接收中断入队，主循环校验并回复温湿度。Fault保留异常现场，IWDG按健康状态决定刷新。</p></div><div class="card"><h3>FreeRTOS独立目标</h3><p class="small">复用SHT30驱动，采集任务与上报任务通过容量1覆盖邮箱交换最新值。质量、序号、年龄和失败阶段共同解释数据状态。</p></div></div>
 <div class="section"><h3>平台与工程组织</h3><table><tr><th>硬件</th><td>野火STM32F407ZG霸天虎V2、SHT30、CH340、USB-RS485 / USB-CAN</td></tr><tr><th>工具</th><td>Keil / ARMCC 5.06、Watch、逻辑分析仪、PCAN、Python</td></tr><tr><th>分层</th><td>Core装配；Application策略；Components器件协议；BSP板级资源与HAL适配</td></tr></table></div>
@@ -64,8 +64,8 @@ code { font-family:Consolas,"Microsoft YaHei",monospace; font-size:.95em; }
 <div class="section"><h3>协议与统计方法</h3><table><tr><th>RS485</th><td>115200 8N1；精确V1|PING / V1|PONG，CRLF结束</td></tr><tr><th>CAN</th><td>500 kbit/s；标准数据帧123h / 1 / 01请求，322h / 5响应</td></tr><tr><th>业务校验</th><td>检查ID、类型、DLC、温湿度编码和VALID质量，完整应用响应计为成功</td></tr><tr><th>统计依据</th><td>原始TX/RX、逐轮判定、连续轮号和汇总独立核对一致</td></tr></table></div>
 <div class="section"><h3>端到端响应时间</h3><table><tr><th>窗口</th><th>实际时长</th><th>PC RTT P95</th><th>最大RTT</th></tr><tr><td>RS485连续1000轮</td><td>2.332秒</td><td>2.465 ms</td><td>3.953 ms</td></tr><tr><td>RS485一小时</td><td>3600.001秒</td><td>2.491 ms</td><td>6.521 ms</td></tr><tr><td>CAN1800次</td><td>1799.023秒</td><td>2.875 ms</td><td>3.503 ms</td></tr></table><p class="caption">RTT包含USB、PC调度和日志处理；周期以逐轮发送时间核对。板端采样推进由UART中的MCU时间戳核对。</p></div>
 <div class="bar"><h3>负载下的采集连续性</h3><p class="small">SHT30序号5920→9524，每次加1；采样时间5919015→9523015 ms，每次增加1000 ms。3605条报文解析正确，温湿度全部VALID/OK，捕获期间无序号或采样时间回退。</p></div>
-<div class="section"><h3>让数据可以复核</h3><p class="small">保留完整压缩日志、UTC与单调时间、执行脚本快照及固件/脚本SHA256。实测基线9688122+dirty，固件AXF指纹340c1383…119374；完整标识和校验结果在每项记录中提供。</p></div>
-<p class="source">证据入口：Docs/TestRecords/2026-10-22_communication_01/RESULTS.md<br>独立核验：verification.json；主机检查按Python、生产C断言及CAN场景分类列示。</p>
+<div class="section"><h3>测试方法与版本追溯</h3><p class="small">保留完整压缩日志、UTC与单调时间、执行脚本快照及固件/脚本SHA256。源码与证据归档于v1.0-bench，测试基线9688122+dirty与319项文件映射关联；固件AXF及完整执行标识可由每项记录核对。</p></div>
+<p class="source">证据入口：docs/TestRecords/2026-10-22_communication_01/RESULTS.md<br>独立核验：verification.json；主机检查：Python119项、生产C477项断言及CAN16场景，BSP/HAL使用测试替身。</p>
 </div><div class="footer"><span>完整应用响应 · 原始日志 · 版本指纹</span><span>02 / 04</span></div></section>
 <section class="page"><div class="body">
 <div class="top"><span>我的代表性故障分析</span><span>RS485 / ROOT CAUSE</span></div>
@@ -87,7 +87,7 @@ uint32_t(1000 - 1001) = 4,294,967,295
 <p class="small">A每轮末延时1秒，B上报后延时3秒，周期包含工作耗时；邮箱保持最新值，B已取出的副本独立。诊断更新与复制采用短临界区，外设访问放在临界区外。</p>
 <div class="section"><h3>正常采集与命令NACK恢复（2026-10-04 / v4）</h3><table><tr><th>正常窗口</th><td>约40秒、14条报告，采集与UART错误字段0</td></tr><tr><th>故障方法</th><td>运行时地址0x44→0x45→0x44，制造命令NACK并恢复</td></tr><tr><th>响应与恢复</th><td>4条no_new_data，8条恢复采样；最后旧值seq389，首条恢复seq390</td></tr><tr><th>诊断保留</th><td>累计fail24；恢复后last0，历史阶段和错误码继续保留</td></tr></table></div>
 <div class="section"><h3>我的工作与实现入口</h3><table><tr><th>通信规则与诊断</th><td>RS485状态、超时和恢复规则；独立推导时间下溢；CAN请求校验、编码和队列核心逻辑</td></tr><tr><th>系统策略</th><td>Fault记录接受/消费规则，IWDG健康门控条件与验收选择</td></tr><tr><th>任务与验证</th><td>最新值邮箱策略、测量与失败记录流程、实板联调及边界验收</td></tr></table></div>
-<p class="small" style="margin-top:4mm">开发过程中使用Codex辅助实现、适配集成与自动化测试。个人工作按设计决策、核心逻辑、实板联调和根因分析组织，源码与记录分别提供对应依据。</p>
-<div class="bar"><h3>快速审阅路径</h3><p class="small">README：量化结果与代码入口<br>docs/CONTRIBUTIONS.md：具体职责与设计判断<br>docs/CASE_RS485.md：真实故障诊断<br>Docs/TestRecords：通信、采集和主机检查完整日志</p></div>
+<p class="small" style="margin-top:4mm">我负责上述设计决策、核心逻辑、实板联调与故障分析，并根据计数、波形及日志验收。开发中使用Codex辅助实现、工程适配和测试集成；具体职责与设计取舍见贡献说明。</p>
+<div class="bar"><h3>快速审阅路径</h3><p class="small">README：量化结果与代码入口<br>docs/CONTRIBUTIONS.md：具体职责与设计判断<br>docs/CASE_RS485.md：真实故障诊断<br>docs/TestRecords：通信、采集和主机检查完整日志</p></div>
 </div><div class="footer"><span>设计决策 · 核心逻辑 · 实板联调 · 故障分析</span><span>04 / 04</span></div></section>
 </body></html>

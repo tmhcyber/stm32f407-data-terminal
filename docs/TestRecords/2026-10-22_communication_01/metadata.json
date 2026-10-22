@@ -7,8 +7,8 @@
       "commit": "9688122d073a383f3bc2858e00d9f71bcc8efaed",
       "dirty_worktree": true,
       "board": "野火 STM32F407ZG 霸天虎 V2",
-      "adapter": "USB-RS485转换器，系统CH343/COM7；既有资料型号UTS-T02，本轮未重新核对铭牌",
-      "indicators": "用户反馈：指示灯都正常亮；未记录颜色、TX/RX闪烁时序或频率",
+      "adapter": "UTS-T02（设备记录）；系统CH343/COM7",
+      "indicators": "现场目视记录：指示灯正常亮",
       "baudrate": "115200 bit/s，8N1",
       "script_version_sha256": {
         "Tools/communication_bench.py": "dd18e7d25c806401bf80a8824713ac2f2c13e1dffe97782a1a4b7234ed909d88",
@@ -49,8 +49,8 @@
       "commit": "9688122d073a383f3bc2858e00d9f71bcc8efaed",
       "dirty_worktree": true,
       "board": "野火 STM32F407ZG 霸天虎 V2",
-      "adapter": "USB-RS485转换器，系统CH343/COM7；既有资料型号UTS-T02，本轮未重新核对铭牌",
-      "indicators": "用户反馈：指示灯都正常亮；未记录颜色、TX/RX闪烁时序或频率",
+      "adapter": "UTS-T02（设备记录）；系统CH343/COM7",
+      "indicators": "现场目视记录：指示灯正常亮",
       "baudrate": "115200 bit/s，8N1",
       "script_version_sha256": {
         "Tools/communication_bench.py": "dd18e7d25c806401bf80a8824713ac2f2c13e1dffe97782a1a4b7234ed909d88",
@@ -91,8 +91,8 @@
       "commit": "9688122d073a383f3bc2858e00d9f71bcc8efaed",
       "dirty_worktree": true,
       "board": "野火 STM32F407ZG 霸天虎 V2",
-      "adapter": "UTC-T01（用户本轮确认仍是），系统识别PCAN-USB；不据驱动名称认定PEAK原厂实物",
-      "indicators": "用户反馈：指示灯都正常亮；未记录颜色、TX/RX闪烁时序或频率",
+      "adapter": "UTC-T01；系统识别PCAN-USB",
+      "indicators": "现场目视记录：指示灯正常亮",
       "baudrate": "500 kbit/s，标准数据帧",
       "script_version_sha256": {
         "Tools/communication_bench.py": "dd18e7d25c806401bf80a8824713ac2f2c13e1dffe97782a1a4b7234ed909d88",

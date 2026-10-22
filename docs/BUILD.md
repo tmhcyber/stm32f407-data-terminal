@@ -5,7 +5,7 @@
 ## 环境
 
 - Keil MDK，Arm Compiler 5.06 update 7 build 960（ARMCC 5）；目标 STM32F407ZGTx，C99。其他编译器需核对启动、链接与语言选项。
-- STM32F4xx Device Pack / CMSIS 环境：RTOS 历史下载使用 STM32F4xx 2.15.0 pack；按本机环境安装。
+- STM32F4xx Device Pack / CMSIS 环境：RTOS验证环境使用STM32F4xx 2.15.0 pack；按本机环境安装。
 - PC Python 3；串口观察需 pyserial，`python -m pip install pyserial`。相关解析器测试使用标准库 unittest，RTOS 测试使用 pytest。
 - 固件逻辑主机测试使用Clang；实板另验证物理链路、采集与应用响应。
 
@@ -24,6 +24,8 @@
 
 ## 已记录的接线
 
+[硬件组成与接线实物](../evidence/hardware-setup.jpg)：STM32F407ZG开发板、SHT30、UTS-T02、UTC-T01及fireDAP。
+
 | 链路 | 连接 / 参数 |
 | --- | --- |
 | SHT30 | 3V3/GND，PB8=SCL、PB9=SDA；I2C1 100 kHz，地址 0x44 |
@@ -37,18 +39,18 @@ CAN目标拓扑为两端各120Ω。本项目实测采用现有短线连接，USB
 
 ## 演示选择
 
-先运行所选目标的正常窗口，两个固件需要分别下载，不是同时运行。下载会替换板内固件，保留另一个磁盘工程。
+裸机终端与FreeRTOS采集目标分别构建、下载。选定目标后先运行正常窗口，并在测试记录中注明对应固件。
 
 - 裸机 USART1：`python Tools/pc_uplink_receiver.py --help` 查看串口观察参数。
-- RS485：`python Tools/pc_rs485_ping_pong.py --help`；请求为 `V1|PING\r\n`，响应为 `V1|PONG\r\n`。100 ms 字节间超时属于自定义实验配置，不是 Modbus 间隔。HSE25MHz版已完成1000轮及一小时36000轮通信，执行版本与原始日志见验证记录。
-- CAN：PCAN-View 正常模式、500 kbit/s，标准数据帧 ID=123h、DLC=1、Data=01；观察 322h / 5 字节响应。Listen-only 缺 ACK 及手动恢复为历史专项，本快速入口不要求重复注入故障。
+- RS485：`python Tools/pc_rs485_ping_pong.py --help`；请求为 `V1|PING\r\n`，响应为 `V1|PONG\r\n`。自定义CRLF协议采用100 ms字节间超时。HSE25MHz版已完成1000轮及一小时36000轮通信，执行版本与原始日志见验证记录。
+- CAN：PCAN-View 正常模式、500 kbit/s，标准数据帧 ID=123h、DLC=1、Data=01；观察 322h / 5 字节响应。缺ACK专项采用对端Listen-only和手动触发的受控恢复，方法与结果见[专项验证](EVIDENCE.md#专项诊断与恢复验证)。
 - RTOS：`python Experiments/FreeRTOS_Queue/Tools/capture_uart.py --list`；选择实际端口观察 v4 正常窗。
 
 ```powershell
 python Experiments/FreeRTOS_Queue/Tools/capture_uart.py --port COMx --mode sensor-diag --seconds 40 --min-samples 10 --output tmp/rtos-new --firmware Experiments/FreeRTOS_Queue/Output/FreeRTOS_Queue.axf
 ```
 
-输出目录须不存在。sensor-diag 只用于无故障正常窗口，不能套用到故障恢复后保留非零历史的窗口。原始地址故障注入使用当时映像的 RAM 布局，本包不提供可照搬地址的注入脚本。
+每次采集使用新的输出目录。sensor-diag模式检查正常采集窗口；故障恢复窗口按累计失败、最近状态与有效序号分别验收。地址故障注入通过当前调试映像的符号定位变量，按[RTOS实验方法](RTOS.md)执行。
 
 ## 主机侧检查
 
