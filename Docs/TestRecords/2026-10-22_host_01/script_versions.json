@@ -1,0 +1,25 @@
+{
+  "stage": "Archive-time fingerprints; these files were not modified after the same-day checks. No historical target readback implied.",
+  "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "pytest": "9.1.1",
+  "sha256": {
+    "Experiments/FreeRTOS_Queue/Tests/test_capture_uart.py": "1635f11521ab01bfd6b2944e91a330472e1a7f8143868d94ea550b7499ef49bd",
+    "Tests/Application/test_app_data_service.py": "1ff6c942b2d0d5c634173c756a148e738a9707fced8ed09afa47b1630690c48f",
+    "Tests/Application/test_app_snapshot_consumer.py": "8912fa81deac82c216e84a9066f9b9cbb2b3b3072155fb90fed04d717afd51dd",
+    "Tests/C/test_core_contracts.c": "21046c7faac169bd1d95b58fd10f54f06edeb700192e516bc606ca9190f50b47",
+    "Tests/CAN/test_can_link.c": "a83b8ee7f76641e41d9f615554dec22f9bc696d3eaf6abfff1a1d27ab96fd48e",
+    "Tests/CAN/test_can_loopback.c": "45a1e545d2517bf51a7b0cf34f6fe60bf7c3857bef226e1a80b5a5898ea89b9c",
+    "Tests/CAN/test_can_protocol.c": "3263f2592232109f091134ee14f6e8ac7e60388abea33af1d7527f2236f402cf",
+    "Tests/CAN/test_can_rx_queue.c": "b0e37db5ea37383ce2ce0904733ea2207a7b23f4dfa6c83ed1246c68798ce8d4",
+    "Tests/PC/test_communication_bench.py": "73a8219492f06dc3fcf59596ef301987788c47794a37069b5f747992118b865f",
+    "Tests/PC/test_pc_uplink_receiver.py": "2bd1999445d23db2921e6b43ae134d79077959fb947f5ed144d7a060078db29b",
+    "Tests/RS485/test_pc_rs485_ping_pong.py": "db977402d208f5fc62634900e327d8abd5a68bc34752548f7945777bfc9cd672",
+    "Tests/RS485/test_rs485_contract.py": "6bfe4018dd0d54e51c17651abe58bdbfea2d477b6ce00d978d0135b5a161099a",
+    "Tests/SHT30/test_app_sht30_policy.py": "f8c351be9ac234c3e7caaa8c6d72bc4357f22b961f01f5a66b16b5ae1632865d",
+    "Tests/SHT30/test_sht30_reference.py": "90bfe3a8b848413d211db8501ee34558a4d7fddb19392c87f6fe26747d8cefa4",
+    "Tests/SystemDiagnostics/test_system_diagnostics_contract.py": "95275468158ba8494ee94038c9d8b764192a7fe87f34e82d13de3d7abc006545",
+    "Tests/SystemTiming/test_system_timing_contract.py": "8ad57699d7bcd75474f69e025a8018190dbd59e18f6f0f734d452fd24a60a49a",
+    "Tests/SystemWatchdog/test_watchdog_gate_contract.py": "125149f5dba2444f926f39288c94b61ee8f53e855b741f8853afba01f4e55d50",
+    "Tools/run_c_tests.ps1": "e0d7b0436868e877415bb76948b9c2bf9255ae629b9690e1000198ae31f10a51"
+  }
+}

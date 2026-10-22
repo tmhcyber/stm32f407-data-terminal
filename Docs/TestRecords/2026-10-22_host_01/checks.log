@@ -1,0 +1,20 @@
+# schema: TestRecord-v1
+# date: 2026-10-22
+# timezone: Asia/Taipei (UTC+8)
+# commit: 9688122d073a383f3bc2858e00d9f71bcc8efaed + dirty
+# board: 不适用（主机检查）
+# adapter: 不适用（假设备/参考模型/结构/生产C行为）
+# indicators: 不适用
+# baudrate: 不适用
+# script_version_sha256: 见script_versions.json
+# source: 同日真实执行的工具输出摘录；不是完整终端会话，不是本次重新执行
+# END_HEADER
+python -X utf8 -m pytest -q Tests Experiments/FreeRTOS_Queue/Tests
+119 passed, 15 subtests passed in 0.25s
+
+Tools/run_c_tests.ps1 (复用本对话同日已执行结果)
+PASS: 477 checks executed against production C sources.
+PASS: 16 CAN diagnostic scenarios (production C, fake HAL; no bus simulation).
+PASS: CAN transport/recovery and RX IRQ queue: deferred business, bounded drain, overflow/drop, FIFO order, masked failure and stale-work cleanup (fake HAL).
+PASS: CAN user protocol and production snapshot mapping: bounds, signed encoding, invalid requests, no-data/stale/offline, truncation, inconsistent/busy snapshot.
+CAN RX queue: FIFO/wrap/full/copy/clear/PRIMASK tests passed (fake IRQ boundary).

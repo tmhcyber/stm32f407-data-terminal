@@ -1,0 +1,10 @@
+{
+  "collection_only": true,
+  "total": 119,
+  "scopes": {
+    "Existing bare-metal Python": 83,
+    "Communication tooling added": 18,
+    "FreeRTOS experiment": 18
+  },
+  "not_counted_as_additional_cases": "subtests and C assertions"
+}

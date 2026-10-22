@@ -1,0 +1,85 @@
+{
+  "scope": "offline raw-log verification; not board Watch counters",
+  "runs": {
+    "rs485_smoke": {
+      "hash_verified": true,
+      "requests": 1,
+      "valid_responses": 1,
+      "first_round_utc": "2026-10-22T09:10:51.688704+00:00",
+      "last_round_utc": "2026-10-22T09:10:51.688704+00:00",
+      "elapsed_s": 0.023547100005089305,
+      "observed_request_interval_min_s": null,
+      "observed_request_interval_max_s": null
+    },
+    "can_smoke": {
+      "hash_verified": true,
+      "requests": 1,
+      "valid_responses": 1,
+      "first_round_utc": "2026-10-22T09:10:52.293924+00:00",
+      "last_round_utc": "2026-10-22T09:10:52.293924+00:00",
+      "elapsed_s": 0.024319399999512825,
+      "observed_request_interval_min_s": null,
+      "observed_request_interval_max_s": null
+    },
+    "rs485_1000": {
+      "hash_verified": true,
+      "requests": 1000,
+      "valid_responses": 1000,
+      "first_round_utc": "2026-10-22T09:10:52.995702+00:00",
+      "last_round_utc": "2026-10-22T09:10:55.304245+00:00",
+      "elapsed_s": 2.3317813000030583,
+      "observed_request_interval_min_s": 0.0021217000030446798,
+      "observed_request_interval_max_s": 0.003978499997174367
+    },
+    "rs485_1hour": {
+      "hash_verified": true,
+      "requests": 36000,
+      "valid_responses": 36000,
+      "first_round_utc": "2026-10-22T09:10:55.866671+00:00",
+      "last_round_utc": "2026-10-22T10:10:55.766315+00:00",
+      "elapsed_s": 3600.000570999997,
+      "observed_request_interval_min_s": 0.0988082999974722,
+      "observed_request_interval_max_s": 0.10110590000113007
+    },
+    "can_1800": {
+      "hash_verified": true,
+      "requests": 1800,
+      "valid_responses": 1800,
+      "first_round_utc": "2026-10-22T09:10:55.885310+00:00",
+      "last_round_utc": "2026-10-22T09:40:54.884841+00:00",
+      "elapsed_s": 1799.0230213000032,
+      "observed_request_interval_min_s": 0.9990917000031914,
+      "observed_request_interval_max_s": 1.0005942999996478
+    }
+  },
+  "uart": {
+    "raw_bytes": 1355480,
+    "raw_sha256": "bfbcfcc270b35a0e4b52cce1df2764041af3fdaf0e957af652a2bca72361e2c2",
+    "chunks_sha256": "fc95ac381cbff82aa1f91e38826bc1faaff65f7ad751a24f51fc6c99b28de9c1",
+    "chunk_reconstruction_verified": true,
+    "records": 3605,
+    "parse_errors": 0,
+    "first_chunk_utc": "2026-10-22T09:10:51.871333+00:00",
+    "last_chunk_utc": "2026-10-22T10:10:55.842514+00:00",
+    "host_observation_span_s": 3603.971181,
+    "first_sequence": 5920,
+    "last_sequence": 9524,
+    "sequence_steps": {
+      "1": 3604
+    },
+    "sample_tick_steps_ms": {
+      "1000": 3604
+    },
+    "first_sample_tick_ms": 5919015,
+    "last_sample_tick_ms": 9523015,
+    "quality_status": {
+      "VALID/OK": 3605
+    },
+    "temperature_min_c": 27.23,
+    "temperature_max_c": 27.948,
+    "humidity_min_rh": 46.786,
+    "humidity_max_rh": 49.944,
+    "reset_conclusion": "No sequence/timestamp reset or startup output observed in this capture; no independent reset-counter/Watch audit."
+  },
+  "audit_script_sha256": "04cd53b0580e9dd67d90f8f8d2dc1d51dda5b666f4172add50e3ee81141029f3"
+}
