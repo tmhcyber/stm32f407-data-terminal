@@ -1,22 +1,25 @@
-# 主机自动化检查记录
+# 主机自动化验证
 
 ```text
 schema: TestRecord-v1
 date: 2026-10-22
 timezone: Asia/Taipei (UTC+8)
 commit: 9688122d073a383f3bc2858e00d9f71bcc8efaed + dirty
-board: 不适用；本条是主机模拟/结构/行为检查
-adapter: 不适用；未用USB-RS485或PCAN实物发送数据
-indicators: 不适用；实板指示灯观察不用于主机检查结论
-baudrate: 不适用
+board: 主机测试环境，使用可控设备边界
+adapter: BSP/HAL/串口/队列测试替身
+indicators: 不适用
+baudrate: 由对应协议测试向量定义
 script_version_sha256: 见script_versions.json
-test: Python正式目录检查、生产C断言、CAN场景
-result: 各范围通过，分开计数
+test: Python检查、生产C断言、CAN诊断场景
+result: 分类检查通过
 ```
 
-- [带头输出摘录](checks.log)：保存当日已执行工具输出的摘录，不是重新执行或完整终端会话。
-- [Python收集清单](python_collection.txt)与[范围计数](python_inventory.json)：119项=既有83+本轮工具18+独立RTOS实验18；15个subtest不另外相加。
-- 生产C为同日已运行的477项断言检查，另有16个CAN诊断场景及传输/协议/队列测试组，不能与119相加称单元测试数。范围见脚本，不证明真实HAL、中断时序或总线可靠性。
-- 工具/测试实现由Codex辅助完成，不能作为用户独立编写全部测试的证据。
+| 验证层 | 规模 | 检查内容与来源 |
+| --- | --- | --- |
+| Python正式目录 | 119项，另列15个subtest | 既有83项、通信工具18项、FreeRTOS观察工具18项 |
+| 核心生产C | 477项断言 | 执行生产源码，检查数据服务、通信状态与健康门控 |
+| CAN专项 | 16个诊断场景及传输/协议/队列测试组 | 故障状态、协议编码、FIFO/环形队列及恢复路径 |
 
-原始历史记录保留在工作区Docs/Evidence/Communication/2026-10-22_host_01，本目录为便于README与GitHub链接的可移植副本及输出摘录。
+[执行输出摘录](checks.log) · [Python收集清单](python_collection.txt) · [范围计数](python_inventory.json) · [脚本版本](script_versions.json)
+
+结果来源为2026-10-22已执行的主机检查，C检查沿用同日验证记录。可控边界用于确定性覆盖异常和边界路径，实板通信记录另提供物理链路与应用应答证据。

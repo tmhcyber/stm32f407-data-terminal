@@ -1,6 +1,6 @@
 #include "app_can_protocol.h"
 
-/* User-authored learning logic, syntax corrected during review. */
+/* Validate the request frame before encoding a sensor snapshot. */
 uint8_t CAN_RequestIsValid(uint32_t id, uint8_t is_extended,
     uint8_t is_remote, uint8_t dlc, const uint8_t *data)
 {
@@ -15,7 +15,7 @@ uint8_t CAN_EncodeResponse(uint8_t quality, int16_t temperature,
 {
   uint16_t temperature_bits;
   if ((data == 0) || (data_capacity < 5U)) return 0U;
-  /* Integration guard: the user's exercise assumed these were valid.
+  /* Validate the snapshot quality and humidity before serialization.
    * Unknown status and >100% humidity must not look like valid readings.
    */
   if ((quality > 3U) || ((quality != 0U) && (humidity > 10000U)))

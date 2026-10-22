@@ -1,4 +1,4 @@
-"""Receive and validate the teaching MVP's read-only serial uplink."""
+"""Receive and validate the STM32 data terminal's read-only serial uplink."""
 
 import argparse
 import re
@@ -692,7 +692,7 @@ def _non_negative_float(text):
 
 def parse_arguments(argv=None):
     parser = argparse.ArgumentParser(
-        description="Receive and validate the STM32 teaching MVP serial uplink."
+        description="Receive and validate the STM32 data terminal serial uplink."
     )
     selection = parser.add_mutually_exclusive_group(required=True)
     selection.add_argument(

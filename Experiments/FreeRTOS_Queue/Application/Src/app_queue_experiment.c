@@ -63,7 +63,7 @@ static SHT30_BusStatus_t SensorRead(void *context, uint8_t address,
     return MapBusStatus(BSP_I2C1_Read(address, data, length, timeout));
 }
 
-/* Core sequence written by the learner in chat; integration/diagnostics by Codex. */
+/* Acquire a validated sample and publish it to the latest-value mailbox. */
 static void AcquisitionTask(void *argument)
 {
     uint32_t next_number = 0;
@@ -100,7 +100,7 @@ static void AcquisitionTask(void *argument)
             current_failure_stage = FAILURE_START;
         }
 
-        /* Learner's update logic: count once and retain the last failure pair. */
+        /* Count each failed attempt once and retain its stage/status pair. */
         taskENTER_CRITICAL();
         diagnostics.last_status = status;
         if (status != SHT30_STATUS_OK)

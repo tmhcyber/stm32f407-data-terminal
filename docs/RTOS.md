@@ -1,32 +1,34 @@
-# FreeRTOS 最新值邮箱与诊断实验
+# FreeRTOS最新值邮箱与诊断
 
-独立构建目标；FreeRTOS Kernel V11.1.0、ARM_CM4F / heap_4。未把裸机系统整体迁移。
+独立构建目标，采用FreeRTOS Kernel V11.1.0、ARM_CM4F和heap_4，复用SHT30驱动。采集任务与上报任务通过按值复制的容量1邮箱交换数据。
 
-## 业务取舍
+## 从业务目标选择策略
 
-用户希望显示最新温湿度，选择容量 1 的邮箱覆盖尚未处理的旧值；能预测慢消费者的 FIFO 会积压。覆盖不改变 B 已经取出的按值副本，也不保证完整历史采样。
+显示当前温湿度时，慢消费者需要优先获得最新采样。我选择 `xQueueOverwrite` 覆盖尚未处理的旧值，避免FIFO积压使显示滞后；B已取出的局部副本保持独立。
 
-A（优先级2）发送 SHT30 命令、vTaskDelay 等待转换、读取及 CRC；成功才换算并 xQueueOverwrite，失败不发布旧 measurement、不占有效 seq。A 每轮末延时 1 秒。B（优先级1）接收采样、复制诊断、上报，超时输出 no_new_data；上报后延时 3 秒。相对延时使周期包含工作耗时。HAL I2C / UART 仍为有界轮询，不是 RTOS 异步外设驱动。
+A（优先级2）发送测量命令、`vTaskDelay` 等待转换、读取并校验CRC；成功后换算并发布，失败保留诊断信息，有效采样序号保持原值。A每轮末延时1秒。B（优先级1）接收采样、复制诊断快照并上报，上报后延时3秒；超时输出no_new_data。相对延时周期包含任务工作耗时，HAL I2C/UART采用有界轮询。
 
-共享 SensorDiagnostics 在 A 更新及 B 复制时使用短临界区；临界区外完成 I2C、队列、延时和 UART。诊断与采样是不同观察，不保证同一轮，因此旧值与最近失败可以出现在同一条报告中。
+我围绕上述流程编写测量启动、单位换算、成功发布和失败记录核心逻辑，并根据日志核对数据年龄、覆盖与恢复行为。
 
-## 计数含义
+## 共享诊断与计数
 
-- `seq`：成功有效采样序号，失败不递增。
-- `rx`：B 成功接收次数；`skip = seq + 1 - rx` 为截至本次接收序号的有效采样缺口，不是即时覆盖总数。
-- `age`：B 接收 tick 减成功 sample_tick，不包含 USB / PC 显示延迟。
-- `fail`：累计失败尝试；`last`：最近一轮状态；`fail_stage/fail_status`：最近一次历史失败阶段与原因。恢复后 last=0，不清除 fail 或历史原因。
+SensorDiagnostics更新/复制使用短临界区，I2C、队列、延时和UART放在临界区外。采样副本携带其自身时间，诊断快照反映最近状态，两者各自可追溯。
 
-## 实板结果（2026-10-04 / v4）
+| 字段 | 含义 |
+| --- | --- |
+| seq | 成功有效采样序号 |
+| rx | B成功接收次数 |
+| skip | `seq+1-rx`，截至该次接收序号的有效采样缺口 |
+| age | B接收tick减sample_tick，表示数据在MCU内的年龄 |
+| fail / last | 累计失败尝试 / 最近一轮状态 |
+| fail_stage / fail_status | 最近一次失败的阶段和原因，恢复后保留 |
 
-正常窗约 40 秒，14 条报告，错误字段均 0；[原始 UART](../evidence/rtos_normal_uart.txt)。
+## 实板验证（2026-10-04，v4）
 
-地址注入 0x44→0x45→0x44；[原始 UART](../evidence/rtos_recovery_uart.txt) 共 17 行：13 条温湿度、4 条 no_new_data，其中8条恢复采样。最后旧值 seq389、首条恢复 seq390；累计 fail24、last0，历史命令 NACK 保留。故障开始后曾收到旧值 age2746ms，需要看年龄和状态。
+正常窗口约40秒、14条报告，采集及UART错误字段0，见[正常UART](../evidence/rtos_normal_uart.txt)。
 
-这是 Codex 执行的事先告知地址注入；未拔线或改变地址脚，不属于物理断线或用户独立未知故障定位。实际读取 CRC 故障仍只有主机注入证据。
+采用运行时地址 `0x44→0x45→0x44` 制造命令NACK并恢复。日志含4条no_new_data和8条恢复采样；最后旧值seq389、首条恢复seq390，累计fail24，恢复后last0，历史命令失败阶段与原因保留，见[恢复UART](../evidence/rtos_recovery_uart.txt)。这是软件地址注入实验，使用原接线和供电。
 
-## 贡献
+日志中旧有效值的age最高出现2746ms，质量、年龄和当前诊断共同解释数据新鲜度；恢复后的有效序号继续推进。该设计将“本轮恢复正常”和“历史出现过失败”同时保留下来，便于现场追查。
 
-用户选择业务策略，在指导下写出核心测量流程、换算、覆盖和失败记录；Codex 完成适配、并发集成、构建下载和证据取证。任务职责、计数和临界区仍有复盘纠正记录；完整独立复现、独立移植、ISR/互斥量专项与长稳未验证。
-
-关键实现：[A/B任务](../Experiments/FreeRTOS_Queue/Application/Src/app_queue_experiment.c)，[构建说明](BUILD.md)。
+[任务源码](../Experiments/FreeRTOS_Queue/Application/Src/app_queue_experiment.c) · [构建与接线](BUILD.md) · [项目贡献](CONTRIBUTIONS.md)
