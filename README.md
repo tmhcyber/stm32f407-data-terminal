@@ -6,13 +6,13 @@
 
 我负责通信规则、代表性核心逻辑、实板联调和故障定位；另以独立FreeRTOS固件实现“持续采集、只上报最新数据”的任务协作。
 
-**怎么复现：**下载[`v1.0-bench`](https://github.com/tmhcyber/stm32f407-data-terminal/tree/v1.0-bench)，按[接线与运行说明](docs/BUILD.md)用Keil编译下载，再运行PC工具观察采样与请求应答。
+**怎么复现：** 下载[`v1.0-bench`](https://github.com/tmhcyber/stm32f407-data-terminal/tree/v1.0-bench)，按[接线与运行说明](docs/BUILD.md)用Keil编译下载，再运行PC工具观察采样与请求应答。
 
 ## 我的主要工作
 
-- **通信与联调：**制定RS485收发、超时和恢复规则，编写CAN请求校验、温湿度编码与队列核心逻辑。
-- **独立故障定位：**结合波形和调试计数，发现主循环与接收中断的时间先后交错，定位无符号下溢导致的首字节误超时。
-- **实时任务设计：**根据“显示最新温湿度”的需求选择单格覆盖邮箱，编写测量、换算和失败记录流程。
+- **通信与联调：** 制定RS485收发、超时和恢复规则，编写CAN请求校验、温湿度编码与队列核心逻辑。
+- **独立故障定位：** 结合波形和调试计数，发现主循环与接收中断的时间先后交错，定位无符号下溢导致的首字节误超时。
+- **实时任务设计：** 根据“显示最新温湿度”的需求选择单格覆盖邮箱，编写测量、换算和失败记录流程。
 
 [设计决策与个人贡献](docs/CONTRIBUTIONS.md)提供实现入口和验证依据。
 
@@ -35,12 +35,10 @@
 
 ```mermaid
 flowchart LR
-    S["SHT30 · 3V3 / GND"] <-->|"I2C1 · PB8 SCL / PB9 SDA"| MCU["STM32F407ZG 霸天虎 V2"]
-    MCU -->|"USART1 · PA9 / J80 · 115200 8N1"| U["板载 CH340 → PC 采集串口"]
-    MCU <-->|"USART2 · PA2 TX / PA3 RX · PC0 方向"| R["板载 RS485 收发器"]
-    R <-->|"A / B · 共地 · 115200 8N1"| RP["USB-RS485 → PC"]
-    MCU <-->|"CAN2 · PB13 TX / PB12 RX"| C["板载 CAN 收发器 · J13"]
-    C <-->|"CANH / CANL · 共地 · 500 kbit/s"| CP["USB-CAN / PCAN → PC"]
+    MCU["STM32F407ZG<br/>霸天虎 V2"] <-->|"I2C1 · PB8 SCL / PB9 SDA"| S["SHT30<br/>3V3 / GND"]
+    MCU -->|"USART1 · PA9 / J80<br/>115200 8N1"| U["板载 CH340<br/>PC 采集串口"]
+    MCU <-->|"USART2 · PA2 TX / PA3 RX<br/>PC0 控制方向 · 115200 8N1"| R["板载 RS485 收发器<br/>A / B / 共地 → USB-RS485 → PC"]
+    MCU <-->|"CAN2 · PB13 TX / PB12 RX<br/>500 kbit/s"| C["板载 CAN 收发器 · J13<br/>CANH / CANL / 共地 → USB-CAN → PC"]
 ```
 
 接线前断电。J40供电与RS485跳帽、引脚复用、CAN端接要求见[接线表与运行说明](docs/BUILD.md#已记录的接线)；本图为连接关系示意。
