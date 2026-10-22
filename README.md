@@ -31,6 +31,20 @@
 源码与实测记录归档于 **`v1.0-bench`**。表中保留测试当天的提交状态，实测固件与标签内文件的对应关系见[版本映射](SNAPSHOT.md)。
 <!-- TEST_RESULTS_END -->
 
+## 硬件接线示意
+
+```mermaid
+flowchart LR
+    S["SHT30 · 3V3 / GND"] <-->|"I2C1 · PB8 SCL / PB9 SDA"| MCU["STM32F407ZG 霸天虎 V2"]
+    MCU -->|"USART1 · PA9 / J80 · 115200 8N1"| U["板载 CH340 → PC 采集串口"]
+    MCU <-->|"USART2 · PA2 TX / PA3 RX · PC0 方向"| R["板载 RS485 收发器"]
+    R <-->|"A / B · 共地 · 115200 8N1"| RP["USB-RS485 → PC"]
+    MCU <-->|"CAN2 · PB13 TX / PB12 RX"| C["板载 CAN 收发器 · J13"]
+    C <-->|"CANH / CANL · 共地 · 500 kbit/s"| CP["USB-CAN / PCAN → PC"]
+```
+
+接线前断电。J40供电与RS485跳帽、引脚复用、CAN端接要求见[接线表与运行说明](docs/BUILD.md#已记录的接线)；本图为连接关系示意。
+
 ## 实板波形与调试截图
 
 ![RS485实测波形：先接收请求，再切换方向发送应答](evidence/rs485_tc.png)
@@ -53,7 +67,7 @@ RS485专项实测：红色PA3为接收，橙色PA2为发送；PC0控制收发方
 
 裸机终端与FreeRTOS实验分别编译、下载。裸机承担采集、双总线通信和故障诊断；FreeRTOS实验展示采集与上报任务的数据交换。
 
-## 代码与工程入口
+## 模块与源码入口
 
 | 内容 | 入口 |
 | --- | --- |
