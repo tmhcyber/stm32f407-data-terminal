@@ -6,6 +6,10 @@ import time
 from dataclasses import dataclass
 from enum import Enum, auto
 
+from communication_bench import (
+    add_campaign_arguments, execute, positive, validate_campaign_arguments,
+)
+
 
 REQUEST = b"V1|PING\r\n"
 EXPECTED_RESPONSE = b"V1|PONG\r\n"
@@ -49,6 +53,8 @@ def read_bounded_response(serial_port, response_timeout_seconds, clock=None):
         chunk = serial_port.read(1)
         if not chunk:
             continue
+        if clock() >= deadline:
+            return ResponseResult(ResponseStatus.TIMEOUT, bytes(frame) + chunk)
 
         for byte in chunk:
             frame.append(byte)
@@ -92,6 +98,8 @@ def run_ping_pong(serial_port, rounds, response_timeout_seconds, clock=None):
             stats.overlength_count += 1
         else:
             stats.timeout_count += 1
+        if result.status is not ResponseStatus.PONG:
+            break
 
     return stats
 
@@ -120,19 +128,15 @@ def parse_arguments(argv=None):
         description="Send one bounded PING at a time and verify PONG."
     )
     parser.add_argument("--port", required=True, help="USB-RS485 COM port")
-    parser.add_argument("--rounds", type=int, default=10)
+    add_campaign_arguments(parser, default_rounds=10)
     parser.add_argument(
         "--response-timeout-ms",
-        type=int,
+        type=positive,
         required=True,
         help="PC-side PONG wait; choose and record it for the experiment",
     )
     args = parser.parse_args(argv)
-    if args.rounds <= 0:
-        parser.error("--rounds must be positive")
-    if args.response_timeout_ms <= 0:
-        parser.error("--response-timeout-ms must be positive")
-    return args
+    return validate_campaign_arguments(parser, args)
 
 
 def format_summary(stats):
@@ -145,21 +149,66 @@ def format_summary(stats):
     )
 
 
+class Rs485Adapter:
+    def __init__(self, port, emit):
+        self.port = port
+        self.emit = emit
+        # Pre-window bytes are logged, not included in the formal denominator.
+        waiting = port.in_waiting
+        if waiting:
+            emit(event="startup_rx", hex=port.read(min(waiting, 4096)).hex())
+        if port.in_waiting:
+            raise RuntimeError("continuous startup input; check other senders")
+
+    def check_quiet(self):
+        waiting = self.port.in_waiting
+        if waiting:
+            raw = self.port.read(min(waiting, 4096))
+            self.emit(event="extra_rx", hex=raw.hex())
+            raise RuntimeError("unsolicited/duplicate response between requests")
+
+    def send(self):
+        written = self.port.write(REQUEST)
+        self.emit(event="tx", hex=REQUEST.hex(), written=written)
+        if written != len(REQUEST):
+            raise OSError("partial serial write")
+        self.port.flush()
+
+    def receive(self, timeout):
+        # Log every nonempty read, including a partial frame on timeout/error.
+        adapter = self
+
+        class LoggedReader:
+            def read(self, size):
+                raw = adapter.port.read(size)
+                if raw:
+                    adapter.emit(event="rx", hex=raw.hex())
+                return raw
+
+        result = read_bounded_response(LoggedReader(), timeout)
+        return {"status": "ok" if result.status is ResponseStatus.PONG else result.status.name.lower(),
+                "response_hex": result.frame.hex()}
+
+    def close(self):
+        self.port.close()
+
+
 def main(argv=None):
     args = parse_arguments(argv)
+
+    def create(emit):
+        port = open_serial_port(args.port)
+        try:
+            return Rs485Adapter(port, emit)
+        except BaseException:
+            port.close()
+            raise
+
     try:
-        with open_serial_port(args.port) as serial_port:
-            stats = run_ping_pong(
-                serial_port,
-                args.rounds,
-                args.response_timeout_ms / 1000.0,
-            )
+        return execute(create, args, "rs485")
     except (OSError, RuntimeError, ValueError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 2
-
-    print(format_summary(stats))
-    return 0 if stats.pong_count == stats.request_count else 1
 
 
 if __name__ == "__main__":

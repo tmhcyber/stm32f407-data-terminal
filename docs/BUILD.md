@@ -50,7 +50,7 @@ python Experiments/FreeRTOS_Queue/Tools/capture_uart.py --port COMx --mode senso
 
 输出目录须不存在。sensor-diag 只用于无故障正常窗口，不能套用到故障恢复后保留非零历史的窗口。原始地址故障注入使用当时映像的 RAM 布局，本包不提供可照搬地址的注入脚本。
 
-## 主机检查
+## 主机侧检查
 
 根目录执行：
 
@@ -67,4 +67,22 @@ clang -std=c99 -Wall -Wextra -Werror -I Experiments/FreeRTOS_Queue/Tests/fakes -
 .\tmp\freertos_queue_task_tests.exe
 ```
 
-主机C通过可控BSP/I2C/队列/UART边界覆盖生产逻辑；Python覆盖协议工具、参考模型及日志解析。软件与实板证据按测试日期、版本和测量对象组织，见[验证记录](EVIDENCE.md)。
+主机侧C检查以BSP/HAL、I2C、队列和UART替身隔离硬件，覆盖生产逻辑；Python覆盖协议工具、参考模型及日志解析。软件与实板证据按测试日期、版本和测量对象组织，见[验证记录](EVIDENCE.md)。
+
+## 通信量化复现
+
+检出`v1.0-bench`，接线、编译下载并RUN后，按实际端口运行PC工具。RS485以115200 bit/s通信，CAN适配器需安装PCAN-Basic驱动，并填写本机DLL路径。每次输出到新的目录。
+
+```powershell
+python Tools/pc_rs485_ping_pong.py --port COMx --rounds 1000 --response-timeout-ms 500 --firmware Output/IndustrialTerminal.axf --output tmp/rs485-1000-new
+python Tools/pc_rs485_ping_pong.py --port COMx --duration-seconds 3600 --interval-ms 100 --response-timeout-ms 500 --firmware Output/IndustrialTerminal.axf --output tmp/rs485-hour-new
+python Tools/pc_can_request_bench.py --dll "本机路径/PCANBasic.dll" --channel 0x51 --rounds 1800 --interval-ms 1000 --firmware Output/IndustrialTerminal.axf --output tmp/can-1800-new
+```
+
+双总线并行并记录采集串口，可使用组合工具（RS485和采集串口必须是不同端口）：
+
+```powershell
+python Tools/run_communication_session.py --rs485-port COMx --uart-port COMy --can-dll "本机路径/PCANBasic.dll" --can-rounds 1800 --output tmp/parallel-new
+```
+
+组合工具先保存单轮冒烟和RS485 1000轮结果，再并行启动RS485一小时与CAN 1800次，并保存UART原始数据。组合工具要求`Output/IndustrialTerminal.axf`、`.hex`和`.build_log.htm`来自本次Keil构建。完整参数用各工具的`--help`查看。

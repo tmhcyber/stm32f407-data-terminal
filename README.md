@@ -2,70 +2,73 @@
 
 陶铭浩 · 2027届 · 嵌入式软件 / MCU固件方向
 
-基于STM32F407ZG、HAL和Keil，完成温湿度采集、串口上报、RS485请求应答、经典CAN通信及Fault/IWDG诊断；同仓库另设FreeRTOS采集与最新值邮箱固件。
+**一个STM32终端：采集温湿度，通过串口、RS485和CAN与电脑通信，并记录通信异常和程序故障。**
+
+我负责通信规则、代表性核心逻辑、实板联调和故障定位；另以独立FreeRTOS固件实现“持续采集、只上报最新数据”的任务协作。
+
+**怎么复现：**下载[`v1.0-bench`](https://github.com/tmhcyber/stm32f407-data-terminal/tree/v1.0-bench)，按[接线与运行说明](docs/BUILD.md)用Keil编译下载，再运行PC工具观察采样与请求应答。
 
 ## 我的主要工作
 
-- 主导RS485状态、超时与恢复规则，结合波形和Watch独立定位时间下溢根因。
-- 编写CAN请求校验、响应编码和队列核心逻辑，完成通信与采集的实板联调。
-- 围绕数据新鲜度选择FreeRTOS最新值邮箱，编写测量、换算和失败记录核心流程。
+- **通信与联调：**制定RS485收发、超时和恢复规则，编写CAN请求校验、温湿度编码与队列核心逻辑。
+- **独立故障定位：**结合波形和调试计数，发现主循环与接收中断的时间先后交错，定位无符号下溢导致的首字节误超时。
+- **实时任务设计：**根据“显示最新温湿度”的需求选择单格覆盖邮箱，编写测量、换算和失败记录流程。
 
 [设计决策与个人贡献](docs/CONTRIBUTIONS.md)提供实现入口和验证依据。
-
-## 代表性案例
-
-- **RS485收到完整PING却无回复：**结合逻辑分析仪和Watch追踪时间先后，定位主循环缓存时间与ISR更新时间相减产生无符号下溢，导致首字节误超时清除。[查看故障分析](docs/CASE_RS485.md)
-- **CAN中断与业务解耦：**接收ISR入环形队列，主循环校验并响应；满队列拒收计数，缺ACK后支持手动恢复。[查看代码](BSP/Src/bsp_can_rx_queue.c)
-- **系统故障诊断：**记录异常现场与复位原因，按健康条件门控IWDG刷新。[查看门控逻辑](Application/Src/app_watchdog_gate.c)
-- **FreeRTOS最新值策略：**慢消费者仅需最新采样，容量1邮箱覆盖旧值；失败不占有效序号，恢复后保留历史错误。[查看任务与诊断](docs/RTOS.md)
-
-## 数据流与两个构建目标
-
-```text
-裸机主项目
-SHT30 -> I2C/CRC -> 周期采集 -> 数据快照 -> USART1 -> PC
-PC PING -> USART2/RS485 -> 有界帧/超时/重同步 -> TC后释放方向 -> PONG
-CAN RX IRQ -> 环形队列 -> 主循环校验 -> 温湿度请求应答
-Fault/复位现场 -> 循环健康评估 -> IWDG刷新门控
-
-FreeRTOS固件（同仓库，复用SHT30驱动）
-采集任务 -> 测量/阻塞等待/读取 -> 成功覆盖最新值邮箱
-上报任务 -> 接收数据副本 -> 诊断快照 -> 串口输出
-```
-
-两个Keil目标分别构建；Fault/IWDG、CAN和RS485位于裸机目标。最新值邮箱按值复制。
-
-## 源码、运行与证据
-
-| 内容 | 入口 |
-|---|---|
-| 接线、构建、PC观察 | [运行说明](docs/BUILD.md) |
-| RS485状态机和时间判断 | [应用源码](Application/Src/app_rs485_service.c) |
-| CAN请求校验与响应编码 | [协议源码](Application/Src/app_can_protocol.c) |
-| FreeRTOS采集/上报任务 | [任务源码](Experiments/FreeRTOS_Queue/Application/Src/app_queue_experiment.c) |
-| 实板日志、波形及适用版本 | [验证证据](docs/EVIDENCE.md) |
-| 个人代码、设计、诊断及协作分工 | [贡献说明](docs/CONTRIBUTIONS.md) |
-| 2026-10-22项目作品集 | [4页PDF](portfolio/project-portfolio.pdf) |
 
 <!-- TEST_RESULTS_BEGIN -->
 ## 测试结果
 
 | 日期 | 提交（测试基线） | 测试项目 | 规模 | 结果 | 日志链接 |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-22 | `9688122+dirty` | RS485 连续轮次 | 1000轮，停止等待 | 通过：1000/1000 | [记录与日志](Docs/TestRecords/2026-10-22_communication_01/rs485_1000.md) |
-| 2026-10-22 | `9688122+dirty` | RS485 持续通信 | 3600秒，目标10 Hz；前30分钟叠加CAN | 通过：36000/36000 | [记录与日志](Docs/TestRecords/2026-10-22_communication_01/rs485_1hour.md) |
-| 2026-10-22 | `9688122+dirty` | CAN 周期请求 | 1800次，1 Hz；叠加RS485 | 通过：1800/1800 | [记录与日志](Docs/TestRecords/2026-10-22_communication_01/can_1800.md) |
-| 2026-10-22 | `9688122+dirty` | 主机自动化检查 | Python 119项；生产C 477项断言；CAN 16场景及测试组 | 通过；按检查类型统计 | [检查记录](Docs/TestRecords/2026-10-22_host_01/README.md) |
+| 2026-10-22 | `9688122+dirty` | RS485 连续应答 | 1000轮PING/PONG | 通过：1000/1000 | [记录与日志](docs/TestRecords/2026-10-22_communication_01/rs485_1000.md) |
+| 2026-10-22 | `9688122+dirty` | RS485 一小时通信 | 10 Hz，3600.000571秒；前30分钟双总线并行 | 通过：36000/36000 | [记录与日志](docs/TestRecords/2026-10-22_communication_01/rs485_1hour.md) |
+| 2026-10-22 | `9688122+dirty` | CAN 周期请求 | 500 kbit/s、1 Hz、约30分钟；与RS485并行 | 通过：1800/1800应用应答 | [记录与日志](docs/TestRecords/2026-10-22_communication_01/can_1800.md) |
+| 2026-10-22 | `9688122+dirty` | 主机侧自动化检查 | Python 119项；生产C 477项断言；CAN 16个诊断场景及相关测试组 | 通过；BSP/HAL以替身隔离 | [检查记录](docs/TestRecords/2026-10-22_host_01/README.md) |
 
-版本通过Git基线、固件和脚本SHA256追溯，完整日志经独立核验。前30分钟两条总线并行，主机检查与实板通信分别列示。
+通信测试的PC超时、错误、跳过时隙均为0；前30分钟RS485与CAN并行，同时保持温湿度采集上报。Python 119项由既有83项、通信工具18项和FreeRTOS观察工具18项组成；生产C 477项断言引用同日已执行记录。
+
+源码与实测记录归档于 **`v1.0-bench`**。表中保留测试当天的提交状态，实测固件与标签内文件的对应关系见[版本映射](SNAPSHOT.md)。
 <!-- TEST_RESULTS_END -->
 
-## 分层
+## 实板波形与调试截图
 
-Core负责初始化与中断入口，Application表达采集/通信/健康策略，Components封装器件协议，BSP适配板级资源与HAL。Drivers保留ST HAL/CMSIS，Middlewares中的FreeRTOS只用于单独固件，Tests/Tools提供主机检查与PC观察工具。
+![RS485实测波形：先接收请求，再切换方向发送应答](evidence/rs485_tc.png)
 
-## 版本与许可
+RS485专项实测：红色PA3为接收，橙色PA2为发送；PC0控制收发方向，保持发送状态直到数据发完。结合此类波形与调试计数定位收发问题。[查看故障分析](docs/CASE_RS485.md)
 
-项目由两个固件目标、设计文档和可追溯实测记录组成。源码与测试版本映射见[版本记录](SNAPSHOT.md)；作品集汇总设计、个人贡献和最新量化结果。
+![RS485初始化修正后的单轮应答调试计数](evidence/rs485_final_watch.png)
+
+上图为2026-09-04初始化修正后的单轮调试截图；2026-10-22的1000轮与一小时结果由上表中的逐轮日志记录。
+
+## 系统怎样工作
+
+```text
+温湿度传感器 → 周期采集 → 最新数据 → 串口上报电脑
+电脑发起请求 → RS485 / CAN → 校验请求 → 返回应答
+程序运行监控 → 记录故障、判断运行状态 → 控制看门狗刷新
+
+独立FreeRTOS固件：采集任务 → 单格邮箱保留最新值 → 上报任务
+```
+
+裸机终端与FreeRTOS实验分别编译、下载。裸机承担采集、双总线通信和故障诊断；FreeRTOS实验展示采集与上报任务的数据交换。
+
+## 代码与工程入口
+
+| 内容 | 入口 |
+| --- | --- |
+| 接线、编译下载、PC工具和测试命令 | [运行说明](docs/BUILD.md) |
+| RS485收发状态与时间判断 | [应用源码](Application/Src/app_rs485_service.c) |
+| CAN请求校验与温湿度编码 | [协议源码](Application/Src/app_can_protocol.c) |
+| CAN接收队列 | [队列源码](BSP/Src/bsp_can_rx_queue.c) |
+| 异常记录与看门狗刷新条件 | [运行健康判断](Application/Src/app_watchdog_gate.c) |
+| FreeRTOS采集与上报 | [任务源码](Experiments/FreeRTOS_Queue/Application/Src/app_queue_experiment.c) · [设计与实测](docs/RTOS.md) |
+| 实板日志、波形和测试条件 | [验证证据](docs/EVIDENCE.md) |
+| 具体职责与设计取舍 | [贡献说明](docs/CONTRIBUTIONS.md) |
+| 项目作品集 | [4页PDF](portfolio/project-portfolio.pdf) |
+
+## 工程组织与许可
+
+初始化与中断入口放在Core，业务流程放在Application，器件驱动放在Components，板级适配放在BSP；Drivers保留ST官方库，Middlewares提供独立实验使用的FreeRTOS内核，Tests/Tools提供主机侧检查与PC工具。
 
 第三方代码与许可见[THIRD_PARTY.md](THIRD_PARTY.md)。自编部分尚未另行授予通用开源许可证，供求职展示与审阅。

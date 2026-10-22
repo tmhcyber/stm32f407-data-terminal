@@ -6,13 +6,13 @@
 
 | 场景 | 结果 | 证据入口 |
 | --- | --- | --- |
-| RS485连续轮次 | 115200 8N1，1000/1000精确PING/PONG，PC超时与错误0 | [逐轮日志](../Docs/TestRecords/2026-10-22_communication_01/rs485_1000.md) |
-| RS485持续通信 | 目标10 Hz，3600.000571秒，36000/36000，跳过时隙0 | [一小时完整记录](../Docs/TestRecords/2026-10-22_communication_01/rs485_1hour.md) |
-| CAN周期请求 | 500 kbit/s，1 Hz，1800/1800正确应用响应 | [CAN完整记录](../Docs/TestRecords/2026-10-22_communication_01/can_1800.md) |
-| SHT30采集上行 | 3605条VALID/OK；seq5920→9524，采样时间每次增加1000ms | [UART原文与核验](../Docs/TestRecords/2026-10-22_communication_01/uart.md) |
-| 主机自动化 | Python119项、生产C477项断言，另有CAN16个诊断场景及传输/协议/队列测试组 | [分类记录](../Docs/TestRecords/2026-10-22_host_01/README.md) |
+| RS485连续轮次 | 115200 8N1，1000/1000精确PING/PONG，PC超时与错误0 | [逐轮日志](../docs/TestRecords/2026-10-22_communication_01/rs485_1000.md) |
+| RS485持续通信 | 目标10 Hz，3600.000571秒，36000/36000，跳过时隙0 | [一小时完整记录](../docs/TestRecords/2026-10-22_communication_01/rs485_1hour.md) |
+| CAN周期请求 | 500 kbit/s，1 Hz，1800/1800正确应用响应 | [CAN完整记录](../docs/TestRecords/2026-10-22_communication_01/can_1800.md) |
+| SHT30采集上行 | 3605条VALID/OK；seq5920→9524，采样时间每次增加1000ms | [UART原文与核验](../docs/TestRecords/2026-10-22_communication_01/uart.md) |
+| 主机自动化 | Python119项、生产C477项断言，另有CAN16个诊断场景及传输/协议/队列测试组 | [分类记录](../docs/TestRecords/2026-10-22_host_01/README.md) |
 
-测试前30分钟为RS485与CAN并行负载，SHT30与UART持续运行。通信统计由完整应用响应计算，原始TX/RX、逐轮结果与汇总独立核对一致。详细配置、计时定义和结果见[验收报告](../Docs/TestRecords/2026-10-22_communication_01/RESULTS.md)。
+测试前30分钟为RS485与CAN并行负载，SHT30与UART持续运行。通信统计由完整应用响应计算，原始TX/RX、逐轮结果与汇总独立核对一致。详细配置、计时定义和结果见[验收报告](../docs/TestRecords/2026-10-22_communication_01/RESULTS.md)。
 
 ## 专项诊断与恢复验证
 

@@ -1,0 +1,2884 @@
+{
+  "archive_tag": "v1.0-bench",
+  "test_date": "2026-10-22",
+  "historical_git_head": "9688122d073a383f3bc2858e00d9f71bcc8efaed",
+  "historical_dirty_worktree": true,
+  "firmware_axf_sha256": "340c13838941ad25195882a43034510c63e97908474d0b9f4f3033d0ef119374",
+  "source_of_hashes": "source_sha256 captured in the original rs485_1hour run manifest",
+  "total_files": 319,
+  "exact_current_files": 317,
+  "files": [
+    {
+      "path": "Core/Inc/main.h",
+      "tested_sha256": "da16e572a4d4c1af88d409de1d18e1711511cc397f20890c0130c1d6c401f743",
+      "tag_path": "Core/Inc/main.h",
+      "current_sha256": "da16e572a4d4c1af88d409de1d18e1711511cc397f20890c0130c1d6c401f743",
+      "mapping": "exact",
+      "git_blob_sha256": "da16e572a4d4c1af88d409de1d18e1711511cc397f20890c0130c1d6c401f743",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Core/Inc/stm32f4xx_hal_conf.h",
+      "tested_sha256": "35ac171a53afa28e0e2579e43784262f9cbc7c213b52091bd2e32ad2dacc918f",
+      "tag_path": "Core/Inc/stm32f4xx_hal_conf.h",
+      "current_sha256": "35ac171a53afa28e0e2579e43784262f9cbc7c213b52091bd2e32ad2dacc918f",
+      "mapping": "exact",
+      "git_blob_sha256": "e225d501b1a4a9618a1015d8356e72e81b162c007da5a5b4c804b902da87a267",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Core/Inc/stm32f4xx_it.h",
+      "tested_sha256": "047d610fdd3e8e567e7fddab5d2e29e6269ae45d8726d82d1473ab1490b41641",
+      "tag_path": "Core/Inc/stm32f4xx_it.h",
+      "current_sha256": "047d610fdd3e8e567e7fddab5d2e29e6269ae45d8726d82d1473ab1490b41641",
+      "mapping": "exact",
+      "git_blob_sha256": "047d610fdd3e8e567e7fddab5d2e29e6269ae45d8726d82d1473ab1490b41641",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Core/Src/main.c",
+      "tested_sha256": "173114be59cb7084ac4a17c768f46e30204c547f0ae78dbfa9d4ec8e96e3755b",
+      "tag_path": "Core/Src/main.c",
+      "current_sha256": "173114be59cb7084ac4a17c768f46e30204c547f0ae78dbfa9d4ec8e96e3755b",
+      "mapping": "exact",
+      "git_blob_sha256": "173114be59cb7084ac4a17c768f46e30204c547f0ae78dbfa9d4ec8e96e3755b",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Core/Src/stm32f4xx_hal_msp.c",
+      "tested_sha256": "c68154c3ca6e67c29ab03a4b719e68a02379c3ebe95eb1bbc0dca4f256a26bea",
+      "tag_path": "Core/Src/stm32f4xx_hal_msp.c",
+      "current_sha256": "c68154c3ca6e67c29ab03a4b719e68a02379c3ebe95eb1bbc0dca4f256a26bea",
+      "mapping": "exact",
+      "git_blob_sha256": "c68154c3ca6e67c29ab03a4b719e68a02379c3ebe95eb1bbc0dca4f256a26bea",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Core/Src/stm32f4xx_it.c",
+      "tested_sha256": "399870b617100133903a83128da6ba520c7b2e2dfdfe49b424e16c1801326789",
+      "tag_path": "Core/Src/stm32f4xx_it.c",
+      "current_sha256": "399870b617100133903a83128da6ba520c7b2e2dfdfe49b424e16c1801326789",
+      "mapping": "exact",
+      "git_blob_sha256": "399870b617100133903a83128da6ba520c7b2e2dfdfe49b424e16c1801326789",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Core/Src/system_stm32f4xx.c",
+      "tested_sha256": "6e2c22ca54cf4ade469f360c71f9ba4edcf6732ca24a54bbb472b6a850bcc278",
+      "tag_path": "Core/Src/system_stm32f4xx.c",
+      "current_sha256": "6e2c22ca54cf4ade469f360c71f9ba4edcf6732ca24a54bbb472b6a850bcc278",
+      "mapping": "exact",
+      "git_blob_sha256": "96757ead3f2ab6f6f7a5b28d2a8883b3f7d0fbdde90c55f15715ec9abdf1339a",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Core/Startup/startup_stm32f407xx.s",
+      "tested_sha256": "c5db4e54fdd526dff68769c260d9732c19625a0dacee190feab2d54e08320d78",
+      "tag_path": "Core/Startup/startup_stm32f407xx.s",
+      "current_sha256": "c5db4e54fdd526dff68769c260d9732c19625a0dacee190feab2d54e08320d78",
+      "mapping": "exact",
+      "git_blob_sha256": "8cee9ac52dc20f505d5b6cc0955f3ef3d16e60daf9d50c4dec8302dd08ea82b1",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Application/Inc/app_bringup.h",
+      "tested_sha256": "757f12dd55c179415820889849ba77cac58da63e3ba6c85cd195989105f50796",
+      "tag_path": "Application/Inc/app_bringup.h",
+      "current_sha256": "757f12dd55c179415820889849ba77cac58da63e3ba6c85cd195989105f50796",
+      "mapping": "exact",
+      "git_blob_sha256": "757f12dd55c179415820889849ba77cac58da63e3ba6c85cd195989105f50796",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Inc/app_can_protocol.h",
+      "tested_sha256": "f9e7c59cc2de5529343c6f7fab07be5ad9d5a637de17a7f608b8406020f834a7",
+      "tag_path": "Application/Inc/app_can_protocol.h",
+      "current_sha256": "f9e7c59cc2de5529343c6f7fab07be5ad9d5a637de17a7f608b8406020f834a7",
+      "mapping": "exact",
+      "git_blob_sha256": "f9e7c59cc2de5529343c6f7fab07be5ad9d5a637de17a7f608b8406020f834a7",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Inc/app_can_service.h",
+      "tested_sha256": "aca25ef8dcc22c5edcec4b1f1625a44eaa7b167e9eee0a262212456592c0c490",
+      "tag_path": "Application/Inc/app_can_service.h",
+      "current_sha256": "aca25ef8dcc22c5edcec4b1f1625a44eaa7b167e9eee0a262212456592c0c490",
+      "mapping": "exact",
+      "git_blob_sha256": "aca25ef8dcc22c5edcec4b1f1625a44eaa7b167e9eee0a262212456592c0c490",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Inc/app_data_service.h",
+      "tested_sha256": "20afc2b9606e06772142012832a147b94c5849e89eebd2978ef8cb962651c110",
+      "tag_path": "Application/Inc/app_data_service.h",
+      "current_sha256": "20afc2b9606e06772142012832a147b94c5849e89eebd2978ef8cb962651c110",
+      "mapping": "exact",
+      "git_blob_sha256": "20afc2b9606e06772142012832a147b94c5849e89eebd2978ef8cb962651c110",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Inc/app_rs485_service.h",
+      "tested_sha256": "0d46c0b953ccaa8e0b23e39ca49eab9ddecc189977e6781f8533d3a1a127991a",
+      "tag_path": "Application/Inc/app_rs485_service.h",
+      "current_sha256": "0d46c0b953ccaa8e0b23e39ca49eab9ddecc189977e6781f8533d3a1a127991a",
+      "mapping": "exact",
+      "git_blob_sha256": "0d46c0b953ccaa8e0b23e39ca49eab9ddecc189977e6781f8533d3a1a127991a",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Inc/app_sht30_bringup.h",
+      "tested_sha256": "7be64c5cc68f9780c45a72cdaf6e9993e0a642b023211d6c1a3c17f6d2aa004f",
+      "tag_path": "Application/Inc/app_sht30_bringup.h",
+      "current_sha256": "7be64c5cc68f9780c45a72cdaf6e9993e0a642b023211d6c1a3c17f6d2aa004f",
+      "mapping": "exact",
+      "git_blob_sha256": "7be64c5cc68f9780c45a72cdaf6e9993e0a642b023211d6c1a3c17f6d2aa004f",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Inc/app_sht30_collector.h",
+      "tested_sha256": "23e62a6213ffc803af09ba7f5f864bb21d6fa750c829ccd19e30b7d402c3625f",
+      "tag_path": "Application/Inc/app_sht30_collector.h",
+      "current_sha256": "23e62a6213ffc803af09ba7f5f864bb21d6fa750c829ccd19e30b7d402c3625f",
+      "mapping": "exact",
+      "git_blob_sha256": "23e62a6213ffc803af09ba7f5f864bb21d6fa750c829ccd19e30b7d402c3625f",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Inc/app_snapshot_consumer.h",
+      "tested_sha256": "44747efa7a85dbfeb5be3b6aa2be90383ca9191451d3d535a943111bc1edbf28",
+      "tag_path": "Application/Inc/app_snapshot_consumer.h",
+      "current_sha256": "44747efa7a85dbfeb5be3b6aa2be90383ca9191451d3d535a943111bc1edbf28",
+      "mapping": "exact",
+      "git_blob_sha256": "44747efa7a85dbfeb5be3b6aa2be90383ca9191451d3d535a943111bc1edbf28",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Inc/app_snapshot_text_formatter.h",
+      "tested_sha256": "29dd996f4656d4da274dd023c12a53badd7cbd318af5114c170c61acd8df9137",
+      "tag_path": "Application/Inc/app_snapshot_text_formatter.h",
+      "current_sha256": "29dd996f4656d4da274dd023c12a53badd7cbd318af5114c170c61acd8df9137",
+      "mapping": "exact",
+      "git_blob_sha256": "29dd996f4656d4da274dd023c12a53badd7cbd318af5114c170c61acd8df9137",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Inc/app_system_monitor.h",
+      "tested_sha256": "0dfad96e5086ed54fddea79538256bfe2ca698e8e0fdb48831d98a7799f061fb",
+      "tag_path": "Application/Inc/app_system_monitor.h",
+      "current_sha256": "0dfad96e5086ed54fddea79538256bfe2ca698e8e0fdb48831d98a7799f061fb",
+      "mapping": "exact",
+      "git_blob_sha256": "0dfad96e5086ed54fddea79538256bfe2ca698e8e0fdb48831d98a7799f061fb",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Inc/app_uart_bringup.h",
+      "tested_sha256": "73ff64608347f90e1512ba9e6236571f800d83fa53dad6210196fe493f016949",
+      "tag_path": "Application/Inc/app_uart_bringup.h",
+      "current_sha256": "73ff64608347f90e1512ba9e6236571f800d83fa53dad6210196fe493f016949",
+      "mapping": "exact",
+      "git_blob_sha256": "73ff64608347f90e1512ba9e6236571f800d83fa53dad6210196fe493f016949",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Inc/app_uplink_message.h",
+      "tested_sha256": "41bca0f3eb7b3439682eeec1152c2e6f8cba176274720f629c15c747b5da33e5",
+      "tag_path": "Application/Inc/app_uplink_message.h",
+      "current_sha256": "41bca0f3eb7b3439682eeec1152c2e6f8cba176274720f629c15c747b5da33e5",
+      "mapping": "exact",
+      "git_blob_sha256": "41bca0f3eb7b3439682eeec1152c2e6f8cba176274720f629c15c747b5da33e5",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Inc/app_uplink_service.h",
+      "tested_sha256": "b0261c103a9ca495baec19e6a46c42b08136fa5ff45f44d6bba64abcdbf83519",
+      "tag_path": "Application/Inc/app_uplink_service.h",
+      "current_sha256": "b0261c103a9ca495baec19e6a46c42b08136fa5ff45f44d6bba64abcdbf83519",
+      "mapping": "exact",
+      "git_blob_sha256": "b0261c103a9ca495baec19e6a46c42b08136fa5ff45f44d6bba64abcdbf83519",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Inc/app_watchdog_gate.h",
+      "tested_sha256": "50bf292f188e13cd9668c2961ab3691578b2e08bcc6025abc84e607f40f9332c",
+      "tag_path": "Application/Inc/app_watchdog_gate.h",
+      "current_sha256": "50bf292f188e13cd9668c2961ab3691578b2e08bcc6025abc84e607f40f9332c",
+      "mapping": "exact",
+      "git_blob_sha256": "50bf292f188e13cd9668c2961ab3691578b2e08bcc6025abc84e607f40f9332c",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Src/app_bringup.c",
+      "tested_sha256": "35c8e43094f6efb9808a76d87e3ab0fa89974ea9166d4cd70061aa2c0f52b938",
+      "tag_path": "Application/Src/app_bringup.c",
+      "current_sha256": "35c8e43094f6efb9808a76d87e3ab0fa89974ea9166d4cd70061aa2c0f52b938",
+      "mapping": "exact",
+      "git_blob_sha256": "35c8e43094f6efb9808a76d87e3ab0fa89974ea9166d4cd70061aa2c0f52b938",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Src/app_can_protocol.c",
+      "tested_sha256": "c4575ab7b48e9557e5c1fccef33453173248820ea7f8ef687e39080c48ce4a2e",
+      "tag_path": "docs/TestRecords/2026-10-22_communication_01/firmware_source/app_can_protocol.c",
+      "current_sha256": "eb0f097d8abc1ea9926c3cb703345173064f301771698e25f5b1e68cdb7fedd9",
+      "mapping": "comments_only; C tokens equal",
+      "git_blob_sha256": "c4575ab7b48e9557e5c1fccef33453173248820ea7f8ef687e39080c48ce4a2e",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Src/app_can_service.c",
+      "tested_sha256": "fc4c3b8fda406d668c2f1ff69a8d17e9b4eaa15ce70e4eef005e6880de107ea7",
+      "tag_path": "Application/Src/app_can_service.c",
+      "current_sha256": "fc4c3b8fda406d668c2f1ff69a8d17e9b4eaa15ce70e4eef005e6880de107ea7",
+      "mapping": "exact",
+      "git_blob_sha256": "fc4c3b8fda406d668c2f1ff69a8d17e9b4eaa15ce70e4eef005e6880de107ea7",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Src/app_data_service.c",
+      "tested_sha256": "a0730cd11418373669892f2ffce52fdc0c4ad2209603b8094ace45537999c993",
+      "tag_path": "Application/Src/app_data_service.c",
+      "current_sha256": "a0730cd11418373669892f2ffce52fdc0c4ad2209603b8094ace45537999c993",
+      "mapping": "exact",
+      "git_blob_sha256": "a0730cd11418373669892f2ffce52fdc0c4ad2209603b8094ace45537999c993",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Src/app_rs485_service.c",
+      "tested_sha256": "20ff49ba4c8d3edd0b1dded7cdc45f50a50f68dd6fde3c9ccb92828d8b1f0cef",
+      "tag_path": "Application/Src/app_rs485_service.c",
+      "current_sha256": "20ff49ba4c8d3edd0b1dded7cdc45f50a50f68dd6fde3c9ccb92828d8b1f0cef",
+      "mapping": "exact",
+      "git_blob_sha256": "20ff49ba4c8d3edd0b1dded7cdc45f50a50f68dd6fde3c9ccb92828d8b1f0cef",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Src/app_sht30_bringup.c",
+      "tested_sha256": "9df135aa382cd236021b28dd57a6950d64c9eed7dd7506210502b755c4e15dfe",
+      "tag_path": "Application/Src/app_sht30_bringup.c",
+      "current_sha256": "9df135aa382cd236021b28dd57a6950d64c9eed7dd7506210502b755c4e15dfe",
+      "mapping": "exact",
+      "git_blob_sha256": "9df135aa382cd236021b28dd57a6950d64c9eed7dd7506210502b755c4e15dfe",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Src/app_sht30_collector.c",
+      "tested_sha256": "b05c40862f174add27d1f041fde3a31770945cbf03518adc246dbe09608e4761",
+      "tag_path": "Application/Src/app_sht30_collector.c",
+      "current_sha256": "b05c40862f174add27d1f041fde3a31770945cbf03518adc246dbe09608e4761",
+      "mapping": "exact",
+      "git_blob_sha256": "b05c40862f174add27d1f041fde3a31770945cbf03518adc246dbe09608e4761",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Src/app_snapshot_consumer.c",
+      "tested_sha256": "05ff6aea5d1db4a1f97f77b51a7758530dfade88275c930dca706cd51dc26af1",
+      "tag_path": "Application/Src/app_snapshot_consumer.c",
+      "current_sha256": "05ff6aea5d1db4a1f97f77b51a7758530dfade88275c930dca706cd51dc26af1",
+      "mapping": "exact",
+      "git_blob_sha256": "05ff6aea5d1db4a1f97f77b51a7758530dfade88275c930dca706cd51dc26af1",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Src/app_snapshot_text_formatter.c",
+      "tested_sha256": "d971e5b2b3225131fd2bb4cb60c675a82824c70786bb052ddac2e1dc799ccf6d",
+      "tag_path": "Application/Src/app_snapshot_text_formatter.c",
+      "current_sha256": "d971e5b2b3225131fd2bb4cb60c675a82824c70786bb052ddac2e1dc799ccf6d",
+      "mapping": "exact",
+      "git_blob_sha256": "d971e5b2b3225131fd2bb4cb60c675a82824c70786bb052ddac2e1dc799ccf6d",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Src/app_system_monitor.c",
+      "tested_sha256": "7730c0249867e661bcd1419f01b94dd823daa87e94b5eff54fb3eaa8285ec3e2",
+      "tag_path": "Application/Src/app_system_monitor.c",
+      "current_sha256": "7730c0249867e661bcd1419f01b94dd823daa87e94b5eff54fb3eaa8285ec3e2",
+      "mapping": "exact",
+      "git_blob_sha256": "7730c0249867e661bcd1419f01b94dd823daa87e94b5eff54fb3eaa8285ec3e2",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Src/app_uart_bringup.c",
+      "tested_sha256": "e4945b9b668fbb7bb65e84a57e2a700616b365c9aedb20404c46b3afa525ec9c",
+      "tag_path": "Application/Src/app_uart_bringup.c",
+      "current_sha256": "e4945b9b668fbb7bb65e84a57e2a700616b365c9aedb20404c46b3afa525ec9c",
+      "mapping": "exact",
+      "git_blob_sha256": "e4945b9b668fbb7bb65e84a57e2a700616b365c9aedb20404c46b3afa525ec9c",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Src/app_uplink_service.c",
+      "tested_sha256": "1084123c7cf8c09c3ff2ececed56e029a6ef13b2daf1ac1d230cc503a2055733",
+      "tag_path": "Application/Src/app_uplink_service.c",
+      "current_sha256": "1084123c7cf8c09c3ff2ececed56e029a6ef13b2daf1ac1d230cc503a2055733",
+      "mapping": "exact",
+      "git_blob_sha256": "1084123c7cf8c09c3ff2ececed56e029a6ef13b2daf1ac1d230cc503a2055733",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Application/Src/app_watchdog_gate.c",
+      "tested_sha256": "2f45e44960c214199ddf6cb6216be87a81df6fb40b574b041beca9cf6323ebc2",
+      "tag_path": "Application/Src/app_watchdog_gate.c",
+      "current_sha256": "2f45e44960c214199ddf6cb6216be87a81df6fb40b574b041beca9cf6323ebc2",
+      "mapping": "exact",
+      "git_blob_sha256": "2f45e44960c214199ddf6cb6216be87a81df6fb40b574b041beca9cf6323ebc2",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Inc/bsp_can_link_test.h",
+      "tested_sha256": "0a64cbff29f06a32627c716143f7d085c244f9aa1055a533abf58b21bbaba439",
+      "tag_path": "BSP/Inc/bsp_can_link_test.h",
+      "current_sha256": "0a64cbff29f06a32627c716143f7d085c244f9aa1055a533abf58b21bbaba439",
+      "mapping": "exact",
+      "git_blob_sha256": "0a64cbff29f06a32627c716143f7d085c244f9aa1055a533abf58b21bbaba439",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Inc/bsp_can_loopback.h",
+      "tested_sha256": "217bb260e97ecc001280145aab4f9bc7950175a51e0162fcbe6c80ddbed185ff",
+      "tag_path": "BSP/Inc/bsp_can_loopback.h",
+      "current_sha256": "217bb260e97ecc001280145aab4f9bc7950175a51e0162fcbe6c80ddbed185ff",
+      "mapping": "exact",
+      "git_blob_sha256": "217bb260e97ecc001280145aab4f9bc7950175a51e0162fcbe6c80ddbed185ff",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Inc/bsp_can_rx_queue.h",
+      "tested_sha256": "04e0ca715beed50da20237bfa70d39c88394712033be750fc37c89a5ac8f35ac",
+      "tag_path": "BSP/Inc/bsp_can_rx_queue.h",
+      "current_sha256": "04e0ca715beed50da20237bfa70d39c88394712033be750fc37c89a5ac8f35ac",
+      "mapping": "exact",
+      "git_blob_sha256": "04e0ca715beed50da20237bfa70d39c88394712033be750fc37c89a5ac8f35ac",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Inc/bsp_i2c.h",
+      "tested_sha256": "9e3d55516949bcb35dffb177ba4b68c3382eaaae3b024d1cdb69fb539986fc92",
+      "tag_path": "BSP/Inc/bsp_i2c.h",
+      "current_sha256": "9e3d55516949bcb35dffb177ba4b68c3382eaaae3b024d1cdb69fb539986fc92",
+      "mapping": "exact",
+      "git_blob_sha256": "9e3d55516949bcb35dffb177ba4b68c3382eaaae3b024d1cdb69fb539986fc92",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Inc/bsp_rs485.h",
+      "tested_sha256": "4839db31871378fb18ccf51f03808c05553cec9491107ed9903c72c331e86272",
+      "tag_path": "BSP/Inc/bsp_rs485.h",
+      "current_sha256": "4839db31871378fb18ccf51f03808c05553cec9491107ed9903c72c331e86272",
+      "mapping": "exact",
+      "git_blob_sha256": "4839db31871378fb18ccf51f03808c05553cec9491107ed9903c72c331e86272",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Inc/bsp_system_diagnostics.h",
+      "tested_sha256": "d680cef7cc98b8f3f80058a9a0907349407436bcf86625b4d459acdeb37225de",
+      "tag_path": "BSP/Inc/bsp_system_diagnostics.h",
+      "current_sha256": "d680cef7cc98b8f3f80058a9a0907349407436bcf86625b4d459acdeb37225de",
+      "mapping": "exact",
+      "git_blob_sha256": "d680cef7cc98b8f3f80058a9a0907349407436bcf86625b4d459acdeb37225de",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Inc/bsp_system_timing.h",
+      "tested_sha256": "457d408a33ef8f580d1b53136f7875bf2c46f2a79f31dfa9b57b9cafabc151b6",
+      "tag_path": "BSP/Inc/bsp_system_timing.h",
+      "current_sha256": "457d408a33ef8f580d1b53136f7875bf2c46f2a79f31dfa9b57b9cafabc151b6",
+      "mapping": "exact",
+      "git_blob_sha256": "457d408a33ef8f580d1b53136f7875bf2c46f2a79f31dfa9b57b9cafabc151b6",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Inc/bsp_system_watchdog.h",
+      "tested_sha256": "9c4da0146b0c1ced015f5cc103e382eade2185c5f3b3c7c34711811a77110c39",
+      "tag_path": "BSP/Inc/bsp_system_watchdog.h",
+      "current_sha256": "9c4da0146b0c1ced015f5cc103e382eade2185c5f3b3c7c34711811a77110c39",
+      "mapping": "exact",
+      "git_blob_sha256": "9c4da0146b0c1ced015f5cc103e382eade2185c5f3b3c7c34711811a77110c39",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Inc/bsp_uart.h",
+      "tested_sha256": "540935d43ab5034c74958a42d8c11a784a0a579ccb6d8b0559249e0d5b95b890",
+      "tag_path": "BSP/Inc/bsp_uart.h",
+      "current_sha256": "540935d43ab5034c74958a42d8c11a784a0a579ccb6d8b0559249e0d5b95b890",
+      "mapping": "exact",
+      "git_blob_sha256": "540935d43ab5034c74958a42d8c11a784a0a579ccb6d8b0559249e0d5b95b890",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Src/bsp_can_link_test.c",
+      "tested_sha256": "8d3097e44deb501b3742db33528a2e12895123ea8af2fdf2172525e171b9d800",
+      "tag_path": "BSP/Src/bsp_can_link_test.c",
+      "current_sha256": "8d3097e44deb501b3742db33528a2e12895123ea8af2fdf2172525e171b9d800",
+      "mapping": "exact",
+      "git_blob_sha256": "8d3097e44deb501b3742db33528a2e12895123ea8af2fdf2172525e171b9d800",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Src/bsp_can_loopback.c",
+      "tested_sha256": "bc470fca7c1686f30d73de3f674777b90d6e590ff4c40a2fabe615ebc1271c34",
+      "tag_path": "BSP/Src/bsp_can_loopback.c",
+      "current_sha256": "bc470fca7c1686f30d73de3f674777b90d6e590ff4c40a2fabe615ebc1271c34",
+      "mapping": "exact",
+      "git_blob_sha256": "bc470fca7c1686f30d73de3f674777b90d6e590ff4c40a2fabe615ebc1271c34",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Src/bsp_can_rx_queue.c",
+      "tested_sha256": "3f9dea72ef45d7cbfc98dfd493bb91dae83911fc56719f1d55b301fe2651c13b",
+      "tag_path": "BSP/Src/bsp_can_rx_queue.c",
+      "current_sha256": "3f9dea72ef45d7cbfc98dfd493bb91dae83911fc56719f1d55b301fe2651c13b",
+      "mapping": "exact",
+      "git_blob_sha256": "3f9dea72ef45d7cbfc98dfd493bb91dae83911fc56719f1d55b301fe2651c13b",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Src/bsp_i2c.c",
+      "tested_sha256": "5a1d87f7493cfd7f3b2d2b3e9f20983ea454bb08a9096f0afb8afb416a2ba81b",
+      "tag_path": "BSP/Src/bsp_i2c.c",
+      "current_sha256": "5a1d87f7493cfd7f3b2d2b3e9f20983ea454bb08a9096f0afb8afb416a2ba81b",
+      "mapping": "exact",
+      "git_blob_sha256": "5a1d87f7493cfd7f3b2d2b3e9f20983ea454bb08a9096f0afb8afb416a2ba81b",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Src/bsp_rs485.c",
+      "tested_sha256": "fb29846993662842e346f41d2839b22d87ea02bb3db8807aecb7ac14782fc6f4",
+      "tag_path": "BSP/Src/bsp_rs485.c",
+      "current_sha256": "fb29846993662842e346f41d2839b22d87ea02bb3db8807aecb7ac14782fc6f4",
+      "mapping": "exact",
+      "git_blob_sha256": "fb29846993662842e346f41d2839b22d87ea02bb3db8807aecb7ac14782fc6f4",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Src/bsp_system_diagnostics.c",
+      "tested_sha256": "3c8080ae210bbb4dd90924031840efb333a77892e81e01da8ead471e177c3ad1",
+      "tag_path": "BSP/Src/bsp_system_diagnostics.c",
+      "current_sha256": "3c8080ae210bbb4dd90924031840efb333a77892e81e01da8ead471e177c3ad1",
+      "mapping": "exact",
+      "git_blob_sha256": "3c8080ae210bbb4dd90924031840efb333a77892e81e01da8ead471e177c3ad1",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Src/bsp_system_diagnostics_record.c",
+      "tested_sha256": "ddbc0a19633f334aa18b9fb48a59a908c0489dd6d63d6ccec4699dcbd12c0337",
+      "tag_path": "BSP/Src/bsp_system_diagnostics_record.c",
+      "current_sha256": "ddbc0a19633f334aa18b9fb48a59a908c0489dd6d63d6ccec4699dcbd12c0337",
+      "mapping": "exact",
+      "git_blob_sha256": "ddbc0a19633f334aa18b9fb48a59a908c0489dd6d63d6ccec4699dcbd12c0337",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Src/bsp_system_timing.c",
+      "tested_sha256": "595aca0dd19581ba1926dfe35150170e6f6d2bd4e076cb052977c79455f411ca",
+      "tag_path": "BSP/Src/bsp_system_timing.c",
+      "current_sha256": "595aca0dd19581ba1926dfe35150170e6f6d2bd4e076cb052977c79455f411ca",
+      "mapping": "exact",
+      "git_blob_sha256": "595aca0dd19581ba1926dfe35150170e6f6d2bd4e076cb052977c79455f411ca",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Src/bsp_system_watchdog.c",
+      "tested_sha256": "ec21c3e7a59f34b8cecc837094fc2202eff575137d8738627756ac049ae4e3f8",
+      "tag_path": "BSP/Src/bsp_system_watchdog.c",
+      "current_sha256": "ec21c3e7a59f34b8cecc837094fc2202eff575137d8738627756ac049ae4e3f8",
+      "mapping": "exact",
+      "git_blob_sha256": "ec21c3e7a59f34b8cecc837094fc2202eff575137d8738627756ac049ae4e3f8",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "BSP/Src/bsp_uart.c",
+      "tested_sha256": "e86b4f6f499a77ee2478e933edc66698e023afdf6c75a3a8e13fff71a50960db",
+      "tag_path": "BSP/Src/bsp_uart.c",
+      "current_sha256": "e86b4f6f499a77ee2478e933edc66698e023afdf6c75a3a8e13fff71a50960db",
+      "mapping": "exact",
+      "git_blob_sha256": "e86b4f6f499a77ee2478e933edc66698e023afdf6c75a3a8e13fff71a50960db",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Components/SHT30/Inc/sht30.h",
+      "tested_sha256": "ac3321c0c58d3cb4cb0905b663e482b95dc315c6e83cb9d15b099d6ff6f79f97",
+      "tag_path": "Components/SHT30/Inc/sht30.h",
+      "current_sha256": "ac3321c0c58d3cb4cb0905b663e482b95dc315c6e83cb9d15b099d6ff6f79f97",
+      "mapping": "exact",
+      "git_blob_sha256": "ac3321c0c58d3cb4cb0905b663e482b95dc315c6e83cb9d15b099d6ff6f79f97",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Components/SHT30/Src/sht30.c",
+      "tested_sha256": "15a43d8cebf87fd590efac6d392897ccd5e02d0441d2293bf81680908502b38d",
+      "tag_path": "Components/SHT30/Src/sht30.c",
+      "current_sha256": "15a43d8cebf87fd590efac6d392897ccd5e02d0441d2293bf81680908502b38d",
+      "mapping": "exact",
+      "git_blob_sha256": "15a43d8cebf87fd590efac6d392897ccd5e02d0441d2293bf81680908502b38d",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h",
+      "tested_sha256": "f27aca49769ce155000d5aa8717e9e29f689bb3072252cbb18b204e582f72286",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h",
+      "current_sha256": "f27aca49769ce155000d5aa8717e9e29f689bb3072252cbb18b204e582f72286",
+      "mapping": "exact",
+      "git_blob_sha256": "1dc18585e7bb5565c0bf80aba4fbe8ae2029dfc9f201c3ada848f2aac2930570",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h",
+      "tested_sha256": "11fbdb78bae9be5dc5ebfd2eeb5a7ad6b7ee459da09bbd4393040f00824504e9",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h",
+      "current_sha256": "11fbdb78bae9be5dc5ebfd2eeb5a7ad6b7ee459da09bbd4393040f00824504e9",
+      "mapping": "exact",
+      "git_blob_sha256": "8f4adca82c674137aaa802ae107e2263587755d341539fa249adbefbf35b347d",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h",
+      "tested_sha256": "4fc6c365a00b246810ad4eeda8abc8ba3460617b8a28e80afbac8a1a3c5405bf",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h",
+      "current_sha256": "4fc6c365a00b246810ad4eeda8abc8ba3460617b8a28e80afbac8a1a3c5405bf",
+      "mapping": "exact",
+      "git_blob_sha256": "5a3802efa4482b5fc0ffeea24044ca8a44dd479f14389ed9f84214dac893aeb1",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h",
+      "tested_sha256": "a0e7f720b1c7c311ceb7a8ab3afba31a35d377a7ebeb6ded3237f771d9d7b786",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h",
+      "current_sha256": "a0e7f720b1c7c311ceb7a8ab3afba31a35d377a7ebeb6ded3237f771d9d7b786",
+      "mapping": "exact",
+      "git_blob_sha256": "2805fb72c4e5c92fb8e83078bfa345f3f6e88c8b5681d2171005c6f16c482f5f",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410cx.h",
+      "tested_sha256": "46fbd7ce80aedc98e78d184f491c198a91bf6a6f52ff7ddebdda82c8d5dff128",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410cx.h",
+      "current_sha256": "46fbd7ce80aedc98e78d184f491c198a91bf6a6f52ff7ddebdda82c8d5dff128",
+      "mapping": "exact",
+      "git_blob_sha256": "5a47dd2c2bd363fc664ee789ec988ceefa7322a0f6d62990b4fac962fd66a756",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410rx.h",
+      "tested_sha256": "4e7e568a349b6e8b3c7cc613747d895474cf2d579f8e54afc29c60b41ddaca0c",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410rx.h",
+      "current_sha256": "4e7e568a349b6e8b3c7cc613747d895474cf2d579f8e54afc29c60b41ddaca0c",
+      "mapping": "exact",
+      "git_blob_sha256": "3788217681b6a2292da5701bc3af147f889f45192864aedcbce11650ea505c71",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410tx.h",
+      "tested_sha256": "b3b6a41c36dace396ab017da40081dc01d508ed64e50bd580925bacd42655b25",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f410tx.h",
+      "current_sha256": "b3b6a41c36dace396ab017da40081dc01d508ed64e50bd580925bacd42655b25",
+      "mapping": "exact",
+      "git_blob_sha256": "c9d0d4dc1ac7bd6d389093feaff5e8ed02e33b65c921677beff7edd08357729c",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h",
+      "tested_sha256": "3c9033b1f676f843ec464f4f2a6adc7910bb9167e013b61a410dba283d74b3d9",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h",
+      "current_sha256": "3c9033b1f676f843ec464f4f2a6adc7910bb9167e013b61a410dba283d74b3d9",
+      "mapping": "exact",
+      "git_blob_sha256": "1100b46473a18bdcc29ebdeca01b1c471cd17edcd70e2abac3c848a5db814e73",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f412cx.h",
+      "tested_sha256": "2f57afd8df3a54ed21b8c0f780d9c8d75d766587a3736c655a9ebabb63d5bbfd",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f412cx.h",
+      "current_sha256": "2f57afd8df3a54ed21b8c0f780d9c8d75d766587a3736c655a9ebabb63d5bbfd",
+      "mapping": "exact",
+      "git_blob_sha256": "a9a10af2cc3263569e72a5eb2b0f88962495149a7cd8d83a5322aee8b89d535b",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f412rx.h",
+      "tested_sha256": "a65299ced83e4e83c9229af555e1add047b2c796682d3094032828b0f0fa8987",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f412rx.h",
+      "current_sha256": "a65299ced83e4e83c9229af555e1add047b2c796682d3094032828b0f0fa8987",
+      "mapping": "exact",
+      "git_blob_sha256": "16be5039dfa9f3e1f6b5b0b4bdcff3b6cb6e3c2713a3d19ea7d92379e3745816",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f412vx.h",
+      "tested_sha256": "1e98d3d4d5fd81876f273a2fd09a42b3192174a1d41a1658f3a3b23f51626172",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f412vx.h",
+      "current_sha256": "1e98d3d4d5fd81876f273a2fd09a42b3192174a1d41a1658f3a3b23f51626172",
+      "mapping": "exact",
+      "git_blob_sha256": "3a8df562b5b20dfa45462fa414d078c6a41e5bbcb2ce437efa663ca2b3b23459",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f412zx.h",
+      "tested_sha256": "89324e81e3d830e7169707dfbafd70840c4ef8625d538dc8acfe2d813a0930a3",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f412zx.h",
+      "current_sha256": "89324e81e3d830e7169707dfbafd70840c4ef8625d538dc8acfe2d813a0930a3",
+      "mapping": "exact",
+      "git_blob_sha256": "20acbf0a5505095b6e983105d8889f561ff6ea3af263904c30d6041836af63f3",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h",
+      "tested_sha256": "fc198472bca38b7f808473608c4c2f7a3d2384dd4a88651b422bb89fd9cae9d1",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f413xx.h",
+      "current_sha256": "fc198472bca38b7f808473608c4c2f7a3d2384dd4a88651b422bb89fd9cae9d1",
+      "mapping": "exact",
+      "git_blob_sha256": "eda3e0e4133b57b3dfd425c3e5c5b7247593e22c3b8fe5d02dd6e7185a6ce01e",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f415xx.h",
+      "tested_sha256": "50557f26d234c4dbc081ca6ef17fe221cdc8d1ea1da58071a0e5cd48e6dbe0a8",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f415xx.h",
+      "current_sha256": "50557f26d234c4dbc081ca6ef17fe221cdc8d1ea1da58071a0e5cd48e6dbe0a8",
+      "mapping": "exact",
+      "git_blob_sha256": "2bdec593ac96b4e4289f68cd3caec935382d83f8e6eb89bce27f83d7d6156aee",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f417xx.h",
+      "tested_sha256": "8baab7c7442b95dc4dc4dab30a0bd5454b8d33316dbae33310961f3e85edec61",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f417xx.h",
+      "current_sha256": "8baab7c7442b95dc4dc4dab30a0bd5454b8d33316dbae33310961f3e85edec61",
+      "mapping": "exact",
+      "git_blob_sha256": "7b0179f8241978559bf2af3ce5fdfc31a7ff9b50b61fdf9ddd03df9b3b18885c",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f423xx.h",
+      "tested_sha256": "9a33cb4f9b78ff714b2d13241b72869a6416cd276b7ea7571e5740ce78a1f623",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f423xx.h",
+      "current_sha256": "9a33cb4f9b78ff714b2d13241b72869a6416cd276b7ea7571e5740ce78a1f623",
+      "mapping": "exact",
+      "git_blob_sha256": "d4ec563b025128d417f828bb919c258cff071433310f918ac42e2a5c2ba5b7ac",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h",
+      "tested_sha256": "a1e861a9d08bb4d850f46b81b5b045a3bf0caa14714c6ac959259529c5194318",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h",
+      "current_sha256": "a1e861a9d08bb4d850f46b81b5b045a3bf0caa14714c6ac959259529c5194318",
+      "mapping": "exact",
+      "git_blob_sha256": "a5314dcc020727f5c0405ee5e03913db25987a3189b9a85c98ff458322850677",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h",
+      "tested_sha256": "cd95767c488dfe803d6d297f69227ea65331f4fbd46cae186c217ef89c629284",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h",
+      "current_sha256": "cd95767c488dfe803d6d297f69227ea65331f4fbd46cae186c217ef89c629284",
+      "mapping": "exact",
+      "git_blob_sha256": "a4f2002067daa0daa8bb7e77f80fe6d326700cb601443ae39f2fa4f615548682",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f437xx.h",
+      "tested_sha256": "e5853cfda88bfc498eaad1617af75edf6602a55263613d7f49cc72d517f58871",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f437xx.h",
+      "current_sha256": "e5853cfda88bfc498eaad1617af75edf6602a55263613d7f49cc72d517f58871",
+      "mapping": "exact",
+      "git_blob_sha256": "bd71f668ba1882653f608689745d34d6f585a4f82a70a64742ed5aee2930b490",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f439xx.h",
+      "tested_sha256": "42e4039614577a181eac2424a10e01acce2f45492d91d79ce56d1dd4979c53c4",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f439xx.h",
+      "current_sha256": "42e4039614577a181eac2424a10e01acce2f45492d91d79ce56d1dd4979c53c4",
+      "mapping": "exact",
+      "git_blob_sha256": "8956e3be55b73092482a911c35ae9ba82abb30a3323bbda0de1fecb32fbe6d31",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h",
+      "tested_sha256": "cbe4c565365a501fcbc091b1d6b15695dc5ca74c8b0294c78ba83c084a43efa6",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h",
+      "current_sha256": "cbe4c565365a501fcbc091b1d6b15695dc5ca74c8b0294c78ba83c084a43efa6",
+      "mapping": "exact",
+      "git_blob_sha256": "77d543e2cff3fd4549580df71cd65883b863f4590b2c27430972336e21049029",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f469xx.h",
+      "tested_sha256": "6b7e02ba80f6c0deae86ba9a2e49ff7596ebe1b55be11a2011746f5270e2cf3a",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f469xx.h",
+      "current_sha256": "6b7e02ba80f6c0deae86ba9a2e49ff7596ebe1b55be11a2011746f5270e2cf3a",
+      "mapping": "exact",
+      "git_blob_sha256": "9d6fd1ddcd06611f816c522a883a59fdb2d81be1cb4595ebddb002de97c1b1ff",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f479xx.h",
+      "tested_sha256": "46eb6fa4501e7431dd2ab5757e739088d1a2fbc8609185e8a3947a7b28a4c84e",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f479xx.h",
+      "current_sha256": "46eb6fa4501e7431dd2ab5757e739088d1a2fbc8609185e8a3947a7b28a4c84e",
+      "mapping": "exact",
+      "git_blob_sha256": "045f58974a63eb209b34b9158879af3fd9b5d7eb9bc59de4d4da29d4e71eb30d",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h",
+      "tested_sha256": "a6d63d055d7780e520d94f9888557c749a611df2ea3bac507636f9fcab7a4bec",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h",
+      "current_sha256": "a6d63d055d7780e520d94f9888557c749a611df2ea3bac507636f9fcab7a4bec",
+      "mapping": "exact",
+      "git_blob_sha256": "c3ac7fa49b52ab00afa81fee7da5891e220275e13cd3f8034da1a72d3cebd088",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h",
+      "tested_sha256": "bdefc39e17d9fb7213b3b10721dcbfbe01708800c01ab85852eea02389e434f2",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h",
+      "current_sha256": "bdefc39e17d9fb7213b3b10721dcbfbe01708800c01ab85852eea02389e434f2",
+      "mapping": "exact",
+      "git_blob_sha256": "8145cf8fc6ff21dcab1c4e71612cf97cb4e3f95a59aeef61dded05abe809bbd5",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xc.s",
+      "tested_sha256": "8606b7f7090a92c7792e142781f675474011f2ab691973f3946c35909c050cb6",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xc.s",
+      "current_sha256": "8606b7f7090a92c7792e142781f675474011f2ab691973f3946c35909c050cb6",
+      "mapping": "exact",
+      "git_blob_sha256": "828ad3124954988ca0cd0508f8166dd1568d09e5b99f6a4d3939dd2ea7328c15",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xe.s",
+      "tested_sha256": "a93b5ee7558a60fe12226abdb4d81f37ed64a15f9f0496d5d7c50b51c1237d27",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xe.s",
+      "current_sha256": "a93b5ee7558a60fe12226abdb4d81f37ed64a15f9f0496d5d7c50b51c1237d27",
+      "mapping": "exact",
+      "git_blob_sha256": "fdb9cebd084552932c1a81427f197938bea76864deac25ef7cebea78a70b943a",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f405xx.s",
+      "tested_sha256": "372be3f520e7098e581e28d0d98946623da8a8abe81cc8b26e8e56eee8949684",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f405xx.s",
+      "current_sha256": "372be3f520e7098e581e28d0d98946623da8a8abe81cc8b26e8e56eee8949684",
+      "mapping": "exact",
+      "git_blob_sha256": "3dd1a6456afdfd1c6e4e63b16326aa8346f15dcad632bcf59999090eefe272d4",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f407xx.s",
+      "tested_sha256": "c5db4e54fdd526dff68769c260d9732c19625a0dacee190feab2d54e08320d78",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f407xx.s",
+      "current_sha256": "c5db4e54fdd526dff68769c260d9732c19625a0dacee190feab2d54e08320d78",
+      "mapping": "exact",
+      "git_blob_sha256": "8cee9ac52dc20f505d5b6cc0955f3ef3d16e60daf9d50c4dec8302dd08ea82b1",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f410cx.s",
+      "tested_sha256": "3533dd3c49e53889b88aa8dafdf9d60378d27be4ce9dd25c15c387c002efad07",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f410cx.s",
+      "current_sha256": "3533dd3c49e53889b88aa8dafdf9d60378d27be4ce9dd25c15c387c002efad07",
+      "mapping": "exact",
+      "git_blob_sha256": "1bd028d0e3c30310b876fe2e5ed5cdbaab6d1aed4f23006ac468a4e49b8bbf9c",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f410rx.s",
+      "tested_sha256": "e729504cfeccbe1df522c88147f39de0ec0d23d94edf22480e8919c955aa1cd3",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f410rx.s",
+      "current_sha256": "e729504cfeccbe1df522c88147f39de0ec0d23d94edf22480e8919c955aa1cd3",
+      "mapping": "exact",
+      "git_blob_sha256": "eef2c378a4924cbeda9f1f563b1f1b412e949700c8ffb4b20c5cc2b40e68d4e7",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f410tx.s",
+      "tested_sha256": "40716384ebe1214b2ff10bcbb9e5b84fcb2ef6e5be19bc97ea1d6c181c551877",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f410tx.s",
+      "current_sha256": "40716384ebe1214b2ff10bcbb9e5b84fcb2ef6e5be19bc97ea1d6c181c551877",
+      "mapping": "exact",
+      "git_blob_sha256": "97d7ac4b5a04a62191f9180059e580080cbdf5a4a6ad3ea5b969c71916020a99",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f411xe.s",
+      "tested_sha256": "c7f827234569a4c7aebcc4b2f92fa5f906ef489d17639880f2397b24f7eef29c",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f411xe.s",
+      "current_sha256": "c7f827234569a4c7aebcc4b2f92fa5f906ef489d17639880f2397b24f7eef29c",
+      "mapping": "exact",
+      "git_blob_sha256": "da881e9302fadcae54b7f924ad44475685fde5a5fc302dbb8489a1a6d059b649",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f412cx.s",
+      "tested_sha256": "1e81d6dbab7227abdac439c3a57a0dac61071bc27fc01cef79337a56a62adb08",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f412cx.s",
+      "current_sha256": "1e81d6dbab7227abdac439c3a57a0dac61071bc27fc01cef79337a56a62adb08",
+      "mapping": "exact",
+      "git_blob_sha256": "e765b07799311a387e4476a0d1fe0aa860cb8ec096b349109c695876de04c86a",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f412rx.s",
+      "tested_sha256": "f840e290b9f93745c29c98d7ee40dfd5e469c3db2fa2311893096383a5ce4aeb",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f412rx.s",
+      "current_sha256": "f840e290b9f93745c29c98d7ee40dfd5e469c3db2fa2311893096383a5ce4aeb",
+      "mapping": "exact",
+      "git_blob_sha256": "d59e717ea77d0f86f27e005c497b2335ecba37729b658fa4650d924f30ead110",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f412vx.s",
+      "tested_sha256": "b9495fe30cc79cf1cb613367e8137c2655a57cf93623347460d959dca22b32d5",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f412vx.s",
+      "current_sha256": "b9495fe30cc79cf1cb613367e8137c2655a57cf93623347460d959dca22b32d5",
+      "mapping": "exact",
+      "git_blob_sha256": "2ca0e89d3bc6e2e76049e408cddaff28c20ac50c72627e682d4a04cecffaacd8",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f412zx.s",
+      "tested_sha256": "c1c5ba847a4ed830a678394bd99b7c48f8761dd5db1ca1a5648ee3da22ee8d0d",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f412zx.s",
+      "current_sha256": "c1c5ba847a4ed830a678394bd99b7c48f8761dd5db1ca1a5648ee3da22ee8d0d",
+      "mapping": "exact",
+      "git_blob_sha256": "ad88eb47ae8994b2f3c9621f0e01f219535d2c0b2f63b10ba7fe1a50a3431541",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f413xx.s",
+      "tested_sha256": "ccf97142a005cfbbe26f6a4448cc900e4ae839458ea7f90a28d7c32a1909a696",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f413xx.s",
+      "current_sha256": "ccf97142a005cfbbe26f6a4448cc900e4ae839458ea7f90a28d7c32a1909a696",
+      "mapping": "exact",
+      "git_blob_sha256": "45dc8627e4e599d9d3e7a673a0118c533228c69b5e7ca7fd8955f028d474efcd",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f415xx.s",
+      "tested_sha256": "13443d50b9dca58833bdef4dbf5cf1276c4badaf1c881296bcfb0cc0697439b2",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f415xx.s",
+      "current_sha256": "13443d50b9dca58833bdef4dbf5cf1276c4badaf1c881296bcfb0cc0697439b2",
+      "mapping": "exact",
+      "git_blob_sha256": "9f97a8f8065aa6bc5ed9a4881792211e7d30d17fba200eae30fe98d8355b0fb7",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f417xx.s",
+      "tested_sha256": "1c6a234785882364e493e81f91b0b75987ae161fb59ff61fcd0a74ad7b3dc859",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f417xx.s",
+      "current_sha256": "1c6a234785882364e493e81f91b0b75987ae161fb59ff61fcd0a74ad7b3dc859",
+      "mapping": "exact",
+      "git_blob_sha256": "b3596bc27fa150eb44042da35a0f9f5545532ed760dc051e79bb91072fe546e8",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f423xx.s",
+      "tested_sha256": "7c6a8ccb586a3932a626665d83567577b5c2c6c8d7afce7f29d23084dc4634bb",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f423xx.s",
+      "current_sha256": "7c6a8ccb586a3932a626665d83567577b5c2c6c8d7afce7f29d23084dc4634bb",
+      "mapping": "exact",
+      "git_blob_sha256": "0c19f2a8c13dccb341234705fdeca6cdf68f3675204e9fa824cbe2f72973f700",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f427xx.s",
+      "tested_sha256": "b5725a6dcde35a86eafe6586ffd4180f8bc2b5b3a92d1ae85149c99d54da8c0e",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f427xx.s",
+      "current_sha256": "b5725a6dcde35a86eafe6586ffd4180f8bc2b5b3a92d1ae85149c99d54da8c0e",
+      "mapping": "exact",
+      "git_blob_sha256": "940fb93a285eb22578d89be83d8f8acedb25ca1a50899d20d0f6f2130d1a23d0",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f429xx.s",
+      "tested_sha256": "5d1b86e05c05e489d706e7b7427325dcdc3ce7c50ff1267ffa671deafe9ebaad",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f429xx.s",
+      "current_sha256": "5d1b86e05c05e489d706e7b7427325dcdc3ce7c50ff1267ffa671deafe9ebaad",
+      "mapping": "exact",
+      "git_blob_sha256": "9e09f8b9d4b078b21551e1d11f263cde1e2e817fcbdf943f12bfe9d449234b41",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f437xx.s",
+      "tested_sha256": "813d31e76baebf6dde3a7a9cadc1e15c8d8573c4a64d5325fcf6b4fb851c5cd4",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f437xx.s",
+      "current_sha256": "813d31e76baebf6dde3a7a9cadc1e15c8d8573c4a64d5325fcf6b4fb851c5cd4",
+      "mapping": "exact",
+      "git_blob_sha256": "da350a49aaf22c86c0553afaea7b8066b2bd66f2f0b7545b1a828dd423e5bd23",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f439xx.s",
+      "tested_sha256": "bfefb986a0d487e6821023bff1d8f7c7712f2b9b60b4e7e6ef9dd8ea64324305",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f439xx.s",
+      "current_sha256": "bfefb986a0d487e6821023bff1d8f7c7712f2b9b60b4e7e6ef9dd8ea64324305",
+      "mapping": "exact",
+      "git_blob_sha256": "ca01c509445a78d7db595325a9bc05fd3f0955154600b77c10f10585c142d1d1",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f446xx.s",
+      "tested_sha256": "9b7d63df1682523b785de305ca642b5b050ce3455d66076f9e12484b46c906cd",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f446xx.s",
+      "current_sha256": "9b7d63df1682523b785de305ca642b5b050ce3455d66076f9e12484b46c906cd",
+      "mapping": "exact",
+      "git_blob_sha256": "845005ab03ed6915666faa97a9e5b0bafe1e773809d85e355e08ed90d3c89b88",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f469xx.s",
+      "tested_sha256": "ab9e42dac403414191863fe74180f4f7121f9a95cd33b1b3973e7e9c2302ff93",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f469xx.s",
+      "current_sha256": "ab9e42dac403414191863fe74180f4f7121f9a95cd33b1b3973e7e9c2302ff93",
+      "mapping": "exact",
+      "git_blob_sha256": "8cf8f65258897206d7ce62b4e400a0e1e18887acec7f9cfe27eaa4924984d325",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f479xx.s",
+      "tested_sha256": "58432e57f60ffc6572d8c234c0fe08466df54d39df525cff77d33a9be9836ab9",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f479xx.s",
+      "current_sha256": "58432e57f60ffc6572d8c234c0fe08466df54d39df525cff77d33a9be9836ab9",
+      "mapping": "exact",
+      "git_blob_sha256": "2799f7207e6026c9d5585e6026e7b6a85803f55626e20dd4462720eff9ee8cfc",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c",
+      "tested_sha256": "c178efc65b0df9461ad5955a88fab5fbda9c7519dac222a838ccda3b8a6a689e",
+      "tag_path": "Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c",
+      "current_sha256": "c178efc65b0df9461ad5955a88fab5fbda9c7519dac222a838ccda3b8a6a689e",
+      "mapping": "exact",
+      "git_blob_sha256": "a25d43db6d7cb994cad40873f6ffe609936c05cd07aa7b1dc345471e59e7e327",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_armcc.h",
+      "tested_sha256": "57b8d88cd03152f60bf74de0149ec979ae20210d86ab06e837aa69c66f27d615",
+      "tag_path": "Drivers/CMSIS/Include/cmsis_armcc.h",
+      "current_sha256": "57b8d88cd03152f60bf74de0149ec979ae20210d86ab06e837aa69c66f27d615",
+      "mapping": "exact",
+      "git_blob_sha256": "3371c679298b7db7caae23215ab8efdb95fe3b5c6c1a793f8004e5be16940149",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_armclang.h",
+      "tested_sha256": "da29dbad3cf27f6c86437af6bd0b302e105210742ad7a602bea51b104f1661c9",
+      "tag_path": "Drivers/CMSIS/Include/cmsis_armclang.h",
+      "current_sha256": "da29dbad3cf27f6c86437af6bd0b302e105210742ad7a602bea51b104f1661c9",
+      "mapping": "exact",
+      "git_blob_sha256": "3a33c83dd7533cd2827164b89e66dc7c0f8376ef4e2d255ec50c1a58b36f670b",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_compiler.h",
+      "tested_sha256": "cd3cbd1c771a5252827a14c75a12e7ed975f76b9fc1577d53a74ba0e7c1af6c3",
+      "tag_path": "Drivers/CMSIS/Include/cmsis_compiler.h",
+      "current_sha256": "cd3cbd1c771a5252827a14c75a12e7ed975f76b9fc1577d53a74ba0e7c1af6c3",
+      "mapping": "exact",
+      "git_blob_sha256": "03ab80c426a8360eaaad833ac816462a9f38cb2e4dbdc490914880ad071181fe",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_gcc.h",
+      "tested_sha256": "8c16d51f7884a9fc07c5cbe6f2bcd24e5e092ddc519f71d36740c2d2e2ff6a27",
+      "tag_path": "Drivers/CMSIS/Include/cmsis_gcc.h",
+      "current_sha256": "8c16d51f7884a9fc07c5cbe6f2bcd24e5e092ddc519f71d36740c2d2e2ff6a27",
+      "mapping": "exact",
+      "git_blob_sha256": "341982e6d6c91119214c47d7a04b31f1f8ce0970c45e2c9fe0870c80d0876e28",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_iccarm.h",
+      "tested_sha256": "a600765888c69ee60cd2d01d77356902d4ae5fa98aa7e1d73703663c96b7f87a",
+      "tag_path": "Drivers/CMSIS/Include/cmsis_iccarm.h",
+      "current_sha256": "a600765888c69ee60cd2d01d77356902d4ae5fa98aa7e1d73703663c96b7f87a",
+      "mapping": "exact",
+      "git_blob_sha256": "03e120db362480dc0c57b9eb2574972029321fb8d9e993e458dbff69e6f4f91e",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_version.h",
+      "tested_sha256": "280b9fc8739aefa878d47e68d7adbd4908a15f98ec193cdba1a4b514133f5c34",
+      "tag_path": "Drivers/CMSIS/Include/cmsis_version.h",
+      "current_sha256": "280b9fc8739aefa878d47e68d7adbd4908a15f98ec193cdba1a4b514133f5c34",
+      "mapping": "exact",
+      "git_blob_sha256": "c2570d56ee85d4f2ec0fb62f31d080d3cddf3a015500a4ed5a006a571637b43c",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_armv8mbl.h",
+      "tested_sha256": "220d90f3f99126e656c31c32f099ff766b32cf487f7dd77388e4c9a78e1898c8",
+      "tag_path": "Drivers/CMSIS/Include/core_armv8mbl.h",
+      "current_sha256": "220d90f3f99126e656c31c32f099ff766b32cf487f7dd77388e4c9a78e1898c8",
+      "mapping": "exact",
+      "git_blob_sha256": "6b1a61685f498b80becd4df1219c50fd47f1e8ec23ee28184585b1025387764b",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_armv8mml.h",
+      "tested_sha256": "825a8799d71f3fa29690b1597dfc2dfb660b103d44e20b8185f26b4f3b4ffdf0",
+      "tag_path": "Drivers/CMSIS/Include/core_armv8mml.h",
+      "current_sha256": "825a8799d71f3fa29690b1597dfc2dfb660b103d44e20b8185f26b4f3b4ffdf0",
+      "mapping": "exact",
+      "git_blob_sha256": "2a9f702aebde491b5a7b96d539413b2ddef1ea6872b09f9397638389aea86d0c",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm0.h",
+      "tested_sha256": "1beaa04c859225f75142d055e9c5dacfc9ac1d88c82934177f745b9c5f3f4094",
+      "tag_path": "Drivers/CMSIS/Include/core_cm0.h",
+      "current_sha256": "1beaa04c859225f75142d055e9c5dacfc9ac1d88c82934177f745b9c5f3f4094",
+      "mapping": "exact",
+      "git_blob_sha256": "1fedf79e11c6c7f7c02fc2c6d93add0f86b62fadbcb913daece240d97a70720c",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm0plus.h",
+      "tested_sha256": "c953256e1c1b1cd6accbbfca5d47c09a9b0534f3147b125e17e59c0ae6c30ed7",
+      "tag_path": "Drivers/CMSIS/Include/core_cm0plus.h",
+      "current_sha256": "c953256e1c1b1cd6accbbfca5d47c09a9b0534f3147b125e17e59c0ae6c30ed7",
+      "mapping": "exact",
+      "git_blob_sha256": "9fd6ebad79f26eeb25f5cba28fd87bedc9e13213cd44269b049cf1f379d5ab36",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm1.h",
+      "tested_sha256": "460281028a261740cd5ec86840bed01c480d70ba5b54a0f9938d4cefadfd486b",
+      "tag_path": "Drivers/CMSIS/Include/core_cm1.h",
+      "current_sha256": "460281028a261740cd5ec86840bed01c480d70ba5b54a0f9938d4cefadfd486b",
+      "mapping": "exact",
+      "git_blob_sha256": "1ca25034076f4952af4d235f2c4302bdc81d123cf55bc329d2fa964d9bc0ece1",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm23.h",
+      "tested_sha256": "6303efec943ca0f9eccdab8fc39200d6f95dc943d4051198e0d49f24395028a5",
+      "tag_path": "Drivers/CMSIS/Include/core_cm23.h",
+      "current_sha256": "6303efec943ca0f9eccdab8fc39200d6f95dc943d4051198e0d49f24395028a5",
+      "mapping": "exact",
+      "git_blob_sha256": "492e9eebccc634173a92826966c40c98061878daae73c67597e370a8def685f5",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm3.h",
+      "tested_sha256": "368296087a925cf78133d27e0854d748605441915e0f4fece93f2f97eea68adb",
+      "tag_path": "Drivers/CMSIS/Include/core_cm3.h",
+      "current_sha256": "368296087a925cf78133d27e0854d748605441915e0f4fece93f2f97eea68adb",
+      "mapping": "exact",
+      "git_blob_sha256": "655bb08e9474438dec8b1874ea6c63749dc2787b85f06a0987c4870bcb580f21",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm33.h",
+      "tested_sha256": "7f1b6a76b119e1e1680f756da897929f63d98133442c5115678af60adf20f1a8",
+      "tag_path": "Drivers/CMSIS/Include/core_cm33.h",
+      "current_sha256": "7f1b6a76b119e1e1680f756da897929f63d98133442c5115678af60adf20f1a8",
+      "mapping": "exact",
+      "git_blob_sha256": "f4b8df5e3327f38497b1893c4b6d75ef9758a5443423f19b45f1ffe1f51ecffe",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm4.h",
+      "tested_sha256": "738dff259c25e68ed2529baf425315d8dae1af5dac6c11b66bfdef82e78e86c9",
+      "tag_path": "Drivers/CMSIS/Include/core_cm4.h",
+      "current_sha256": "738dff259c25e68ed2529baf425315d8dae1af5dac6c11b66bfdef82e78e86c9",
+      "mapping": "exact",
+      "git_blob_sha256": "53712d8aefacaebf3faa2370be8c7c6065328a974242f9e315ffc86b3ee852c5",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm7.h",
+      "tested_sha256": "6b75e3bef1eb81e0d3e2c311ad26fcdbac4cde2cd3462a62b81a23f6aec0e55f",
+      "tag_path": "Drivers/CMSIS/Include/core_cm7.h",
+      "current_sha256": "6b75e3bef1eb81e0d3e2c311ad26fcdbac4cde2cd3462a62b81a23f6aec0e55f",
+      "mapping": "exact",
+      "git_blob_sha256": "4e67355b28417febaa955120abd51fcdcf4d581c5e1522ece1e673c38cd17728",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_sc000.h",
+      "tested_sha256": "d1528d13fbf91da620ef977e99802d83ded093c0521c04cad128da23e3001524",
+      "tag_path": "Drivers/CMSIS/Include/core_sc000.h",
+      "current_sha256": "d1528d13fbf91da620ef977e99802d83ded093c0521c04cad128da23e3001524",
+      "mapping": "exact",
+      "git_blob_sha256": "cb3a0b87bdbb70f552773bc442fdacb6c59b06233b5f0d6b2e0e8f56fd561396",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_sc300.h",
+      "tested_sha256": "fa514ea0cf5327b0523c2bdfebfb76fd2e69f972e5f60fbfb94ade56b31c722b",
+      "tag_path": "Drivers/CMSIS/Include/core_sc300.h",
+      "current_sha256": "fa514ea0cf5327b0523c2bdfebfb76fd2e69f972e5f60fbfb94ade56b31c722b",
+      "mapping": "exact",
+      "git_blob_sha256": "2a3ec02d4b947d6eb09a7b9860a4fbe9b9f45ee1a911f1674a424fd6d3faa683",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/mpu_armv7.h",
+      "tested_sha256": "b0b6da4ec744b5f547a94e60e24b0a6ff6bb7307d3f81a83d0b7c3a64dc29326",
+      "tag_path": "Drivers/CMSIS/Include/mpu_armv7.h",
+      "current_sha256": "b0b6da4ec744b5f547a94e60e24b0a6ff6bb7307d3f81a83d0b7c3a64dc29326",
+      "mapping": "exact",
+      "git_blob_sha256": "e4968e627df085e4ebf46be5140be657e035d978ae1938c1c2e3ee49fbde5030",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/mpu_armv8.h",
+      "tested_sha256": "8280a1d4d3d25f60cdc05b84718cf504f02b7265fc3b7c5790cb29cd7dcf116c",
+      "tag_path": "Drivers/CMSIS/Include/mpu_armv8.h",
+      "current_sha256": "8280a1d4d3d25f60cdc05b84718cf504f02b7265fc3b7c5790cb29cd7dcf116c",
+      "mapping": "exact",
+      "git_blob_sha256": "8e5a84b186f303eb3f2ece0cd84f013ac31ed68bffde4feea502acd0b474c40f",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/tz_context.h",
+      "tested_sha256": "7fcc21fc190f6fd970390e9caaa6a86d72fd10f9edf4efab36f12aecf1a8baa0",
+      "tag_path": "Drivers/CMSIS/Include/tz_context.h",
+      "current_sha256": "7fcc21fc190f6fd970390e9caaa6a86d72fd10f9edf4efab36f12aecf1a8baa0",
+      "mapping": "exact",
+      "git_blob_sha256": "45565c8cb04c653aabaf3cceddfc848b6a0de28c20d4f7e3d475a992c7eee788",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h",
+      "tested_sha256": "ae11dcf1db5c761ec72dd2c80dd8f579c53a0b7c991ca03dfaef7adad52eefb5",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h",
+      "current_sha256": "ae11dcf1db5c761ec72dd2c80dd8f579c53a0b7c991ca03dfaef7adad52eefb5",
+      "mapping": "exact",
+      "git_blob_sha256": "d0359e0779f75015c759c11aba94d94670f51046e54e91190fb79dec1bfff20b",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32f4xx_hal_can_legacy.h",
+      "tested_sha256": "543bed78bd38b6203fbd15b7eed27cccf58e89216e993e28170af55e779adec2",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32f4xx_hal_can_legacy.h",
+      "current_sha256": "543bed78bd38b6203fbd15b7eed27cccf58e89216e993e28170af55e779adec2",
+      "mapping": "exact",
+      "git_blob_sha256": "08f8bb965771467497fbc525591451db7e6da043cd5064644bad463ecb61dbc1",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32_assert_template.h",
+      "tested_sha256": "48263680a9ef62218f9b06c396f2c9612903b8ca34303c0f1d185481d55045bb",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32_assert_template.h",
+      "current_sha256": "48263680a9ef62218f9b06c396f2c9612903b8ca34303c0f1d185481d55045bb",
+      "mapping": "exact",
+      "git_blob_sha256": "a2f26196b43a27176a837a73850442504857e1ea93b60cc34bca832bb472c722",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h",
+      "tested_sha256": "11299f5cbd709eb0623354bc285cd6403c281244c323ebd9667519d70a5300fc",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h",
+      "current_sha256": "11299f5cbd709eb0623354bc285cd6403c281244c323ebd9667519d70a5300fc",
+      "mapping": "exact",
+      "git_blob_sha256": "13c99c4db319a15d8dfd6de06c096d8a494ea9f036b68d67ceb6ce937926f354",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h",
+      "tested_sha256": "01afa441d6f80901d4bb0b3383b08c8ee348d5a8a96256e46e2fada64f881c1c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h",
+      "current_sha256": "01afa441d6f80901d4bb0b3383b08c8ee348d5a8a96256e46e2fada64f881c1c",
+      "mapping": "exact",
+      "git_blob_sha256": "d914a79d8c163073782a2e359872e8283f0a5e230413ef447aa219153d7ecc1a",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h",
+      "tested_sha256": "5bcefe6ea7d077f77920f27f283e16c6c0bf88a8a57332ea3dc2a5c7f4b2fb55",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h",
+      "current_sha256": "5bcefe6ea7d077f77920f27f283e16c6c0bf88a8a57332ea3dc2a5c7f4b2fb55",
+      "mapping": "exact",
+      "git_blob_sha256": "6676a8d28a87d3bda7f53037850f250417fbae31b2c2dcf4c58661e47bb9bc32",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h",
+      "tested_sha256": "313b598eecd02b0aacaeb3c9716f85a7ef973f5783ced26ab79cfbff433caf83",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h",
+      "current_sha256": "313b598eecd02b0aacaeb3c9716f85a7ef973f5783ced26ab79cfbff433caf83",
+      "mapping": "exact",
+      "git_blob_sha256": "f898958b577dcd112e85e806f21fb053f43239cd75e19b0a04073917a9e636ec",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cec.h",
+      "tested_sha256": "f771a0f3dfa48d4b07dacc7ec5ff413253f51cacc25fa2e1fff0c755ad3e6671",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cec.h",
+      "current_sha256": "f771a0f3dfa48d4b07dacc7ec5ff413253f51cacc25fa2e1fff0c755ad3e6671",
+      "mapping": "exact",
+      "git_blob_sha256": "5964138a0dd0176f711dff999775c63f7e793d0d23e47979efd04900ac60bf65",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_conf_template.h",
+      "tested_sha256": "daf490dc12e53491e6898b8a061576f06f0accf114d6d07ba15d17c340ca5f9b",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_conf_template.h",
+      "current_sha256": "daf490dc12e53491e6898b8a061576f06f0accf114d6d07ba15d17c340ca5f9b",
+      "mapping": "exact",
+      "git_blob_sha256": "4d17ad25a9dc2d7795013152e0c1a982285670871ac897f2639ee8b571de397d",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h",
+      "tested_sha256": "f2d8d6c2f27b0203c35e986275f612feba01bd4f835560fc5df839102369b585",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h",
+      "current_sha256": "f2d8d6c2f27b0203c35e986275f612feba01bd4f835560fc5df839102369b585",
+      "mapping": "exact",
+      "git_blob_sha256": "880314a06187ae879f52ac0adcc720faf574ffc7378caa8d4d4a581823f948aa",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h",
+      "tested_sha256": "c9981cc84780636fec8846ccbd315bc2d885c1202076ebf16f074153965d68e5",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h",
+      "current_sha256": "c9981cc84780636fec8846ccbd315bc2d885c1202076ebf16f074153965d68e5",
+      "mapping": "exact",
+      "git_blob_sha256": "d965d52eee33db9186e4aebea96c54187dc063486d9be61494f7705883005804",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp.h",
+      "tested_sha256": "ee12d5f04437a73d6b877f7bc03f8aa1c36d4d904569734fd876963a38c3a554",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp.h",
+      "current_sha256": "ee12d5f04437a73d6b877f7bc03f8aa1c36d4d904569734fd876963a38c3a554",
+      "mapping": "exact",
+      "git_blob_sha256": "54cb6b91da25f731fccc569dff6c5e38d4e9fcd0912d144254f9aef5c32ce4af",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp_ex.h",
+      "tested_sha256": "d54d38aa3223cb7ff4763ac7480ce30f10195d62a0474f7cf79465b0c45d5ce4",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp_ex.h",
+      "current_sha256": "d54d38aa3223cb7ff4763ac7480ce30f10195d62a0474f7cf79465b0c45d5ce4",
+      "mapping": "exact",
+      "git_blob_sha256": "164392760c80f309b3cbcceca8d203c3eeb15f27100ad54f8973ecb7951b3718",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h",
+      "tested_sha256": "efe27ed32a52a0887a959e6611f30b31b0c7d488ac4603c88e07329839312163",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h",
+      "current_sha256": "efe27ed32a52a0887a959e6611f30b31b0c7d488ac4603c88e07329839312163",
+      "mapping": "exact",
+      "git_blob_sha256": "8a61e31849b1a455af5fb01248115bf093da1139e2b3d5efb1333427cea3b457",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h",
+      "tested_sha256": "879c639d2ec5548a76c859f4c344855012705e1f20f211bdbd3493de0e534dff",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h",
+      "current_sha256": "879c639d2ec5548a76c859f4c344855012705e1f20f211bdbd3493de0e534dff",
+      "mapping": "exact",
+      "git_blob_sha256": "9d7ddbbecf8f60a0337cb0e4f79c865b4ee995313364d93f57ecdf181646a2e5",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi.h",
+      "tested_sha256": "8b9e547e42ec80e5ea25afeef900adbe003b05c1ee2573e84c408603ab3361b5",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi.h",
+      "current_sha256": "8b9e547e42ec80e5ea25afeef900adbe003b05c1ee2573e84c408603ab3361b5",
+      "mapping": "exact",
+      "git_blob_sha256": "19d00cafc3f9c1d66fed48a2817296a5ea50e3d8daacad3fb89e1709b2853534",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi_ex.h",
+      "tested_sha256": "ecc12e10f2ed957df63a35c1a81bdca1d1d2065d8b462e83d67c23caabd79725",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi_ex.h",
+      "current_sha256": "ecc12e10f2ed957df63a35c1a81bdca1d1d2065d8b462e83d67c23caabd79725",
+      "mapping": "exact",
+      "git_blob_sha256": "f189cb2866b99555cab14100703008f3cb31fb7e30c8d62b37565ceed0099308",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h",
+      "tested_sha256": "a0fd395c49b28f917b77df9e53f7a8c9dce21241c851ddbbb509741eb30f408e",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h",
+      "current_sha256": "a0fd395c49b28f917b77df9e53f7a8c9dce21241c851ddbbb509741eb30f408e",
+      "mapping": "exact",
+      "git_blob_sha256": "527b3dff9678bbbedee2f3c29a3b6cef65ce1045dbc82bd77941ab1c676dde76",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dfsdm.h",
+      "tested_sha256": "69d43b2312ea892bab24beb64094cc1320489c339b0e6f684fe4ea84ffebfde0",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dfsdm.h",
+      "current_sha256": "69d43b2312ea892bab24beb64094cc1320489c339b0e6f684fe4ea84ffebfde0",
+      "mapping": "exact",
+      "git_blob_sha256": "9cff117909bd266032c009ad0b20a7c871af066ae5a319e3e9aa89a628a49fb0",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h",
+      "tested_sha256": "ed211f05fdb42ce4c647ad588c03c64764263594ec079908112437cdf6af80cd",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h",
+      "current_sha256": "ed211f05fdb42ce4c647ad588c03c64764263594ec079908112437cdf6af80cd",
+      "mapping": "exact",
+      "git_blob_sha256": "274cda0a1c9ecf9ed4a546bbd09534929b48bcf550ae897e25b72b05b8d8a355",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h",
+      "tested_sha256": "dd9e930105d836ef9eb471059731d913da03d32266b50fa44e99d8ef5178b160",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h",
+      "current_sha256": "dd9e930105d836ef9eb471059731d913da03d32266b50fa44e99d8ef5178b160",
+      "mapping": "exact",
+      "git_blob_sha256": "794b633556c40d8bc33a251e9636b87c36cf3589465e9dffceb913cbab86878b",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h",
+      "tested_sha256": "cc1cc94a98945e793e7e73ead38e73138c3816b6a8bb475edb09d4adb9b80b39",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h",
+      "current_sha256": "cc1cc94a98945e793e7e73ead38e73138c3816b6a8bb475edb09d4adb9b80b39",
+      "mapping": "exact",
+      "git_blob_sha256": "5cf4d46e6e6b24a10751ee14184dfd6508e8a1ea130270fe6f2281e71733f19c",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h",
+      "tested_sha256": "b14f93e40d54c069cf7bbc48fab45097bf0dfb84e41e66d738288abac5b3c779",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h",
+      "current_sha256": "b14f93e40d54c069cf7bbc48fab45097bf0dfb84e41e66d738288abac5b3c779",
+      "mapping": "exact",
+      "git_blob_sha256": "563ed36ab11b4c173fbece0b44f550e807a7230a7075dac88f23f4bf43f0a4bb",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_eth.h",
+      "tested_sha256": "1880f7c3720b685ab7cd679239722819bc45bf9c01628bbb2fdc60f21ab6451d",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_eth.h",
+      "current_sha256": "1880f7c3720b685ab7cd679239722819bc45bf9c01628bbb2fdc60f21ab6451d",
+      "mapping": "exact",
+      "git_blob_sha256": "77adb0f0815afada6f7710268eb0254d296a76ff3e4fef9d1296542a45e2f803",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h",
+      "tested_sha256": "dc58f7410e33afd9bf372b2bfcd53ee2a68e38475f6029c8f0f4436e3b1289b9",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h",
+      "current_sha256": "dc58f7410e33afd9bf372b2bfcd53ee2a68e38475f6029c8f0f4436e3b1289b9",
+      "mapping": "exact",
+      "git_blob_sha256": "ce5cba391f4fa629a8d22cc8abc91932ce8d34dde877c4f176121b90d3be3346",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h",
+      "tested_sha256": "49ace9937ba7d18c10c7806f94a12b19cf5cc7e2434424235e36a387a0c60ed3",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h",
+      "current_sha256": "49ace9937ba7d18c10c7806f94a12b19cf5cc7e2434424235e36a387a0c60ed3",
+      "mapping": "exact",
+      "git_blob_sha256": "553c0da23adffd66325685517bd939d54c371c144af092e80c9f2f0d87d3c6b8",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h",
+      "tested_sha256": "b008dea9d48f83e11b90d806d8a8565394d59b093f8769ede0dadd1012272be8",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h",
+      "current_sha256": "b008dea9d48f83e11b90d806d8a8565394d59b093f8769ede0dadd1012272be8",
+      "mapping": "exact",
+      "git_blob_sha256": "f22346df53f2f189fd62f1442ca6fe44a3cd385590a787f80db9252c6e621973",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h",
+      "tested_sha256": "d4991e679c01ce5bcd1cedadad0e25d0541e4997a5c10a7dd717cbe15b81c198",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h",
+      "current_sha256": "d4991e679c01ce5bcd1cedadad0e25d0541e4997a5c10a7dd717cbe15b81c198",
+      "mapping": "exact",
+      "git_blob_sha256": "05ae87de28f7424c18bf2da1e5f5dd7504a2bb1cc7139bb5cffe1f793dc7c05a",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c.h",
+      "tested_sha256": "59af5631400fbbd2b66325006457a3749b93a6710123757aa61928645ca52a9f",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c.h",
+      "current_sha256": "59af5631400fbbd2b66325006457a3749b93a6710123757aa61928645ca52a9f",
+      "mapping": "exact",
+      "git_blob_sha256": "a9aff9440bea38631215b283e754a60f80aac851a5eef888b9eb61fd68faa87f",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c_ex.h",
+      "tested_sha256": "834261589418ec9b6a5fb0219ee19d2520c0c7349850640bf6a477085f2debee",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c_ex.h",
+      "current_sha256": "834261589418ec9b6a5fb0219ee19d2520c0c7349850640bf6a477085f2debee",
+      "mapping": "exact",
+      "git_blob_sha256": "773fb56659255e4916d789c20d450a794655ac9f6a508cef367c8054c35117d8",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h",
+      "tested_sha256": "a0c3bc2771cddea3d8a13f5c1a854e9dd7140a307d904835834b1b4ce20e2b5c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h",
+      "current_sha256": "a0c3bc2771cddea3d8a13f5c1a854e9dd7140a307d904835834b1b4ce20e2b5c",
+      "mapping": "exact",
+      "git_blob_sha256": "14bd5c4cc7339960d84777e51e40dbbd1c13846290c94b1e38d34ed14a9e258d",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h",
+      "tested_sha256": "259ced57e0e31cbbc0c552741af592d6a51f5b8eee8a4caaecad4ce75108d435",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h",
+      "current_sha256": "259ced57e0e31cbbc0c552741af592d6a51f5b8eee8a4caaecad4ce75108d435",
+      "mapping": "exact",
+      "git_blob_sha256": "735ca5c6fa41b993468ba48800b71ec9dafcb935692c7fd667072a1f915a99e9",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash.h",
+      "tested_sha256": "0979bd49b17bb49726adf0d90a507013a7e57bbb5b591908d10fa9c1599b002f",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash.h",
+      "current_sha256": "0979bd49b17bb49726adf0d90a507013a7e57bbb5b591908d10fa9c1599b002f",
+      "mapping": "exact",
+      "git_blob_sha256": "1aaae268b5ac81503722445a48a529379ad71dfbdfa4e20b8874a9ea30d66b8e",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash_ex.h",
+      "tested_sha256": "0349e2e78b085bda72321e1a5b5321af05453d495212dcd079abc14264665617",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash_ex.h",
+      "current_sha256": "0349e2e78b085bda72321e1a5b5321af05453d495212dcd079abc14264665617",
+      "mapping": "exact",
+      "git_blob_sha256": "2532b6874c0ee2edcea2fac6e571a17a1dde3ee32a1d024824628c8c8f346ab7",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h",
+      "tested_sha256": "9223f062bb5bace6af33e68811947f0154de527a7da8834fd0679d376621ab25",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h",
+      "current_sha256": "9223f062bb5bace6af33e68811947f0154de527a7da8834fd0679d376621ab25",
+      "mapping": "exact",
+      "git_blob_sha256": "978f6485cfdb4e2ba29a728e2d43347ee5600df1777ec9d487903563934b3b3e",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h",
+      "tested_sha256": "8bf26ee0cf2ac4d668c859d20d84a613b27ca1c94e12763ddb9d6fce358f68ef",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h",
+      "current_sha256": "8bf26ee0cf2ac4d668c859d20d84a613b27ca1c94e12763ddb9d6fce358f68ef",
+      "mapping": "exact",
+      "git_blob_sha256": "bad0e8ff9a97221d77e776c850e7cd5e96e0ac5e3b51937ccbe22020a8e5866e",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h",
+      "tested_sha256": "0b08b0a12205869226b0f6afb127accb539af41094d1a5641062ccb5d62e236b",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h",
+      "current_sha256": "0b08b0a12205869226b0f6afb127accb539af41094d1a5641062ccb5d62e236b",
+      "mapping": "exact",
+      "git_blob_sha256": "aa040143b29893fa9907762d63dabc78926b17aa148e3202f48b5497515926c9",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h",
+      "tested_sha256": "20ff8eb16648943fa62480438e4a1c4c9fb878985f5b023285b8178070be606c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h",
+      "current_sha256": "20ff8eb16648943fa62480438e4a1c4c9fb878985f5b023285b8178070be606c",
+      "mapping": "exact",
+      "git_blob_sha256": "24d9ff0c31e82647658a26d1ff12652f1a4abf0018b46f5ffac7f031e4658372",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s_ex.h",
+      "tested_sha256": "5fec96b96a0ae81b0a074dabc4c5004c84c25bce60f0fb319f28ce4e7742f4c8",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s_ex.h",
+      "current_sha256": "5fec96b96a0ae81b0a074dabc4c5004c84c25bce60f0fb319f28ce4e7742f4c8",
+      "mapping": "exact",
+      "git_blob_sha256": "50da4a3e44fca72971ff4b5e296ce81046d5ebd817b60f97bc4640c5f34c654f",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_irda.h",
+      "tested_sha256": "f898bad8a0bd7bff5cb55f3ebc9b5023504e62e3d4d13874a6ff2dc26d3f8e41",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_irda.h",
+      "current_sha256": "f898bad8a0bd7bff5cb55f3ebc9b5023504e62e3d4d13874a6ff2dc26d3f8e41",
+      "mapping": "exact",
+      "git_blob_sha256": "e686531e0f76d5cacc3d5d33d38b6dd14452fafaa62b09fc8ca72d3e61d6f9f5",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h",
+      "tested_sha256": "7006e59aa6dc9f125e884cfa0a63508914ec29bd2d3a44150e576376c84af212",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h",
+      "current_sha256": "7006e59aa6dc9f125e884cfa0a63508914ec29bd2d3a44150e576376c84af212",
+      "mapping": "exact",
+      "git_blob_sha256": "dcc03d3d24c5638324543e08ce706fbce37e2dc3b8366d92f9675518aa2851ee",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_lptim.h",
+      "tested_sha256": "1437e1ae6c82923a1900d1c548b77aa7f3640db09ccfd9100721828c5a21bbfd",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_lptim.h",
+      "current_sha256": "1437e1ae6c82923a1900d1c548b77aa7f3640db09ccfd9100721828c5a21bbfd",
+      "mapping": "exact",
+      "git_blob_sha256": "ac6e512ae844b350d2398e62afbefe3661bdd9670df18ef54757c590d1d2b671",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h",
+      "tested_sha256": "d67757417e2fded59b1ca4a2009271e4b895399616b858fae4caf199cb70d9a2",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h",
+      "current_sha256": "d67757417e2fded59b1ca4a2009271e4b895399616b858fae4caf199cb70d9a2",
+      "mapping": "exact",
+      "git_blob_sha256": "dd15df6b9e6ad175e572b504166041106d18cbcfe8e0e874e4134b7083fbdb55",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h",
+      "tested_sha256": "e9168035db8f2bc10e1f5c0fc3213da30ab34a291aa5f640df2c042327e21261",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h",
+      "current_sha256": "e9168035db8f2bc10e1f5c0fc3213da30ab34a291aa5f640df2c042327e21261",
+      "mapping": "exact",
+      "git_blob_sha256": "06c9ace70ea94997f19a0493a1d32c190fa701aa29e1b73e76e737679e05a2a2",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_mmc.h",
+      "tested_sha256": "5b6527a710a9f8db4bb161f81361d23d48c157a6b0baa3d685191529213896ce",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_mmc.h",
+      "current_sha256": "5b6527a710a9f8db4bb161f81361d23d48c157a6b0baa3d685191529213896ce",
+      "mapping": "exact",
+      "git_blob_sha256": "8057475571492ca079e7818ad238d44759aeb1d8866267942d6dfaa0b5d6bf16",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nand.h",
+      "tested_sha256": "8d3a62d1623f82d817ffe486648cbb0095878271d71657209719acd361d42dbd",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nand.h",
+      "current_sha256": "8d3a62d1623f82d817ffe486648cbb0095878271d71657209719acd361d42dbd",
+      "mapping": "exact",
+      "git_blob_sha256": "abe44b8f53fc22aacb8a2ecc1a5e909ec83f1f412b5586c1efc6549ce15a8338",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nor.h",
+      "tested_sha256": "04e283ae45a849ce60a29bc0c7f45ffa64ea1dafd6526e61b13ebbfabcfe259c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nor.h",
+      "current_sha256": "04e283ae45a849ce60a29bc0c7f45ffa64ea1dafd6526e61b13ebbfabcfe259c",
+      "mapping": "exact",
+      "git_blob_sha256": "e4b33575eb2f11618d6ef4fd27e211e95cec0d205258328f97f1aeaf42358f5b",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pccard.h",
+      "tested_sha256": "268d171f99ca9230c6e16b4ef7144bd2514992e710741d5ae47f6f8ca448cd8d",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pccard.h",
+      "current_sha256": "268d171f99ca9230c6e16b4ef7144bd2514992e710741d5ae47f6f8ca448cd8d",
+      "mapping": "exact",
+      "git_blob_sha256": "cc16abc6681ae74e4a6e98928f586dc4ce86da75ca1b68503a3476c2dbb972bd",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h",
+      "tested_sha256": "31aa76fe01979664c59578e528d97967910613d920481df93a5593e8aee3f82c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h",
+      "current_sha256": "31aa76fe01979664c59578e528d97967910613d920481df93a5593e8aee3f82c",
+      "mapping": "exact",
+      "git_blob_sha256": "22febbe2af0d933b2d64e7b72033c33f70222d74cb7179100737ddae795f048e",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h",
+      "tested_sha256": "623238bef2c2a4505bfb8927b1eb861836e183996b8816a234146d5bf6b86560",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h",
+      "current_sha256": "623238bef2c2a4505bfb8927b1eb861836e183996b8816a234146d5bf6b86560",
+      "mapping": "exact",
+      "git_blob_sha256": "cf63497c9a5e4ca756700df8ae8108f159c1ae856fb9310fb59bcf19bc41560e",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h",
+      "tested_sha256": "dbca0e7c98403d5b1be330db65d043c71d0d3035658337d66fd6619d8b8b3305",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h",
+      "current_sha256": "dbca0e7c98403d5b1be330db65d043c71d0d3035658337d66fd6619d8b8b3305",
+      "mapping": "exact",
+      "git_blob_sha256": "531ac89885c0575ddbb5d638b59496e28a23165a2be3a416a74b4f1499f04c6e",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h",
+      "tested_sha256": "5606b1bc814da0e27e231393ea507b476f76f6826ea8e989048aaaf3f6845ee1",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h",
+      "current_sha256": "5606b1bc814da0e27e231393ea507b476f76f6826ea8e989048aaaf3f6845ee1",
+      "mapping": "exact",
+      "git_blob_sha256": "462395f8b9d3377139ea48708863cc6a45f64a5621fa742d9b73d15124ac292a",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h",
+      "tested_sha256": "137b39d8e2169c18a12b55a60327f9a472163e16afd848d5087207a8adcc6568",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h",
+      "current_sha256": "137b39d8e2169c18a12b55a60327f9a472163e16afd848d5087207a8adcc6568",
+      "mapping": "exact",
+      "git_blob_sha256": "287785adc8b18e9af3676ab3f57ecba33225ddcc0342a4df542d1519c19d92bc",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h",
+      "tested_sha256": "1fbdf8e8fc4982cc68b976db7f2249fcf3ce1549d671d5766b068e960bba052c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h",
+      "current_sha256": "1fbdf8e8fc4982cc68b976db7f2249fcf3ce1549d671d5766b068e960bba052c",
+      "mapping": "exact",
+      "git_blob_sha256": "5d0e1aa64fae7d0f48484fc99f8eaf063359c01fc0f65972e427aab1b4bb4240",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h",
+      "tested_sha256": "fbb76ff293619d841ca23f4410334d7250762d4a1b0d85a79c357f69619b9cb9",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h",
+      "current_sha256": "fbb76ff293619d841ca23f4410334d7250762d4a1b0d85a79c357f69619b9cb9",
+      "mapping": "exact",
+      "git_blob_sha256": "e0633f77bccc61a4099ccaad581b0465b4b462ded5ec0832052c047c4b4aeb8f",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h",
+      "tested_sha256": "3d8246d7cb6fa1881a138cd0512f951165428ea8b0354ee67e0b7bbffcb193cf",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h",
+      "current_sha256": "3d8246d7cb6fa1881a138cd0512f951165428ea8b0354ee67e0b7bbffcb193cf",
+      "mapping": "exact",
+      "git_blob_sha256": "5c038db647264888405d5434d3c689ae00d5bb59e1e25eb578e8757c1fc9fa4d",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h",
+      "tested_sha256": "347539154297f15cfbf788ddca9d21f573c8b1b8ca2f926d4a500d637b34e3c9",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h",
+      "current_sha256": "347539154297f15cfbf788ddca9d21f573c8b1b8ca2f926d4a500d637b34e3c9",
+      "mapping": "exact",
+      "git_blob_sha256": "c8221b541a03fb6f0c59b97edf1ea0e4dc26868eb84db27001f2a9a99f82c654",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h",
+      "tested_sha256": "0fa15849d8ae1ba6e447acec923d285f9efe6f4e08895812052805ed0f47e6c8",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h",
+      "current_sha256": "0fa15849d8ae1ba6e447acec923d285f9efe6f4e08895812052805ed0f47e6c8",
+      "mapping": "exact",
+      "git_blob_sha256": "b745160b07b618b0529c2a10637e0630b12ae83af6efb0677ada181a9fb51af1",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai.h",
+      "tested_sha256": "b7acc072569285852b6165a9fd4a2888d586149482ca8a233aae3e67afd77b51",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai.h",
+      "current_sha256": "b7acc072569285852b6165a9fd4a2888d586149482ca8a233aae3e67afd77b51",
+      "mapping": "exact",
+      "git_blob_sha256": "d4e00ca26cefe1f9437d4b2b7b35d84759ae162c31405c2f77f1c1c46685904f",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai_ex.h",
+      "tested_sha256": "7dde5234e5ff61e46272e3828e5bdbb79dc6db2eee3f0780f266236dab3ca1af",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai_ex.h",
+      "current_sha256": "7dde5234e5ff61e46272e3828e5bdbb79dc6db2eee3f0780f266236dab3ca1af",
+      "mapping": "exact",
+      "git_blob_sha256": "93d372057f09d30209d5262574e093db051bdd600d1e653acf3b28e73b585472",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h",
+      "tested_sha256": "c875db8d8e7a2e70a4894d8752222d309ada5f0dae8dfeff30971e73725462e9",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h",
+      "current_sha256": "c875db8d8e7a2e70a4894d8752222d309ada5f0dae8dfeff30971e73725462e9",
+      "mapping": "exact",
+      "git_blob_sha256": "7cdba3496093fe2c3074db8fe9c28c31c2d072b906a022fd65f4efbd30ff2372",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h",
+      "tested_sha256": "a54ba8006a68559f53abd6e25ec4e1deb0eeba51fc85b613d1d86b9af6dc8997",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h",
+      "current_sha256": "a54ba8006a68559f53abd6e25ec4e1deb0eeba51fc85b613d1d86b9af6dc8997",
+      "mapping": "exact",
+      "git_blob_sha256": "29ac4377e0cf64ee6beed3835876f390d905bb9fce7e424ad38ee3f3464f8e8a",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smartcard.h",
+      "tested_sha256": "4843a64cac6ed4f069eec208b64f171b62093de885fd8a4130f0c357bf5f2540",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smartcard.h",
+      "current_sha256": "4843a64cac6ed4f069eec208b64f171b62093de885fd8a4130f0c357bf5f2540",
+      "mapping": "exact",
+      "git_blob_sha256": "90b6df2ba60881317e72543392e2a869ff01c4107b9a53bd325694ca0803d2be",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smbus.h",
+      "tested_sha256": "fd3a8a5169b64bddf2c162de9250c7e94b7744c84862c85d474a480b1c128c6c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smbus.h",
+      "current_sha256": "fd3a8a5169b64bddf2c162de9250c7e94b7744c84862c85d474a480b1c128c6c",
+      "mapping": "exact",
+      "git_blob_sha256": "488e0680f454ea30d22fa5c1374e0918cf234868aa66851338b3e3333b28f5b6",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spdifrx.h",
+      "tested_sha256": "f69ed1042eb7142f7fb0de8e3e8471cce32edfc5f3fd38201ebedc33919210cc",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spdifrx.h",
+      "current_sha256": "f69ed1042eb7142f7fb0de8e3e8471cce32edfc5f3fd38201ebedc33919210cc",
+      "mapping": "exact",
+      "git_blob_sha256": "26705d3b58a532ecd5c73ece9eba7c09697e67a6272d451726e4cbb872205821",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h",
+      "tested_sha256": "2d3dc767374c95d63366b855fa2336914830dc455073195668faad0d811d5a65",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h",
+      "current_sha256": "2d3dc767374c95d63366b855fa2336914830dc455073195668faad0d811d5a65",
+      "mapping": "exact",
+      "git_blob_sha256": "d2e7728d86c1b85cfeffc05da832c024311fc226a95f075ab7e0768e843b5c78",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h",
+      "tested_sha256": "0ce30c77304b3cd94f8f11f70ebaf81d8ff978ae3a12cb7bcd46c43256ba8c8c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h",
+      "current_sha256": "0ce30c77304b3cd94f8f11f70ebaf81d8ff978ae3a12cb7bcd46c43256ba8c8c",
+      "mapping": "exact",
+      "git_blob_sha256": "c43b8727f729556beb2d1184c6dbff029a75eb2d9abd0396a774786327abcc26",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h",
+      "tested_sha256": "9d46481862dfdb14f9a120d3dcc7dc544d7186567439232c8cedb8a863b80df2",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h",
+      "current_sha256": "9d46481862dfdb14f9a120d3dcc7dc544d7186567439232c8cedb8a863b80df2",
+      "mapping": "exact",
+      "git_blob_sha256": "a30fc5cbb1455ce54137d9c3f12937af3a49290dea834f0808ca8f430960c5f7",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h",
+      "tested_sha256": "28a9237677bd2138cdc77abd7ba5966ce5fc53f175c8b105d4237430a3e01f88",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h",
+      "current_sha256": "28a9237677bd2138cdc77abd7ba5966ce5fc53f175c8b105d4237430a3e01f88",
+      "mapping": "exact",
+      "git_blob_sha256": "6930af46aba690afb3431da458c17a82ff7e9e77bf5eb7ce9101c3f9d67b2cef",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h",
+      "tested_sha256": "fde1fb8df86092a52024cf5450bcac9383304a3691e744569d1272c816bb2b24",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h",
+      "current_sha256": "fde1fb8df86092a52024cf5450bcac9383304a3691e744569d1272c816bb2b24",
+      "mapping": "exact",
+      "git_blob_sha256": "1156d4bcdd9f8f9018998b8703023b5b675b06ca6f6eb4fb99e9c985eb64dddd",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h",
+      "tested_sha256": "d9f64481117bb54440afb5d09b4b2dfc1db5a62d22edf901f298e62abc651129",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h",
+      "current_sha256": "d9f64481117bb54440afb5d09b4b2dfc1db5a62d22edf901f298e62abc651129",
+      "mapping": "exact",
+      "git_blob_sha256": "97bc3b038d2e8e00c46163e5e849ab3354873c1305b24b1e49b31a5a0a47ba27",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h",
+      "tested_sha256": "3053d1feb7cbb8f41fa31e5ac552df9a5838c7e00c72eedc6518b4d612875312",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h",
+      "current_sha256": "3053d1feb7cbb8f41fa31e5ac552df9a5838c7e00c72eedc6518b4d612875312",
+      "mapping": "exact",
+      "git_blob_sha256": "ea4fe8eeaf4b70be67ad00b4d207a502fabe374be44d5a5b13674ea4abb1d843",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h",
+      "tested_sha256": "cfe3e3b1b98139cb377608e2b97d3ce539b410ef94cbef6a4e3451969c6bb9a6",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h",
+      "current_sha256": "cfe3e3b1b98139cb377608e2b97d3ce539b410ef94cbef6a4e3451969c6bb9a6",
+      "mapping": "exact",
+      "git_blob_sha256": "04c13ebc74b74d0fe9ebb7a690e3ae2e7a0d7a1a0f3deabadb1cd3fa8e959080",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h",
+      "tested_sha256": "a133d2a1862f3c126098e8d30a332373033d8e33fdf7e35d045a78c0bec0508f",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h",
+      "current_sha256": "a133d2a1862f3c126098e8d30a332373033d8e33fdf7e35d045a78c0bec0508f",
+      "mapping": "exact",
+      "git_blob_sha256": "ce6ce1c721891bbe0393e6d5470dc538016e370f0a778e4408652abfbbaade9e",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_cortex.h",
+      "tested_sha256": "112411ef329834e9059e56384ab5fd59a65b2ace4f0abc44faab1a93897b7d91",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_cortex.h",
+      "current_sha256": "112411ef329834e9059e56384ab5fd59a65b2ace4f0abc44faab1a93897b7d91",
+      "mapping": "exact",
+      "git_blob_sha256": "491ddb8f21ca0878efcfb36a248f91dcb61e9f091c611e7f4efe621fc81a2ac0",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_crc.h",
+      "tested_sha256": "ab46ea91aa247c5019b634a0f1096a745bcc7f3cc6a42a34a6c7aa2d35ac5d3e",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_crc.h",
+      "current_sha256": "ab46ea91aa247c5019b634a0f1096a745bcc7f3cc6a42a34a6c7aa2d35ac5d3e",
+      "mapping": "exact",
+      "git_blob_sha256": "c21eed5615c541dc27e030de88fc5048cc121ea8053f2770f71467201ad66721",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dac.h",
+      "tested_sha256": "92c5b1b77700fb375f1dff9a06a0686b78a5fd7aff7b55f3818fccc389c801be",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dac.h",
+      "current_sha256": "92c5b1b77700fb375f1dff9a06a0686b78a5fd7aff7b55f3818fccc389c801be",
+      "mapping": "exact",
+      "git_blob_sha256": "e1cc81f161fd60807e2e2841896ba0f717716e500095366f937d6dc8b2969e55",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h",
+      "tested_sha256": "31fadac6a5bca7793b1226a9c373d604fd38bce901f1c3d3d4e7be92af58d3c5",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h",
+      "current_sha256": "31fadac6a5bca7793b1226a9c373d604fd38bce901f1c3d3d4e7be92af58d3c5",
+      "mapping": "exact",
+      "git_blob_sha256": "339270182af47c1856039d69a2de410bc2fa70688b95bf78e869d65d5dde2ee7",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma2d.h",
+      "tested_sha256": "0808037f37653a42a13a70518f20fb7f057e8d8fcdac7588f410b74620862071",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma2d.h",
+      "current_sha256": "0808037f37653a42a13a70518f20fb7f057e8d8fcdac7588f410b74620862071",
+      "mapping": "exact",
+      "git_blob_sha256": "75e71624cb3018fe30adee4e968464b613a4af4777f9afde8ea8ee5c65f379eb",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_exti.h",
+      "tested_sha256": "0699c0fa43de3552e4aedbedc83c6204d913b043c8202807039c28ad0774ecb6",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_exti.h",
+      "current_sha256": "0699c0fa43de3552e4aedbedc83c6204d913b043c8202807039c28ad0774ecb6",
+      "mapping": "exact",
+      "git_blob_sha256": "40f5989d447c5faf3bbf011ac60ff19a1e6005c898c600268a93c75847b852cb",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h",
+      "tested_sha256": "95783f0a4860da529fbb771f4a3e61b393a96d5c7c692c7dece75f554255226d",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h",
+      "current_sha256": "95783f0a4860da529fbb771f4a3e61b393a96d5c7c692c7dece75f554255226d",
+      "mapping": "exact",
+      "git_blob_sha256": "53cadaac15907f214970c50c2695f5ce6843157c675d24bc8b897cc486d1350c",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h",
+      "tested_sha256": "6b68573333f13cea49af46bbb0560d714597079b411b7cd015b418e25841984b",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h",
+      "current_sha256": "6b68573333f13cea49af46bbb0560d714597079b411b7cd015b418e25841984b",
+      "mapping": "exact",
+      "git_blob_sha256": "fcd6a30eda869dc55d04b4cc4e2969e4bc71ebbc448bfbdc0917b4330228fa80",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h",
+      "tested_sha256": "d59789cbb8a7de25123a88dd8e181cf05b8cff540b32fb974db946c9a4f88937",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h",
+      "current_sha256": "d59789cbb8a7de25123a88dd8e181cf05b8cff540b32fb974db946c9a4f88937",
+      "mapping": "exact",
+      "git_blob_sha256": "3d0279c0c1f9d3999527d2288b55388ba1a5ec32b0774a3ab320737b70dce4a6",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_i2c.h",
+      "tested_sha256": "8c615dcde3e4170c0caa7f0b1b9ae94da441dc389c655101f194457239530adf",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_i2c.h",
+      "current_sha256": "8c615dcde3e4170c0caa7f0b1b9ae94da441dc389c655101f194457239530adf",
+      "mapping": "exact",
+      "git_blob_sha256": "b7a8e0ca260ccbce8a952afffe28ee9e3676ebcfbd02524956d6c44bbfc3b11b",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_iwdg.h",
+      "tested_sha256": "73c1712636a6e652f43436139e54b9392a01324463c91103d8ee92723f5bda6c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_iwdg.h",
+      "current_sha256": "73c1712636a6e652f43436139e54b9392a01324463c91103d8ee92723f5bda6c",
+      "mapping": "exact",
+      "git_blob_sha256": "671787f54ba9a163766a8e1381f1cfe76326d524ad6207c210c5a1d2f1ab8285",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_lptim.h",
+      "tested_sha256": "6a225596a2d4ecd6d26e936f360cebaf881f7bbc98fe2696563f2a3048682833",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_lptim.h",
+      "current_sha256": "6a225596a2d4ecd6d26e936f360cebaf881f7bbc98fe2696563f2a3048682833",
+      "mapping": "exact",
+      "git_blob_sha256": "2d3f627b521675fcd795b167f872b6ccfd1b1dccc0590f818468ce66867932fb",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h",
+      "tested_sha256": "e9f58c4673214459618091e633a9aeb26c499f25747aff055ce4f1d85e9bb477",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h",
+      "current_sha256": "e9f58c4673214459618091e633a9aeb26c499f25747aff055ce4f1d85e9bb477",
+      "mapping": "exact",
+      "git_blob_sha256": "8f287762b1fb8e179acdb257f838bba9107704eb06d7a7362c1a0e64f3b1e218",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h",
+      "tested_sha256": "a1e70a8ad778ae98f26a621181cbf444749ddc22013f6e56e686fd58b95462c8",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h",
+      "current_sha256": "a1e70a8ad778ae98f26a621181cbf444749ddc22013f6e56e686fd58b95462c8",
+      "mapping": "exact",
+      "git_blob_sha256": "caf4f78c24c48313f8f146223e3e66595c2137f393a39e1ebf55ae160048fcd4",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rng.h",
+      "tested_sha256": "cf1833f587d0cfd5a0074b8e42efc2276e8e98d874b6df4ba5ad9af89663a49d",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rng.h",
+      "current_sha256": "cf1833f587d0cfd5a0074b8e42efc2276e8e98d874b6df4ba5ad9af89663a49d",
+      "mapping": "exact",
+      "git_blob_sha256": "eac3f7948174125a80f4825fec6444647b81a9d3be2cf53e3c6b3280df3def9c",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rtc.h",
+      "tested_sha256": "88aacd1b9f1b6bf266c8cf9e3ed2773c490eb2b3a0ac706f52af33e5d5568290",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rtc.h",
+      "current_sha256": "88aacd1b9f1b6bf266c8cf9e3ed2773c490eb2b3a0ac706f52af33e5d5568290",
+      "mapping": "exact",
+      "git_blob_sha256": "f01ad66ded40c180010fcc4d5154c9c9dfc5dc711d4ce38a616a786e98dc4f58",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h",
+      "tested_sha256": "4de4b76b8643a82d211bb9b115b406a211b2551932ce47425d9a0f17ea8a2bae",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h",
+      "current_sha256": "4de4b76b8643a82d211bb9b115b406a211b2551932ce47425d9a0f17ea8a2bae",
+      "mapping": "exact",
+      "git_blob_sha256": "df9fbf9e888465791c573e462f70bfe30b1379b6a488e6edf490f94d8ff307fb",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h",
+      "tested_sha256": "f2ca010f00517b81d36a702b3e2ea6f60218ba08b8e0ed03da9f870aeb2862f7",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h",
+      "current_sha256": "f2ca010f00517b81d36a702b3e2ea6f60218ba08b8e0ed03da9f870aeb2862f7",
+      "mapping": "exact",
+      "git_blob_sha256": "64b9ba8fb0b8c8db1b0732244a7571210079300a495a17d444b6be12cc924a3b",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_system.h",
+      "tested_sha256": "965b4df0745e5f4d0a696e89a8d97bcba9227b8ec1835c4b602338274542e60c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_system.h",
+      "current_sha256": "965b4df0745e5f4d0a696e89a8d97bcba9227b8ec1835c4b602338274542e60c",
+      "mapping": "exact",
+      "git_blob_sha256": "e51d18dac7403fd30835f1ae1aeeab79871a5e40d23c423b1d358169f41a6e6f",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h",
+      "tested_sha256": "4ed787c9a1ecc331bb6c74af0cc9a050325f718950393703285a3fd3bdd3159a",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h",
+      "current_sha256": "4ed787c9a1ecc331bb6c74af0cc9a050325f718950393703285a3fd3bdd3159a",
+      "mapping": "exact",
+      "git_blob_sha256": "d0eb69bbd1986ca2d9a61d7de1817e40dda92b7611092016acb645acb05e85ca",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h",
+      "tested_sha256": "1c8d3862f416e91008045e4b2a8dec8ee697b4f03c4d5f73191a01172c4267f2",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h",
+      "current_sha256": "1c8d3862f416e91008045e4b2a8dec8ee697b4f03c4d5f73191a01172c4267f2",
+      "mapping": "exact",
+      "git_blob_sha256": "cd329cce3de06c29e4e49d6b6d1891d96d91886239a8f6d7361177abd01da2cf",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h",
+      "tested_sha256": "da2ac811ab694035d29ad779b2c6541234153d7f8797b0b0eeca59b1926e9887",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h",
+      "current_sha256": "da2ac811ab694035d29ad779b2c6541234153d7f8797b0b0eeca59b1926e9887",
+      "mapping": "exact",
+      "git_blob_sha256": "170af39c4f787c101545c8c50e0acb7a84bb8ad84f07a802437d20be3e296ff0",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h",
+      "tested_sha256": "8bd1486f0bb40ffe9748b6a4c546c3a00c023d23b3adf89780614e9aa2b4c41c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h",
+      "current_sha256": "8bd1486f0bb40ffe9748b6a4c546c3a00c023d23b3adf89780614e9aa2b4c41c",
+      "mapping": "exact",
+      "git_blob_sha256": "75d79f7a66ff6eb7ce44b1e0f5bd9e8243943a741b9897a282eb4c564acd6689",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_wwdg.h",
+      "tested_sha256": "bff5be28d37eb6395ca1d3a6af92aee0ade56066cc3fc07bdda3181c42614dfc",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_wwdg.h",
+      "current_sha256": "bff5be28d37eb6395ca1d3a6af92aee0ade56066cc3fc07bdda3181c42614dfc",
+      "mapping": "exact",
+      "git_blob_sha256": "501690f728cb5b1a6121fe0f07d9a9f2b43011582fa792a9b89f48ac3f829790",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c",
+      "tested_sha256": "bfddc28066ff4626eceae35d668f40c656c9a2345e68d572751de0b5c5ddbf51",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c",
+      "current_sha256": "bfddc28066ff4626eceae35d668f40c656c9a2345e68d572751de0b5c5ddbf51",
+      "mapping": "exact",
+      "git_blob_sha256": "1839cd7eff2abd260fff153dd09099d11ddafac897eae8aa1fbf80ab9f8a3a67",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c",
+      "tested_sha256": "77eec39de91d5ea99c7537fb89e93236d5a1212e9e9e81cadd937a8d17284b17",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c",
+      "current_sha256": "77eec39de91d5ea99c7537fb89e93236d5a1212e9e9e81cadd937a8d17284b17",
+      "mapping": "exact",
+      "git_blob_sha256": "304422cf1b568a87a1f2b68aa8bbe99497f8254a8b75ab541b44bee87b70f930",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c",
+      "tested_sha256": "ad52545b15a6da53efa9bb53507c56a548a8bcdd58908770c546ca9637bc9ccf",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c",
+      "current_sha256": "ad52545b15a6da53efa9bb53507c56a548a8bcdd58908770c546ca9637bc9ccf",
+      "mapping": "exact",
+      "git_blob_sha256": "c70cdd6416a498839e52b6ed1d77e80274b75b4f559761b61f961f1b0c542c06",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c",
+      "tested_sha256": "cbbb9d57b4d4be3946a1020de0de81bbea904a6b042d072b5d8c93185dff304b",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c",
+      "current_sha256": "cbbb9d57b4d4be3946a1020de0de81bbea904a6b042d072b5d8c93185dff304b",
+      "mapping": "exact",
+      "git_blob_sha256": "755ce7818744d7728626dd946ee64485e24fd8fdf97c34fd49006ec5b733a393",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.c",
+      "tested_sha256": "b1c78bf1ac87ee2fa4b0ee6eef1d90e5c0dbd82a9911f0bd056e1a507f68d97c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.c",
+      "current_sha256": "b1c78bf1ac87ee2fa4b0ee6eef1d90e5c0dbd82a9911f0bd056e1a507f68d97c",
+      "mapping": "exact",
+      "git_blob_sha256": "1e770a4f5b061b615d96c32204b72e35b4aa2504037751cb2533a0e7a2c5a986",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c",
+      "tested_sha256": "284f4f276ba6a5b3938b4e04371fad1bb8a193ba1a48a5f2227b7ebcccbee65e",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c",
+      "current_sha256": "284f4f276ba6a5b3938b4e04371fad1bb8a193ba1a48a5f2227b7ebcccbee65e",
+      "mapping": "exact",
+      "git_blob_sha256": "a4a434e676adf764c3419104f9cf56a5e853133727d12ed9cf77d19418043979",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c",
+      "tested_sha256": "7eed22678948e0410a68e22b1c3e34f514f7ae552682c06dc800ca31edbc45db",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c",
+      "current_sha256": "7eed22678948e0410a68e22b1c3e34f514f7ae552682c06dc800ca31edbc45db",
+      "mapping": "exact",
+      "git_blob_sha256": "8cf19c1cf93c169671bbeecf219a15383b1065cb447da2d8b085e30df74aefda",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c",
+      "tested_sha256": "e993478e5664295c316faf6bbbac1e0570f971bd286c61c4c159ddd4fe5a1e04",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c",
+      "current_sha256": "e993478e5664295c316faf6bbbac1e0570f971bd286c61c4c159ddd4fe5a1e04",
+      "mapping": "exact",
+      "git_blob_sha256": "aeb315263bfa2cc7cb92747c034ff2ff458109362ea9d9eedd5107ecdc3e7a9d",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.c",
+      "tested_sha256": "c880549f1cb3b11d2ea13ad103df90033d649ba90579912bcf00c5aeb4dad671",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.c",
+      "current_sha256": "c880549f1cb3b11d2ea13ad103df90033d649ba90579912bcf00c5aeb4dad671",
+      "mapping": "exact",
+      "git_blob_sha256": "1b806f49d32627fc482a5a0ef88ff84d16abab945e0d9d90e42fd6d8ec0c20cd",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c",
+      "tested_sha256": "33b47d7d958362e2bc5188309832f1b50a4fafacf72bc302a9f6172a0ac409eb",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c",
+      "current_sha256": "33b47d7d958362e2bc5188309832f1b50a4fafacf72bc302a9f6172a0ac409eb",
+      "mapping": "exact",
+      "git_blob_sha256": "73b10a838258ecdbf7e50cac58329e56d2359539f077ae77cc1b4d605cdb73f0",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c",
+      "tested_sha256": "d41621b6cecdb2453439e28e22e090f14417d56525e062e936653e0d70f370f1",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c",
+      "current_sha256": "d41621b6cecdb2453439e28e22e090f14417d56525e062e936653e0d70f370f1",
+      "mapping": "exact",
+      "git_blob_sha256": "06a42baca1eb08f5a623b2715c5ab1ed6992c2322acb212b08a68f54117747f4",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.c",
+      "tested_sha256": "10b8ddb82329adf2c8d36d53e11036c575bcd29584d35d5b4cec073d07b2c1b5",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.c",
+      "current_sha256": "10b8ddb82329adf2c8d36d53e11036c575bcd29584d35d5b4cec073d07b2c1b5",
+      "mapping": "exact",
+      "git_blob_sha256": "f5451a6c0c778ba080b5f7975b2a578874514038c10f41c8754cc11b139f51eb",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi_ex.c",
+      "tested_sha256": "32c8504b02ff667ec4e8bcd2b99dfba90acc9d38e427057aeb484305d01426aa",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi_ex.c",
+      "current_sha256": "32c8504b02ff667ec4e8bcd2b99dfba90acc9d38e427057aeb484305d01426aa",
+      "mapping": "exact",
+      "git_blob_sha256": "891d136112a8b229cd214fe7d18e68b1f7dc2b3dca4cf65a68595f6f5b243f51",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dfsdm.c",
+      "tested_sha256": "a11eb151680697c63daa71c74a2d7caf06b03a3709de70af51ef947666c835f3",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dfsdm.c",
+      "current_sha256": "a11eb151680697c63daa71c74a2d7caf06b03a3709de70af51ef947666c835f3",
+      "mapping": "exact",
+      "git_blob_sha256": "2bdc717e06f717c740ff7de065a6510477348b6bb46f1a532ec8798f1f354057",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c",
+      "tested_sha256": "f5c9be9b38748729eb576778ad4a9e1db1b7684757ed2f76e28a826e70d80f0c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c",
+      "current_sha256": "f5c9be9b38748729eb576778ad4a9e1db1b7684757ed2f76e28a826e70d80f0c",
+      "mapping": "exact",
+      "git_blob_sha256": "665e9128b7393b90dffa131a23ad8d2c39de9d4e388b74d39d69903270240770",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.c",
+      "tested_sha256": "72e3c2fa96a202b0f8fecc3971d5ac8de0478d38625c05e66772e21c9aaaeb7d",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.c",
+      "current_sha256": "72e3c2fa96a202b0f8fecc3971d5ac8de0478d38625c05e66772e21c9aaaeb7d",
+      "mapping": "exact",
+      "git_blob_sha256": "9c63c5df84bf13b61f0ddbc2f685b903ff6fdb1be25801e346296d3cf72a4d54",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c",
+      "tested_sha256": "053e6d5a07d79d693f2e6e6dadcce094d4df7db958f7c51545295fa41589b47c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c",
+      "current_sha256": "053e6d5a07d79d693f2e6e6dadcce094d4df7db958f7c51545295fa41589b47c",
+      "mapping": "exact",
+      "git_blob_sha256": "dba5354fbd3e82cb40511b2efc7477c1b3de43596bd2add6c9a483b7774e2042",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dsi.c",
+      "tested_sha256": "66d20b3369c7b6c297cbce521634c980bd1f9d6f0613c4b0e3213f46d47e7c2d",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dsi.c",
+      "current_sha256": "66d20b3369c7b6c297cbce521634c980bd1f9d6f0613c4b0e3213f46d47e7c2d",
+      "mapping": "exact",
+      "git_blob_sha256": "6811c6371c7b5669f7801045e5fb1fd8e5449c04ba3a5a86cc30c5eaec33bd48",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c",
+      "tested_sha256": "1170cc417019144d593c1b65428dd9b89863b350c780063b6991d2ce47780aa6",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c",
+      "current_sha256": "1170cc417019144d593c1b65428dd9b89863b350c780063b6991d2ce47780aa6",
+      "mapping": "exact",
+      "git_blob_sha256": "8eb91ce22ff2c0676b457b5ccc3dc1021d7a6f15ce4272c769b614de6287ae58",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c",
+      "tested_sha256": "d1ac2a8541a2c5e243f140396e9de879e6bf36172682cd1d31fd75e6197505bd",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c",
+      "current_sha256": "d1ac2a8541a2c5e243f140396e9de879e6bf36172682cd1d31fd75e6197505bd",
+      "mapping": "exact",
+      "git_blob_sha256": "0e73180d40ebffcbeba94fd23ee1a8dc46a72557b06d06db35306ec3eff1e9bf",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c",
+      "tested_sha256": "d44e97fe3edf71496d8945aa7583f07e1a583c00c80d94818cb6598a794b3cb4",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c",
+      "current_sha256": "d44e97fe3edf71496d8945aa7583f07e1a583c00c80d94818cb6598a794b3cb4",
+      "mapping": "exact",
+      "git_blob_sha256": "707c7af3f2cd737f5ca1d7200b4cb133665a3aefd10f8707ff5f0810aa4c7894",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c",
+      "tested_sha256": "b89eb6f00f456a40f029a23f67d38c26c2bf9c276620099f80d19c85b084d75d",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c",
+      "current_sha256": "b89eb6f00f456a40f029a23f67d38c26c2bf9c276620099f80d19c85b084d75d",
+      "mapping": "exact",
+      "git_blob_sha256": "718370e6898f91ff2c64b85c8b1f03552eedcd64cced1331932ea4e6314af25b",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c",
+      "tested_sha256": "4133261fd04c8f176dc631eaf35859ed1cc2fd4ead5681f6dc4a7022b1fbf73c",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c",
+      "current_sha256": "4133261fd04c8f176dc631eaf35859ed1cc2fd4ead5681f6dc4a7022b1fbf73c",
+      "mapping": "exact",
+      "git_blob_sha256": "f2a587bba78184cf6fa76120d6d1df04b63b1e102fb67eb3c553ec9270219073",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c.c",
+      "tested_sha256": "7b6270df04ea9b5ef7062fca24814f611f74ddf619d0582156919e8766e9197a",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c.c",
+      "current_sha256": "7b6270df04ea9b5ef7062fca24814f611f74ddf619d0582156919e8766e9197a",
+      "mapping": "exact",
+      "git_blob_sha256": "d744bd4bf74caa5e1b6c6ac08c140950329568c6c2e175b40cfe2a280f37afc6",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c_ex.c",
+      "tested_sha256": "2afbe257eeb73973bbae994572d4c88c77490c010a9372882f5efbfae098529d",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c_ex.c",
+      "current_sha256": "2afbe257eeb73973bbae994572d4c88c77490c010a9372882f5efbfae098529d",
+      "mapping": "exact",
+      "git_blob_sha256": "318e1a833c0b38bb0138da528d30d4ab7018c8c704ef438f0445c7ab5709616a",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c",
+      "tested_sha256": "1fd44f4bc05fa30c57473031dcbe7712a401022651b907a9cadca91f33146579",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c",
+      "current_sha256": "1fd44f4bc05fa30c57473031dcbe7712a401022651b907a9cadca91f33146579",
+      "mapping": "exact",
+      "git_blob_sha256": "333ce6258f4c6977ca2360c6a9023c5f21412d1ad4be441d34d4b65fc5b3f5c5",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.c",
+      "tested_sha256": "2317851b279147980938bbf5c14827462a69fb56490ac96463b72a64459faca0",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.c",
+      "current_sha256": "2317851b279147980938bbf5c14827462a69fb56490ac96463b72a64459faca0",
+      "mapping": "exact",
+      "git_blob_sha256": "59d406f876a8322d82279270c24bb9f03270447ee6dd29d05913cbf798a3fb25",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.c",
+      "tested_sha256": "01b8d1139672569b81f75a293dafce2b768703e56e9b464b405bb7529c84bcdc",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.c",
+      "current_sha256": "01b8d1139672569b81f75a293dafce2b768703e56e9b464b405bb7529c84bcdc",
+      "mapping": "exact",
+      "git_blob_sha256": "4d804feec72c458a699c1dd981f4c2d30e67df264d5baff2312e3d536d252e37",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c",
+      "tested_sha256": "b9bc32d0b0fffddbdfa13b90fd9b4217e2e08191b846c74c111e7dbfadb31511",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c",
+      "current_sha256": "b9bc32d0b0fffddbdfa13b90fd9b4217e2e08191b846c74c111e7dbfadb31511",
+      "mapping": "exact",
+      "git_blob_sha256": "797057d3093d52563e12d9db47c0fe80d8da088212a10dfe0e03b01e83828803",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c",
+      "tested_sha256": "8b5ff5de660bf1009cac724c88b9e7b2a4265423a42190b394eef213bc699d69",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c",
+      "current_sha256": "8b5ff5de660bf1009cac724c88b9e7b2a4265423a42190b394eef213bc699d69",
+      "mapping": "exact",
+      "git_blob_sha256": "16ae350646c81c91e2659a94257801e7cfe6f0454da825946832f1ef88fe2063",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c",
+      "tested_sha256": "8b85421fe815031086e964fdc437886b90b5b308501d83651177021195d6cca2",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c",
+      "current_sha256": "8b85421fe815031086e964fdc437886b90b5b308501d83651177021195d6cca2",
+      "mapping": "exact",
+      "git_blob_sha256": "53809221eb1656a85f637d522c520404ca707003a74e7df207adeb8226975c99",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c",
+      "tested_sha256": "0ec087acf6769ba108fde19e5ebb49e2947e6bd1a0ccd81ece18724452d84509",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c",
+      "current_sha256": "0ec087acf6769ba108fde19e5ebb49e2947e6bd1a0ccd81ece18724452d84509",
+      "mapping": "exact",
+      "git_blob_sha256": "bd6dbbc18a14bfdb30328f90021f008bcaa1b524af67a7d0fcf91e3cc1961041",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c",
+      "tested_sha256": "78b43d6f12e5d460fec0798b8ca8c5f50fcbe60943a74e3443e9c0e9459b93a1",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c",
+      "current_sha256": "78b43d6f12e5d460fec0798b8ca8c5f50fcbe60943a74e3443e9c0e9459b93a1",
+      "mapping": "exact",
+      "git_blob_sha256": "f0d9f45df2234146338b53098fa6074f5756f4607c0e0d24fc1f815c19c563f1",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.c",
+      "tested_sha256": "2ddb858ed74bfc5465d6aec4aaf2cf38dc66c4467f68f20fef7e5926dfb326a6",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.c",
+      "current_sha256": "2ddb858ed74bfc5465d6aec4aaf2cf38dc66c4467f68f20fef7e5926dfb326a6",
+      "mapping": "exact",
+      "git_blob_sha256": "d8076438837cb704d334478870c9ea4b634d404fd4fd2b4b2f611ade9a157c5f",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c",
+      "tested_sha256": "eb653daeba376bc3a9d3d29a25ab12a41159948172766e4f64b4e2ba29f648c2",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c",
+      "current_sha256": "eb653daeba376bc3a9d3d29a25ab12a41159948172766e4f64b4e2ba29f648c2",
+      "mapping": "exact",
+      "git_blob_sha256": "4be7b0655903f733093f656a06e3e0ccdba185c32f0b5d91b41aed18f0772867",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_lptim.c",
+      "tested_sha256": "faad12799d31b7c251d88fcadb00f0836b65660fd0f2e3afa3436748a2e7600e",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_lptim.c",
+      "current_sha256": "faad12799d31b7c251d88fcadb00f0836b65660fd0f2e3afa3436748a2e7600e",
+      "mapping": "exact",
+      "git_blob_sha256": "2a558073be085cc8b7c914f08f3fbf9e2aa39accf7852c1cd10e32ce9fb518e4",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.c",
+      "tested_sha256": "3b8659b94db71331736fa3488f84153b97c1ec37df85948c16ba4bcd2d866e07",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.c",
+      "current_sha256": "3b8659b94db71331736fa3488f84153b97c1ec37df85948c16ba4bcd2d866e07",
+      "mapping": "exact",
+      "git_blob_sha256": "98eb284e52a188f2945bd2b07b8d1995796d6a90e3ec79d1b62d7d487b7dea40",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.c",
+      "tested_sha256": "2f131648ead0292127eaa438f473952960bde4f1ce685402a8a3beaba726a0ec",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.c",
+      "current_sha256": "2f131648ead0292127eaa438f473952960bde4f1ce685402a8a3beaba726a0ec",
+      "mapping": "exact",
+      "git_blob_sha256": "1ae3f11b51fb9a8a8cf9ac784eda73dbe47e538132f99a380d4f48931d3271ba",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_mmc.c",
+      "tested_sha256": "d026018c59e87a0f5bb01cd60f156c9d3250a4d3cc035efd57b8af6bf8a5ee16",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_mmc.c",
+      "current_sha256": "d026018c59e87a0f5bb01cd60f156c9d3250a4d3cc035efd57b8af6bf8a5ee16",
+      "mapping": "exact",
+      "git_blob_sha256": "283adf3ebc097465e2348cc12fb8a291cf6ad413190d473c05c15d59c03db0eb",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.c",
+      "tested_sha256": "8882bd9682e265237d6a45dd502da1ab22ff14f72d5e6c6fecb948f8d01fc138",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.c",
+      "current_sha256": "8882bd9682e265237d6a45dd502da1ab22ff14f72d5e6c6fecb948f8d01fc138",
+      "mapping": "exact",
+      "git_blob_sha256": "c0fe260140d9728380dc5bccb9128577d15c07baf9b23daed0476ea1fdd95a2c",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.c",
+      "tested_sha256": "6f9862b61bf4c32e704844d6f2b1f24cd80d58eed13e35c47968b88387afaa8d",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.c",
+      "current_sha256": "6f9862b61bf4c32e704844d6f2b1f24cd80d58eed13e35c47968b88387afaa8d",
+      "mapping": "exact",
+      "git_blob_sha256": "d395a2d9abb5b8fc4ef25b1d468cab6d476e5d55eb9f9e3edcf06f8252dc70cb",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.c",
+      "tested_sha256": "6df1a79cd1b7d72aaa79a42bbb22e866ee0e62795ce18b93aa222b78853151a0",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.c",
+      "current_sha256": "6df1a79cd1b7d72aaa79a42bbb22e866ee0e62795ce18b93aa222b78853151a0",
+      "mapping": "exact",
+      "git_blob_sha256": "7d62190584995fab67e1d6c7d75a7fc8022ad8ce91f9b1f42f57aeb655c78bd9",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.c",
+      "tested_sha256": "6ed6c56e705f1b58e9993da8c7bac27e3e6d00ed7b5695d9483f3bef2a33d83a",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.c",
+      "current_sha256": "6ed6c56e705f1b58e9993da8c7bac27e3e6d00ed7b5695d9483f3bef2a33d83a",
+      "mapping": "exact",
+      "git_blob_sha256": "7280494cb2d5b1efc597b157114c70ea8ebdaf246a0a0f80e0b5e15087383bf6",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c",
+      "tested_sha256": "db6b5f29b98e82927b152497c179a13cb9f50eaa63872355bb844af99fc999a9",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c",
+      "current_sha256": "db6b5f29b98e82927b152497c179a13cb9f50eaa63872355bb844af99fc999a9",
+      "mapping": "exact",
+      "git_blob_sha256": "e567f5b4482930133df4f0305d3c709f02e9f9ebebc9faf58cd031221c3b40bd",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c",
+      "tested_sha256": "95ffef5ae6b0592c8d2915b3ae474bc35464ef0ac6c158c44df76078baa7b456",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c",
+      "current_sha256": "95ffef5ae6b0592c8d2915b3ae474bc35464ef0ac6c158c44df76078baa7b456",
+      "mapping": "exact",
+      "git_blob_sha256": "8bc5e0c358129cfe8c28a20d9d7ef0ef9f3b7cbd1f7e4e19e4d8d7f673a78207",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c",
+      "tested_sha256": "e3871d182e08e8df39fdf44b95a50c2044c5710540f86b25361c18a65b919d1f",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c",
+      "current_sha256": "e3871d182e08e8df39fdf44b95a50c2044c5710540f86b25361c18a65b919d1f",
+      "mapping": "exact",
+      "git_blob_sha256": "93c1e966e01347e5c9216d581e5a1c5f7d4537b60e095c4946678faa6ac2937f",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c",
+      "tested_sha256": "162086981ff41b78e08bfb4c526500e07bf5edac59deaad3e367f2acfbc81434",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c",
+      "current_sha256": "162086981ff41b78e08bfb4c526500e07bf5edac59deaad3e367f2acfbc81434",
+      "mapping": "exact",
+      "git_blob_sha256": "3e218c62dfcacd62c17e6f5af3897b0b0c2d9ef5310a2ce84f7d074febfcafbf",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_qspi.c",
+      "tested_sha256": "72b59a5d85b2a351df08ca645e27021658044cdf2ab0305d887fe60820cf1705",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_qspi.c",
+      "current_sha256": "72b59a5d85b2a351df08ca645e27021658044cdf2ab0305d887fe60820cf1705",
+      "mapping": "exact",
+      "git_blob_sha256": "817458583c73aa297fb75eae1980b49d930eea7ab1b0ea09b820707a5f2a7ccc",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c",
+      "tested_sha256": "103d6eb1b0f808de7d9e723abe61c229ae644b6da658acfddb3039308c8880c0",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c",
+      "current_sha256": "103d6eb1b0f808de7d9e723abe61c229ae644b6da658acfddb3039308c8880c0",
+      "mapping": "exact",
+      "git_blob_sha256": "f1f74ddc01d42d8fad2a74c2e98de3c224d079c488b5f3929d857b0a7af073e0",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c",
+      "tested_sha256": "c76ccea0401869aec36dec95378950d80483cb696d05bc5f4cd96cbd67876225",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c",
+      "current_sha256": "c76ccea0401869aec36dec95378950d80483cb696d05bc5f4cd96cbd67876225",
+      "mapping": "exact",
+      "git_blob_sha256": "49cbdfc1608707535e3c55e0a93a7c251e963f0b5779c08847b5dafd750a1bbf",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.c",
+      "tested_sha256": "036a7c0a66821b0b41bc170b2f3559ba15c1df07dfefdc16cc9b926b6c270b07",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.c",
+      "current_sha256": "036a7c0a66821b0b41bc170b2f3559ba15c1df07dfefdc16cc9b926b6c270b07",
+      "mapping": "exact",
+      "git_blob_sha256": "d4d7fcafd9afda789e1e1ca155497301697cbd57d0920fe64db7d48168af4b82",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c",
+      "tested_sha256": "a35509b4646ffd9a35e343fe60e5292dcd5b8df8927dff4f0a2235545d0761e4",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c",
+      "current_sha256": "a35509b4646ffd9a35e343fe60e5292dcd5b8df8927dff4f0a2235545d0761e4",
+      "mapping": "exact",
+      "git_blob_sha256": "f84848d3c92604825027eb4c7015be94bf7389f908dfadf28e9256ad763482f4",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c",
+      "tested_sha256": "f18d4d81614818b96db2dc623e6628c0207771da6ce3ebc0f9734571b51e6615",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c",
+      "current_sha256": "f18d4d81614818b96db2dc623e6628c0207771da6ce3ebc0f9734571b51e6615",
+      "mapping": "exact",
+      "git_blob_sha256": "3cb0f4b126506a5173b02c08f759b30b90387fe8bd43f3988aca04ea0ba1f593",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.c",
+      "tested_sha256": "7780523baf5ed88addc13e9ea55f24adf331a60aa8286b73a79b793a6552b193",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.c",
+      "current_sha256": "7780523baf5ed88addc13e9ea55f24adf331a60aa8286b73a79b793a6552b193",
+      "mapping": "exact",
+      "git_blob_sha256": "2c81086f8d0def122c9b52fe564933d52f83eadb0a22dd9f8475abc263c84c37",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai_ex.c",
+      "tested_sha256": "f2cdce998da623fa6cb0312f5e88b3813a217f72e505924bb6f1f989336e3334",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai_ex.c",
+      "current_sha256": "f2cdce998da623fa6cb0312f5e88b3813a217f72e505924bb6f1f989336e3334",
+      "mapping": "exact",
+      "git_blob_sha256": "2f3d732812b9a43209b7dee189d45a62950f9211fe01a3626080ca2b3bff4eb9",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.c",
+      "tested_sha256": "1c2343f18e9b208fed132cdc08f0d85ab10be73b49b7394e6a93e389c79c1041",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.c",
+      "current_sha256": "1c2343f18e9b208fed132cdc08f0d85ab10be73b49b7394e6a93e389c79c1041",
+      "mapping": "exact",
+      "git_blob_sha256": "e770d57d8d7572f30c2928b692ecea99333f171464ff3401edc6dd0c363a50f3",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.c",
+      "tested_sha256": "2dfae928bad7ab2606144e809e459bb53a453a349c9a9642b245fd9175373232",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.c",
+      "current_sha256": "2dfae928bad7ab2606144e809e459bb53a453a349c9a9642b245fd9175373232",
+      "mapping": "exact",
+      "git_blob_sha256": "2b9d7233afaa707b5fa97717c4db13a2bc40c44ed95f1cb28383349af8aa86af",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.c",
+      "tested_sha256": "e08981103b5777506f9fc4924c119cbe268a3e8efe0a68d5b24b62f1e5333b38",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.c",
+      "current_sha256": "e08981103b5777506f9fc4924c119cbe268a3e8efe0a68d5b24b62f1e5333b38",
+      "mapping": "exact",
+      "git_blob_sha256": "b7e6a4955ea1d565064e495aa7aee03ef6e5fa72d10652a81d3313978ce9ffbc",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smbus.c",
+      "tested_sha256": "f1d47708a5ea8c403467338b0c5d98fb3da2cafdbb0b722edc0b446a13ba31ed",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smbus.c",
+      "current_sha256": "f1d47708a5ea8c403467338b0c5d98fb3da2cafdbb0b722edc0b446a13ba31ed",
+      "mapping": "exact",
+      "git_blob_sha256": "f04dc1ba0dc3e6d13f82e57686195b443e97bdb928ecdc6765a1ad379fe693ff",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spdifrx.c",
+      "tested_sha256": "62f8ca57f661a3827f327159837484ce576ad69b412c022c10d45024b424a186",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spdifrx.c",
+      "current_sha256": "62f8ca57f661a3827f327159837484ce576ad69b412c022c10d45024b424a186",
+      "mapping": "exact",
+      "git_blob_sha256": "f71b89f58118613869cd0aded14fc3876d1311d508f43677e16b1cb1dd63bc96",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c",
+      "tested_sha256": "2ab503cd3a5569a172e4b793c28b9546ca97ec51d6a665af79716000cfa08cea",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c",
+      "current_sha256": "2ab503cd3a5569a172e4b793c28b9546ca97ec51d6a665af79716000cfa08cea",
+      "mapping": "exact",
+      "git_blob_sha256": "d5a8d9b6210f91eae805204cb19a35f90633443b663d15f730a6ad103c43c9b3",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.c",
+      "tested_sha256": "e99a64392758f77997443e6df6418873ad3ae11c536fcdfef4f3cdaa3814945e",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.c",
+      "current_sha256": "e99a64392758f77997443e6df6418873ad3ae11c536fcdfef4f3cdaa3814945e",
+      "mapping": "exact",
+      "git_blob_sha256": "9068b75f4e888f937542d184954ba38c40fd1092c469f26eabcfa1e64fea45e9",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c",
+      "tested_sha256": "f931e73a824287d71af7fb47d2d8bceca5ed871fd273b12a8eaf72b810c59656",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c",
+      "current_sha256": "f931e73a824287d71af7fb47d2d8bceca5ed871fd273b12a8eaf72b810c59656",
+      "mapping": "exact",
+      "git_blob_sha256": "000d90c786c2f6f81711f4b3e05f214bd6a89c83166ce080d5f339141166a399",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c",
+      "tested_sha256": "5fc0c341627a9e26376cf83330431b8f9723347f7c57855e63ba6959649de433",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c",
+      "current_sha256": "5fc0c341627a9e26376cf83330431b8f9723347f7c57855e63ba6959649de433",
+      "mapping": "exact",
+      "git_blob_sha256": "122c9acab0469df743c85a246783bab3b23645a47a7cca57dcfaaae8d52bb33f",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c",
+      "tested_sha256": "4551ab1934d2f37de6f3e6afcf7d3bf9e1d918f48f5d11299daebb85e9e793ab",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c",
+      "current_sha256": "4551ab1934d2f37de6f3e6afcf7d3bf9e1d918f48f5d11299daebb85e9e793ab",
+      "mapping": "exact",
+      "git_blob_sha256": "a1229fbcc0a9b53f37455fe3f56139c8c5c6a79a70c40ce66026d9af75297014",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c",
+      "tested_sha256": "4ffec1dee52d90620f52a0264f69d8edcaa1935d865263e720a123c0f6b2edec",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c",
+      "current_sha256": "4ffec1dee52d90620f52a0264f69d8edcaa1935d865263e720a123c0f6b2edec",
+      "mapping": "exact",
+      "git_blob_sha256": "56492f392634ed21dc63c446ff24c427ebc1cb9b7d5d9ccf0e41adf945f8fa07",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c",
+      "tested_sha256": "8bac57deb958d08f5acc28fbf0d1cc753d8248c313b7eb98147658d32f4451ff",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c",
+      "current_sha256": "8bac57deb958d08f5acc28fbf0d1cc753d8248c313b7eb98147658d32f4451ff",
+      "mapping": "exact",
+      "git_blob_sha256": "ff0876dd55a6884b76dbf70806f00940266fe53cfacad5a412af7747e323e9d9",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c",
+      "tested_sha256": "09499c0aecade0af170de6ad20e4e8e12ff09c40dc95a068c8dc28634f09f981",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c",
+      "current_sha256": "09499c0aecade0af170de6ad20e4e8e12ff09c40dc95a068c8dc28634f09f981",
+      "mapping": "exact",
+      "git_blob_sha256": "0c96ca1169dfa9325e9a779ddd8b67e04fbe78d9343fecb5dc8612fc9f08c005",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_crc.c",
+      "tested_sha256": "b4e6b68b05aaa757fea4e2fffe1843a4d8bf5f9eb6b143b1e162d4e92d6fea59",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_crc.c",
+      "current_sha256": "b4e6b68b05aaa757fea4e2fffe1843a4d8bf5f9eb6b143b1e162d4e92d6fea59",
+      "mapping": "exact",
+      "git_blob_sha256": "70ad2b1262bc6921c2ea9849d9a46ec7253c96389db991e19a7372ba8a1c4801",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dac.c",
+      "tested_sha256": "86c4c363497f33a044d3733ab50b9dcb3a78f717e71ca289918242cf6ab3924f",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dac.c",
+      "current_sha256": "86c4c363497f33a044d3733ab50b9dcb3a78f717e71ca289918242cf6ab3924f",
+      "mapping": "exact",
+      "git_blob_sha256": "c9d7d7ae7ff222c19325f3363f41a70e29fc24c438d8b305bee17e6ac483636d",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dma.c",
+      "tested_sha256": "eda6c91137e3fbb0f2527488497f9e8b7e1f0fb7f0ebd85b235b2b5ddc4fb290",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dma.c",
+      "current_sha256": "eda6c91137e3fbb0f2527488497f9e8b7e1f0fb7f0ebd85b235b2b5ddc4fb290",
+      "mapping": "exact",
+      "git_blob_sha256": "0c82f30a667d2b080161ebf9e6ea830aca3e0ea35e496ffae723e6d7a5ec13cf",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dma2d.c",
+      "tested_sha256": "3cc2c5aa589c5e497f9bd80294353f6fd2d13d6e512d1dcc5a0720359a51eaed",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dma2d.c",
+      "current_sha256": "3cc2c5aa589c5e497f9bd80294353f6fd2d13d6e512d1dcc5a0720359a51eaed",
+      "mapping": "exact",
+      "git_blob_sha256": "33c0f4065a03de68e4cbf3b4253477e98d71b56a39b6830a06501f3edc983d23",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_exti.c",
+      "tested_sha256": "caad9d4eb6d21f74cfee0900d150db73b604e4e9ff86d8aa64c7cb6fe83df3ad",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_exti.c",
+      "current_sha256": "caad9d4eb6d21f74cfee0900d150db73b604e4e9ff86d8aa64c7cb6fe83df3ad",
+      "mapping": "exact",
+      "git_blob_sha256": "3e208a3ae10772fc048fe400d8e131eb83ab181d6e30b6cf0a58ba290ed4a972",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.c",
+      "tested_sha256": "6911eda9f557e3a65c299ad99ae3784ec6601bf5e4641af70757d580457b58f2",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.c",
+      "current_sha256": "6911eda9f557e3a65c299ad99ae3784ec6601bf5e4641af70757d580457b58f2",
+      "mapping": "exact",
+      "git_blob_sha256": "2cf0a01dab47fefbe060f1c546760554ac9bdc3ddf368cd6ebd5f835530201bc",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.c",
+      "tested_sha256": "9c3b29b9bf928cade7f813b12ce4a3fc1fe71d2b9a66d68b64c77b28c74dcb93",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.c",
+      "current_sha256": "9c3b29b9bf928cade7f813b12ce4a3fc1fe71d2b9a66d68b64c77b28c74dcb93",
+      "mapping": "exact",
+      "git_blob_sha256": "2205b6bf0914bbde643263e94f9114ba9f380731ed5edbcbf29eee6b62d75d85",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c",
+      "tested_sha256": "2ca2c02a78f014df1af2d2dd469cdb612144440f6f98df93fa629846427b7995",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c",
+      "current_sha256": "2ca2c02a78f014df1af2d2dd469cdb612144440f6f98df93fa629846427b7995",
+      "mapping": "exact",
+      "git_blob_sha256": "6dd925e87371cf6a5a322d5410a336f60495ce1c453994e399b56d37770deacf",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_i2c.c",
+      "tested_sha256": "b0220826667d2bb23de9be3b858abbfdfa8138444fc38de32f86a5f93881a8cc",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_i2c.c",
+      "current_sha256": "b0220826667d2bb23de9be3b858abbfdfa8138444fc38de32f86a5f93881a8cc",
+      "mapping": "exact",
+      "git_blob_sha256": "92488cd8eb7663f566581ba3569daae6609d15e0995d419ab82b6b07fbe87d3c",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_lptim.c",
+      "tested_sha256": "94490c3a41e36af3e6e3f3825afb546593d4cc441a2a6ffb7dee57d1806895fb",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_lptim.c",
+      "current_sha256": "94490c3a41e36af3e6e3f3825afb546593d4cc441a2a6ffb7dee57d1806895fb",
+      "mapping": "exact",
+      "git_blob_sha256": "5908265eafb29a4c7fb01e25b4298f6d100097dedcce353473c1a0136fdc910a",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_pwr.c",
+      "tested_sha256": "2266f1f2781290ff70f2fcd8ed6d23ad5d3c1b0fec596898bb658f77abbd91e3",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_pwr.c",
+      "current_sha256": "2266f1f2781290ff70f2fcd8ed6d23ad5d3c1b0fec596898bb658f77abbd91e3",
+      "mapping": "exact",
+      "git_blob_sha256": "b68ab25095ea8842137e383c5313c6d7e04901959bb86d525b6ed09176453f6c",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rcc.c",
+      "tested_sha256": "75cb55a42accc8b8ed6a31a4c3a1f4279eb3454db744bfbb22890bd9262d6254",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rcc.c",
+      "current_sha256": "75cb55a42accc8b8ed6a31a4c3a1f4279eb3454db744bfbb22890bd9262d6254",
+      "mapping": "exact",
+      "git_blob_sha256": "1657cdb4dd466b15560acce2b7b22477d74d423c726032a1a4060197d70d961a",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rng.c",
+      "tested_sha256": "b1ace24c21a814d2ce8fd4ea53cf2ce670c11e746b88707bf76a302ca8fc3f63",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rng.c",
+      "current_sha256": "b1ace24c21a814d2ce8fd4ea53cf2ce670c11e746b88707bf76a302ca8fc3f63",
+      "mapping": "exact",
+      "git_blob_sha256": "bdf6dfb15b2d91cd3b772118bd164c58bb776ed247372de21c99b9737ca76fd5",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rtc.c",
+      "tested_sha256": "231a74d6fed6ec0d509871ce4c404ed1e12d24bba8132b89ada41ba461a67832",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rtc.c",
+      "current_sha256": "231a74d6fed6ec0d509871ce4c404ed1e12d24bba8132b89ada41ba461a67832",
+      "mapping": "exact",
+      "git_blob_sha256": "46a3f1ae71f426f04dbf611c0edb5ba7675a2c89fe66446d65724fbb753f47e3",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c",
+      "tested_sha256": "f6938329c0b5b37c9d93939db16aba16641de737fea0ddb17fff97154b18bf35",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c",
+      "current_sha256": "f6938329c0b5b37c9d93939db16aba16641de737fea0ddb17fff97154b18bf35",
+      "mapping": "exact",
+      "git_blob_sha256": "bd00bb1525213c9be29881537f31f862e6a703db7fd516b20518f86c16a959eb",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_spi.c",
+      "tested_sha256": "69b23f50ad5b008be30187a34a20bd3b7c4c5b4ab923c0059625a00c84156022",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_spi.c",
+      "current_sha256": "69b23f50ad5b008be30187a34a20bd3b7c4c5b4ab923c0059625a00c84156022",
+      "mapping": "exact",
+      "git_blob_sha256": "4e0e510f9aeb64642ae3da18e31a71c3d871b34845fbae14b62677b8af049413",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.c",
+      "tested_sha256": "b1b206d7cf0942dfa106183ff2938584ab7683bf25443ab4fa5e103656188077",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.c",
+      "current_sha256": "b1b206d7cf0942dfa106183ff2938584ab7683bf25443ab4fa5e103656188077",
+      "mapping": "exact",
+      "git_blob_sha256": "abf68428d591a783072308e47bd65c7bea81c28b26665b3f62473587c2413955",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usart.c",
+      "tested_sha256": "12418ae94f55c11b3012fa0cdf67cb7510d81ef32dfb189ad8ff6d6f15878cae",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usart.c",
+      "current_sha256": "12418ae94f55c11b3012fa0cdf67cb7510d81ef32dfb189ad8ff6d6f15878cae",
+      "mapping": "exact",
+      "git_blob_sha256": "b93d6524be2db39047963846cb6ea5e4cf4607f29ba68e2ec280deb74949f76d",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c",
+      "tested_sha256": "62fc245d5de766dea8ac038e7c03fb35c285e881131a94f69b31a3e54052e511",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c",
+      "current_sha256": "62fc245d5de766dea8ac038e7c03fb35c285e881131a94f69b31a3e54052e511",
+      "mapping": "exact",
+      "git_blob_sha256": "62b5a9ffba9b6e69ccac53a141f47f927f2637feb2bc30b7a63e6639a220b5a1",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_utils.c",
+      "tested_sha256": "a474499b70eb591b878fde2b538da80029bc1c80be3411c6bcbb5a1e9e15c107",
+      "tag_path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_utils.c",
+      "current_sha256": "a474499b70eb591b878fde2b538da80029bc1c80be3411c6bcbb5a1e9e15c107",
+      "mapping": "exact",
+      "git_blob_sha256": "621ab02e8df6cc5075e325ae5087597b5889c0f6daca19b0761ce57aecaf036c",
+      "reconstruct_tested_line_endings": "lf_to_crlf"
+    },
+    {
+      "path": "MDK-ARM/IndustrialTerminal.sct",
+      "tested_sha256": "537063f0cb264c39f79835fd3ee2e5bf86f6b8c5bc3b15e2a697bb9cdd74958c",
+      "tag_path": "MDK-ARM/IndustrialTerminal.sct",
+      "current_sha256": "537063f0cb264c39f79835fd3ee2e5bf86f6b8c5bc3b15e2a697bb9cdd74958c",
+      "mapping": "exact",
+      "git_blob_sha256": "537063f0cb264c39f79835fd3ee2e5bf86f6b8c5bc3b15e2a697bb9cdd74958c",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "MDK-ARM/IndustrialTerminal.uvprojx",
+      "tested_sha256": "816cf27209633d804b5291bffbf220889dbe7d2ec4374b5ca8e8a4ec44a58c87",
+      "tag_path": "MDK-ARM/IndustrialTerminal.uvprojx",
+      "current_sha256": "816cf27209633d804b5291bffbf220889dbe7d2ec4374b5ca8e8a4ec44a58c87",
+      "mapping": "exact",
+      "git_blob_sha256": "816cf27209633d804b5291bffbf220889dbe7d2ec4374b5ca8e8a4ec44a58c87",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Tools/communication_bench.py",
+      "tested_sha256": "dd18e7d25c806401bf80a8824713ac2f2c13e1dffe97782a1a4b7234ed909d88",
+      "tag_path": "Tools/communication_bench.py",
+      "current_sha256": "dd18e7d25c806401bf80a8824713ac2f2c13e1dffe97782a1a4b7234ed909d88",
+      "mapping": "exact",
+      "git_blob_sha256": "dd18e7d25c806401bf80a8824713ac2f2c13e1dffe97782a1a4b7234ed909d88",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Tools/pc_can_request_bench.py",
+      "tested_sha256": "9dee054becebe8751de62508cf0b1db218a401daf49b5a9a9311bc4bbdfb9d19",
+      "tag_path": "Tools/pc_can_request_bench.py",
+      "current_sha256": "9dee054becebe8751de62508cf0b1db218a401daf49b5a9a9311bc4bbdfb9d19",
+      "mapping": "exact",
+      "git_blob_sha256": "9dee054becebe8751de62508cf0b1db218a401daf49b5a9a9311bc4bbdfb9d19",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Tools/pc_rs485_ping_pong.py",
+      "tested_sha256": "9a1e95ced0c40a169742c5b54e684e9dea0e8fff00992dac92e01ff3b69d54b0",
+      "tag_path": "Tools/pc_rs485_ping_pong.py",
+      "current_sha256": "9a1e95ced0c40a169742c5b54e684e9dea0e8fff00992dac92e01ff3b69d54b0",
+      "mapping": "exact",
+      "git_blob_sha256": "9a1e95ced0c40a169742c5b54e684e9dea0e8fff00992dac92e01ff3b69d54b0",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Tools/pc_uplink_receiver.py",
+      "tested_sha256": "227cbcfd91d17c0b1055764dade85d138587d289838d6ab9922ac35c66efe40e",
+      "tag_path": "docs/TestRecords/2026-10-22_communication_01/scripts/pc_uplink_receiver.py",
+      "current_sha256": "90b8ea84d3f679fbd75bf6d93f2ba91eade520b0263a5af433875c4e911aa231",
+      "mapping": "help_text_and_docstring; tested original retained",
+      "git_blob_sha256": "227cbcfd91d17c0b1055764dade85d138587d289838d6ab9922ac35c66efe40e",
+      "reconstruct_tested_line_endings": "identity"
+    },
+    {
+      "path": "Tools/run_communication_session.py",
+      "tested_sha256": "9ba789a88612b9722e500a6330fb17ed251cadebe0538782cb36ac6a1c32dad4",
+      "tag_path": "Tools/run_communication_session.py",
+      "current_sha256": "9ba789a88612b9722e500a6330fb17ed251cadebe0538782cb36ac6a1c32dad4",
+      "mapping": "exact",
+      "git_blob_sha256": "9ba789a88612b9722e500a6330fb17ed251cadebe0538782cb36ac6a1c32dad4",
+      "reconstruct_tested_line_endings": "identity"
+    }
+  ],
+  "git_text_line_endings": "Git LF/CRLF normalization is explicit per file; reconstruction changes line endings only."
+}
