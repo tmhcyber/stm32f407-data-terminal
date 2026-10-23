@@ -4,7 +4,7 @@
 
 - [通信测试总览](2026-10-22_communication_01/README.md)：RS4851000轮及一小时36000轮，CAN1 Hz 1800次。
 - [测试方法与结果](2026-10-22_communication_01/RESULTS.md)：时间预算、并行负载、统计口径和采集连续性。
-- [主机自动化检查](2026-10-22_host_01/README.md)：Python检查、生产C断言及CAN场景分类记录。
+- [主机侧自动化检查](2026-10-22_host_01/README.md)：Python检查、生产C断言及CAN场景分类记录。
 - [记录格式](TEMPLATE.md)：日期、commit、开发板、适配器、波特率、脚本版本和结果字段。
 
 ## 可追溯设计

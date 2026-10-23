@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-23",
+  "tag": "v1.0-bench",
+  "compiler": "Arm Compiler 5.06 update 7 build 960",
+  "rebuild_result": "0 errors, 0 warnings",
+  "measured_axf_sha256": "340c13838941ad25195882a43034510c63e97908474d0b9f4f3033d0ef119374",
+  "rebuilt_axf_sha256": "1129951f6c2646333fa3143558e8ddc8fa0dfc1ad30f4985d40279b96752e40e",
+  "axf_file_identical": false,
+  "measured_pt_load_segments": [
+    {
+      "physical_address": "0x8000000",
+      "virtual_address": "0x8000000",
+      "file_size": 27512,
+      "memory_size": 31688,
+      "flags": 2147483655,
+      "sha256": "169129b8d73db1d7629b29fe712cc44fec4974c663d2bb2cffe1de32dc64fc5c"
+    }
+  ],
+  "rebuilt_pt_load_segments": [
+    {
+      "physical_address": "0x8000000",
+      "virtual_address": "0x8000000",
+      "file_size": 27512,
+      "memory_size": 31688,
+      "flags": 2147483655,
+      "sha256": "169129b8d73db1d7629b29fe712cc44fec4974c663d2bb2cffe1de32dc64fc5c"
+    }
+  ],
+  "pt_load_segments_identical": true,
+  "entry_point_identical": true,
+  "board_test_performed": false
+}

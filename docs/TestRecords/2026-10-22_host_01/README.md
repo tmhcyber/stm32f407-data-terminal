@@ -1,4 +1,4 @@
-# 主机侧自动化验证
+# 主机侧自动化检查
 
 ```text
 schema: TestRecord-v1
