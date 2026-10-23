@@ -14,7 +14,7 @@
 1. 裸机：打开 `MDK-ARM/IndustrialTerminal.uvprojx`，选择 `IndustrialTerminal`。当前入口 `Core/Src/main.c` 的 `APP_CAN_EXTERNAL_TEST=1` 使用外部 CAN / HSE 25 MHz；0 为原静默回环入口。初始化只有一个 CAN2 所有者。
 2. RTOS：打开 `Experiments/FreeRTOS_Queue/MDK-ARM/FreeRTOS_Queue.uvprojx`，选择 `FreeRTOS_Queue`。使用仓库共享BSP、SHT30、HAL/CMSIS与内核。
 
-可在 uVision 中 Rebuild，要求检查本次日志的错误与警告。裸机输出位于根 `Output/`；RTOS 输出位于实验的 `Output/`。若首次构建提示输出目录不存在，创建目标目录后重试。工程不包含作者 `.uvoptx` / `.uvguix` 用户调试状态，DAP 的型号与 SWD 设置须在本机选择。
+在 uVision 中 Rebuild 后查看构建日志。裸机输出位于根 `Output/`；RTOS 输出位于实验的 `Output/`。首次构建时创建对应输出目录，在本机选择 DAP 型号与 SWD 设置；uVision 将调试配置保存在本机 `.uvoptx` / `.uvguix` 文件中。
 
 也可在根目录执行 RTOS 构建 helper（展示副本将原硬编码 Keil 路径改为参数）：
 
@@ -33,9 +33,9 @@
 | RS485 | USART2 PA2=TX、PA3=RX；PC0 高发送、低接收；115200 8N1 |
 | CAN2 | PB13=TX、PB12=RX；J13 CANH/CANL，对端共地；500 kbit/s |
 
-开发板 J40：1-2 提供 CAN/485_3V3；RS485 3-5 / 4-6 连接 PA2/PA3；5-7 / 6-8 的 RS232 路径断开。改线和跳帽先断开所有供电。不要让信号线连接到未供电收发器而 MCU 已上电。实际板型不同须按其原理图核对，不能照搬跳帽。
+开发板 J40：1-2 提供 CAN/485_3V3；RS485 3-5 / 4-6 连接 PA2/PA3；5-7 / 6-8 的 RS232 路径断开。接线顺序：断开全部供电，按对应板型原理图设置跳帽、连接信号线与共地，再为 MCU 和收发器供电。
 
-CAN目标拓扑为两端各120Ω。本项目实测采用现有短线连接，USB-CAN终端状态记录见具体实验配置；换线或扩展拓扑时核对端接电阻。PB12/PB13 与板载音频功能复用，不同时启用。PA2 与以太网 MDIO 复用，不能默认 RS485 与板载以太网同时工作。
+CAN目标拓扑为两端各120Ω。实测短线连接及USB-CAN端接配置见对应测试记录；扩展拓扑时按总线两端配置端接电阻。引脚分配：PB12/PB13选择CAN功能，关闭复用的板载音频功能；PA2选择RS485发送功能，关闭复用的以太网MDIO功能。
 
 ## 演示选择
 

@@ -27,7 +27,7 @@ SensorDiagnostics更新/复制使用短临界区，I2C、队列、延时和UART�
 
 正常窗口约40秒、14条报告，采集及UART错误字段0，见[正常UART](../evidence/rtos_normal_uart.txt)。
 
-采用运行时地址 `0x44→0x45→0x44` 制造命令NACK并恢复。日志含4条no_new_data和8条恢复采样；最后旧值seq389、首条恢复seq390，累计fail24，恢复后last0，历史命令失败阶段与原因保留，见[恢复UART](../evidence/rtos_recovery_uart.txt)。这是软件地址注入实验，使用原接线和供电。
+在接线与供电保持不变的条件下，将运行时地址设为 `0x44→0x45→0x44`，注入命令NACK并恢复。日志含4条no_new_data和8条恢复采样；最后旧值seq389、首条恢复seq390，累计fail24，恢复后last0，历史命令失败阶段与原因保留，见[恢复UART](../evidence/rtos_recovery_uart.txt)。
 
 日志中旧有效值的age最高出现2746ms，质量、年龄和当前诊断共同解释数据新鲜度；恢复后的有效序号继续推进。该设计将“本轮恢复正常”和“历史出现过失败”同时保留下来，便于现场追查。
 
