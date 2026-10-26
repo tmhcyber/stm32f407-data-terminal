@@ -83,7 +83,7 @@ RS485专项实测：红色PA3为接收，橙色PA2为发送；PC0控制收发方
 | FreeRTOS采集与上报 | [任务源码](Experiments/FreeRTOS_Queue/Application/Src/app_queue_experiment.c) · [设计与实测](docs/RTOS.md) |
 | 实板日志、波形和测试条件 | [验证证据](docs/EVIDENCE.md) |
 | 具体职责与设计取舍 | [贡献说明](docs/CONTRIBUTIONS.md) |
-| 项目作品集 | [4页PDF](portfolio/project-portfolio.pdf) |
+| 项目作品集 | [5页PDF](portfolio/project-portfolio.pdf) |
 
 ## 工程组织与许可
 

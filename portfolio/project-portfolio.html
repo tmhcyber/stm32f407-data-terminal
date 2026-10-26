@@ -1,93 +1,28 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>陶铭浩 · STM32项目作品集</title><style>
-@page { size:A4; margin:0; }
-* { box-sizing:border-box; }
-body { margin:0; color:#1e2c3b; background:#e8edf1; font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif; font-size:10pt; line-height:1.55; }
-.page { width:210mm; height:297mm; background:white; padding:15mm 17mm 13mm; position:relative; margin:8mm auto; break-after:page; }
-.page:last-child { break-after:auto; }
-.body { height:255mm; }
-.top { display:flex; justify-content:space-between; color:#627486; font-size:8pt; letter-spacing:.6px; border-bottom:1px solid #d9e3e9; padding-bottom:3mm; margin-bottom:5mm; }
-.eyebrow { color:#187b83; font-size:9pt; letter-spacing:1px; font-weight:bold; margin:0 0 2mm; }
-h1 { font-size:25pt; line-height:1.3; margin:0 0 4mm; letter-spacing:-.4px; }
-h2 { font-size:19pt; line-height:1.35; margin:0 0 4mm; }
-h3 { font-size:11pt; color:#126a73; margin:0 0 2mm; }
-p { margin:0 0 2.5mm; }
-.lead { font-size:11pt; color:#536777; }
-.muted { color:#657784; }
-.tags { display:flex; gap:2mm; margin:4mm 0 5mm; flex-wrap:wrap; }
-.tags span { background:#eaf3f3; padding:1mm 2.8mm; color:#196971; font-size:8.5pt; }
-.section { margin-top:4mm; }
-.grid { display:grid; grid-template-columns:1fr 1fr; gap:4mm; }
-.card { border:1px solid #dbe5e8; padding:3mm; border-radius:2mm; }
-.bar { border-left:3px solid #21868c; padding:3mm 4mm; background:#edf6f6; margin:4mm 0; }
-.small { font-size:8.5pt; line-height:1.6; }
-.caption { font-size:8pt; line-height:1.5; color:#5f7180; margin-top:2mm; }
-.flow { display:flex; gap:2mm; align-items:center; margin:3mm 0; }
-.node { flex:1; background:#f0f5f7; border-top:3px solid #187b83; text-align:center; padding:3mm 1mm; font-size:9pt; }
-.node b { display:block; }
-.arrow { color:#18818a; font-size:16pt; }
-.rule { margin:4mm 0; border-bottom:1px solid #dbe5e8; }
-table { width:100%; border-collapse:collapse; font-size:9pt; line-height:1.6; }
-th { text-align:left; background:#edf3f6; font-weight:normal; color:#456271; }
-td,th { padding:1.9mm 2.5mm; border-bottom:1px solid #dfe7eb; vertical-align:top; }
-.metric { display:flex; gap:4mm; margin:4mm 0; }
-.metric > div { flex:1; background:#edf6f6; padding:3mm; }
-.metric b { display:block; font-size:21pt; color:#116f78; line-height:1.3; }
-.metric span { font-size:8pt; }
-pre { font:8.5pt/1.6 Consolas,"Microsoft YaHei",monospace; white-space:pre-wrap; overflow-wrap:anywhere; margin:2.5mm 0; background:#edf2f5; padding:2.5mm 4mm; color:#213c50; }
-code { font-family:Consolas,"Microsoft YaHei",monospace; font-size:.95em; }
-.img { width:100%; display:block; border:1px solid #dbe4e8; }
-.footer { position:absolute; bottom:10mm; left:17mm; right:17mm; display:flex; justify-content:space-between; border-top:1px solid #dbe5e8; padding-top:2mm; font-size:7.5pt; color:#70808a; }
-.steps { display:grid; grid-template-columns:10mm 1fr; gap:2mm 3mm; }
-.num { color:#187b83; font-size:17pt; line-height:1.3; }
-.steps p { font-size:9.5pt; line-height:1.5; margin-bottom:1.5mm; }
-.evidence { font-size:7.7pt; color:#667b88; overflow-wrap:anywhere; margin-top:3mm; }
-@media print { body { background:white; } .page { margin:0; } }
-
-.metric b {font-size:18pt;} a {color:#126a73;text-decoration:none;} .source {font-size:8pt;overflow-wrap:anywhere;color:#657784;}
-</style></head><body>
-<section class="page"><div class="body">
-<div class="top"><span>陶铭浩 / 嵌入式软件 · 2027届</span><span>PROJECT PORTFOLIO / 2026.10.22</span></div>
-<p class="eyebrow">01 / 项目概览</p><h1>STM32F407ZG<br>数据采集与通信终端</h1>
-<p class="lead">把采集、通信和故障诊断连成可观察、可验证的闭环。<br>个人项目 · C / HAL / Keil · 2026.07 至今</p>
-<div class="tags"><span>C / Cortex-M4</span><span>I2C / UART</span><span>RS485 / 经典CAN</span><span>Fault / IWDG</span><span>FreeRTOS</span></div>
-<div class="bar"><h3>我的主要工作</h3><p class="small">设计RS485状态、超时与恢复规则，结合波形和Watch独立定位时间下溢根因；编写CAN校验、编码和队列核心逻辑；围绕数据新鲜度选择FreeRTOS最新值邮箱，编写测量与失败记录流程。</p></div>
-<div class="section"><h3>裸机采集与通信主线</h3><div class="flow"><div class="node"><b>SHT30</b>I2C / CRC</div><span class="arrow">→</span><div class="node"><b>周期采集</b>重试 / 恢复</div><span class="arrow">→</span><div class="node"><b>统一快照</b>质量 / 时间 / 序号</div><span class="arrow">→</span><div class="node"><b>USART1</b>PC上行解析</div></div></div>
-<div class="grid"><div class="card"><h3>通信与系统诊断</h3><p class="small">USART2/RS485处理CRLF成帧、超时与重同步，TC后释放半双工方向；CAN2接收中断入队，主循环校验并回复温湿度。Fault保留异常现场，IWDG按健康状态决定刷新。</p></div><div class="card"><h3>FreeRTOS独立目标</h3><p class="small">复用SHT30驱动，采集任务与上报任务通过容量1覆盖邮箱交换最新值。质量、序号、年龄和失败阶段共同解释数据状态。</p></div></div>
-<div class="section"><h3>平台与工程组织</h3><table><tr><th>硬件</th><td>野火STM32F407ZG霸天虎V2、SHT30、CH340、USB-RS485 / USB-CAN</td></tr><tr><th>工具</th><td>Keil / ARMCC 5.06、Watch、逻辑分析仪、PCAN、Python</td></tr><tr><th>分层</th><td>Core装配；Application策略；Components器件协议；BSP板级资源与HAL适配</td></tr></table></div>
-<p class="source" style="margin-top:4mm">在线源码、设计案例与完整日志：<br><a href="https://github.com/tmhcyber/stm32f407-data-terminal">github.com/tmhcyber/stm32f407-data-terminal</a></p>
-</div><div class="footer"><span>陶铭浩 · 数据采集与通信终端</span><span>01 / 04</span></div></section>
-<section class="page"><div class="body">
-<div class="top"><span>通信与数据连续性验证</span><span>MEASUREMENT / 2026.10.22</span></div>
-<p class="eyebrow">02 / 量化结果</p><h2>持续请求应答，采集同步推进</h2>
-<div class="metric"><div><b>36000 / 36000</b><span>RS485目标10 Hz，一小时</span></div><div><b>1800 / 1800</b><span>CAN目标1 Hz，约30分钟</span></div><div><b>3605条</b><span>SHT30上行连续VALID/OK</span></div></div>
-<p>RS485另完成连续1000/1000轮。各通信窗口的PC超时、错误与跳过时隙均为0；正式窗口前30分钟两条总线并行，SHT30采集与UART上报持续运行。</p>
-<div class="section"><h3>协议与统计方法</h3><table><tr><th>RS485</th><td>115200 8N1；精确V1|PING / V1|PONG，CRLF结束</td></tr><tr><th>CAN</th><td>500 kbit/s；标准数据帧123h / 1 / 01请求，322h / 5响应</td></tr><tr><th>业务校验</th><td>检查ID、类型、DLC、温湿度编码和VALID质量，完整应用响应计为成功</td></tr><tr><th>统计依据</th><td>原始TX/RX、逐轮判定、连续轮号和汇总独立核对一致</td></tr></table></div>
-<div class="section"><h3>端到端响应时间</h3><table><tr><th>窗口</th><th>实际时长</th><th>PC RTT P95</th><th>最大RTT</th></tr><tr><td>RS485连续1000轮</td><td>2.332秒</td><td>2.465 ms</td><td>3.953 ms</td></tr><tr><td>RS485一小时</td><td>3600.001秒</td><td>2.491 ms</td><td>6.521 ms</td></tr><tr><td>CAN1800次</td><td>1799.023秒</td><td>2.875 ms</td><td>3.503 ms</td></tr></table><p class="caption">RTT包含USB、PC调度和日志处理；周期以逐轮发送时间核对。板端采样推进由UART中的MCU时间戳核对。</p></div>
-<div class="bar"><h3>负载下的采集连续性</h3><p class="small">SHT30序号5920→9524，每次加1；采样时间5919015→9523015 ms，每次增加1000 ms。3605条报文解析正确，温湿度全部VALID/OK，捕获期间无序号或采样时间回退。</p></div>
-<div class="section"><h3>测试方法与版本追溯</h3><p class="small">保留完整压缩日志、UTC与单调时间、执行脚本快照及固件/脚本SHA256。源码与证据归档于v1.0-bench，测试基线9688122+dirty与319项文件映射关联；固件AXF及完整执行标识可由每项记录核对。</p></div>
-<p class="source">证据入口：docs/TestRecords/2026-10-22_communication_01/RESULTS.md<br>独立核验：verification.json；主机检查：Python119项、生产C477项断言及CAN16场景，BSP/HAL使用测试替身。</p>
-</div><div class="footer"><span>完整应用响应 · 原始日志 · 版本指纹</span><span>02 / 04</span></div></section>
-<section class="page"><div class="body">
-<div class="top"><span>我的代表性故障分析</span><span>RS485 / ROOT CAUSE</span></div>
-<p class="eyebrow">03 / 从现象推导根因</p><h2>波形完整，为什么PING没有响应？</h2><p class="lead">主循环旧时间与ISR新时间交错，首字节被误判超时。</p>
-<div class="steps"><span class="num">1</span><div><h3>用波形和计数定位处理阶段</h3><p>PC超时，PA3请求完整，PC0保持低，PA2没有输出。Watch为RX9、完整帧1、超时1、语义无效1、有效PING0、UART错误0。我先确认请求到达，再定位到产生回复之前的应用处理。</p></div><span class="num">2</span><div><h3>构造时间顺序，独立解释全部现象</h3><p>主循环先保存now_ms=1000，ISR随后记录首字节1001。无符号差变为大数，超过100ms阈值并清除V；剩余1|PING仍可成帧，却匹配失败。</p></div></div>
-<pre>主循环 now=1000 → ISR rx_tick=1001 → 消费事件
-uint32_t(1000 - 1001) = 4,294,967,295
-原判定：差值 ≥ 100 ms → 假超时 → 丢失首字节</pre>
-<div class="steps"><span class="num">3</span><div><h3>修正时间方向，保留Tick回绕语义</h3><p>先要求模差小于0x80000000，再比较100ms阈值。该方案区分未来半区时间戳与正常经过时间，恢复精确PONG。</p></div><span class="num">4</span><div><h3>回到半双工链路核对方向</h3><p>TC在最后停止位完成后触发，随后释放PC0；TXE表示数据寄存器空。对照正常响应波形，核对方向控制与实际线时。</p></div></div>
-<img class="img" style="margin-top:3mm" src="../evidence/rs485_tc.png" alt="RS485正常响应及方向控制波形">
-<p class="caption">正常响应回归波形：PA3请求 → PC0拉高 → PA2响应 → PC0拉低。9字节、115200 8N1理论线时0.781ms，方向高电平约0.80ms。</p>
-<p class="small" style="margin-top:3mm">后续验证覆盖分段、超长重同步、UART ORE恢复与A/B极性对照；2026-10-22 HSE版进一步完成连续1000轮和一小时36000轮。</p>
-<p class="source">诊断依据：docs/CASE_RS485.md，Application/Src/app_rs485_service.c，evidence/rs485_tc.png。</p>
-</div><div class="footer"><span>现象 → 区分实验 → 时间推理 → 修复 → 回归</span><span>03 / 04</span></div></section>
-<section class="page"><div class="body">
-<div class="top"><span>任务设计与个人贡献</span><span>FREERTOS / ENGINEERING</span></div>
-<p class="eyebrow">04 / 任务与数据交换</p><h2>慢上报需要最新值，怎样处理积压？</h2><p>根据显示当前温湿度的目标，我选择容量1覆盖邮箱，编写测量启动、转换等待、读取、换算和成功发布核心流程，并用诊断记录解释失败与恢复。</p>
-<div class="flow"><div class="node"><b>A / 采集</b>测量 + CRC成功后发布</div><span class="arrow">→</span><div class="node"><b>单格邮箱</b>xQueueOverwrite</div><span class="arrow">→</span><div class="node"><b>B / 上报</b>数据副本 + 诊断快照</div></div>
-<p class="small">A每轮末延时1秒，B上报后延时3秒，周期包含工作耗时；邮箱保持最新值，B已取出的副本独立。诊断更新与复制采用短临界区，外设访问放在临界区外。</p>
-<div class="section"><h3>正常采集与命令NACK恢复（2026-10-04 / v4）</h3><table><tr><th>正常窗口</th><td>约40秒、14条报告，采集与UART错误字段0</td></tr><tr><th>故障方法</th><td>运行时地址0x44→0x45→0x44，制造命令NACK并恢复</td></tr><tr><th>响应与恢复</th><td>4条no_new_data，8条恢复采样；最后旧值seq389，首条恢复seq390</td></tr><tr><th>诊断保留</th><td>累计fail24；恢复后last0，历史阶段和错误码继续保留</td></tr></table></div>
-<div class="section"><h3>我的工作与实现入口</h3><table><tr><th>通信规则与诊断</th><td>RS485状态、超时和恢复规则；独立推导时间下溢；CAN请求校验、编码和队列核心逻辑</td></tr><tr><th>系统策略</th><td>Fault记录接受/消费规则，IWDG健康门控条件与验收选择</td></tr><tr><th>任务与验证</th><td>最新值邮箱策略、测量与失败记录流程、实板联调及边界验收</td></tr></table></div>
-<p class="small" style="margin-top:4mm">我负责上述设计决策、核心逻辑、实板联调与故障分析，并根据计数、波形及日志验收。开发中使用Codex辅助实现、工程适配和测试集成；具体职责与设计取舍见贡献说明。</p>
-<div class="bar"><h3>快速审阅路径</h3><p class="small">README：量化结果与代码入口<br>docs/CONTRIBUTIONS.md：具体职责与设计判断<br>docs/CASE_RS485.md：真实故障诊断<br>docs/TestRecords：通信、采集和主机检查完整日志</p></div>
-</div><div class="footer"><span>设计决策 · 核心逻辑 · 实板联调 · 故障分析</span><span>04 / 04</span></div></section>
-</body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>陶铭浩 · STM32F407 项目作品集</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #eef4f5; color: #18323d;
+      font: 16px/1.6 "Microsoft YaHei", sans-serif; }
+    header { max-width: 1100px; margin: auto; padding: 24px; }
+    h1 { margin: 0 0 8px; font-size: 24px; }
+    p { margin: 8px 0; }
+    a { color: #087f7b; }
+    iframe { display: block; width: min(1100px, 100%); height: 85vh;
+      margin: 0 auto 24px; border: 1px solid #cadadd; background: white; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>STM32F407ZG 数据采集与通信终端</h1>
+    <p>陶铭浩 · 2027届 · 项目作品集（5页，2026-10-25修订）</p>
+    <p><a href="project-portfolio.pdf">打开或下载 PDF</a> ·
+      <a href="../README.md">返回项目说明</a></p>
+  </header>
+  <iframe src="project-portfolio.pdf" title="陶铭浩的五页 STM32F407 项目作品集"></iframe>
+</body>
+</html>
