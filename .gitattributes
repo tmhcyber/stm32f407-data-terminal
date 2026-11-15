@@ -7,3 +7,4 @@
 *.ps1 text eol=lf
 *.uvprojx text eol=lf
 evidence/modbus/** -text -whitespace
+*.pdf binary
