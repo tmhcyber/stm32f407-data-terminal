@@ -1,12 +1,14 @@
-# STM32F407ZG 数据采集与通信终端
+# STM32F407 数据采集终端 · Modbus RTU / RS485 / CAN / FreeRTOS
 
 陶铭浩 · 2027届 · 嵌入式软件 / MCU固件方向
 
-**一个STM32终端：采集温湿度，通过串口、RS485和CAN与电脑通信，并记录通信异常和程序故障。**
+**从 SHT30 采集温湿度，通过 Modbus RTU、RS485、CAN 对外提供数据；用质量状态、Fault 现场与看门狗健康门控处理异常。**
+
+`C` · `STM32 HAL` · `Cortex-M4` · `Modbus RTU` · `RS485 半双工` · `CAN` · `I2C` · `FreeRTOS` · `波形调试`
 
 我设计RS485状态、超时与恢复规则，编写CAN校验、编码与队列核心逻辑，并完成实板联调和时间下溢故障定位；在FreeRTOS固件中设计最新值邮箱策略，编写采集与失败记录流程。
 
-**怎么复现：** 下载[`v1.0-bench`](https://github.com/tmhcyber/stm32f407-data-terminal/tree/v1.0-bench)，按[接线与运行说明](docs/BUILD.md)用Keil编译下载，再运行PC工具观察采样与请求应答。
+**运行演示：** 按[构建与接线](docs/BUILD.md)运行 `Tools/build_modbus_demo.ps1`，下载 Modbus＋诊断配置，再用通用主站读取温湿度与数据质量。[协议与实测](docs/MODBUS_RTU.md) · [个人贡献](docs/CONTRIBUTIONS.md) · [5页作品集](portfolio/project-portfolio.pdf)
 
 ## 我的主要工作
 
@@ -16,8 +18,26 @@
 
 [设计决策与个人贡献](docs/CONTRIBUTIONS.md)提供实现入口和验证依据。
 
+## Modbus RTU 实板成果（2026-11-15）
+
+PC 主站 → USB-RS485 → STM32 → SHT30 数据快照。地址 **1**，**115200 8E1**，功能码 **0x04**；三个输入寄存器提供温度、湿度与质量状态。
+
+| 验证内容 | 实测结果 |
+| --- | --- |
+| 正常连续读取 | **600/600 成功，0 通信错误**；10 Hz 设置，60.120 s |
+| 异常请求与恢复 | **11 个边界/异常场景通过**，各场景后正常读取恢复 |
+| 采集 NACK 与恢复 | **320/320 读取成功**；有效 → 陈旧 → 离线 → 有效，保留最近样本 |
+| RS485 方向波形 | 8 MS/s、10 组事务；末停止位完成后 **6.02～6.14 μs** 释放方向 |
+| Linux 网关兼容 | 5 s 暖机＋30 s 测试；29 条遥测、6 条诊断入库，29 条遥测获 MQTT 确认 |
+
+![Modbus 请求、应答与 RS485 方向实测](evidence/modbus/waveform/timing.png)
+
+D0=PA3 RX，D1=PA2 TX，D2=PC0 方向；80 个请求字节、110 个应答字节与 PC 收发记录逐字节一致。停止位末端由同次 UART 边沿拟合位宽计算，采样分辨率 0.125 μs。
+
+[报文、故障恢复与波形证据](evidence/modbus/README.md) · [寄存器表与复现步骤](docs/MODBUS_RTU.md) · [源码及固件哈希核验](evidence/modbus/MANIFEST.json)
+
 <!-- TEST_RESULTS_BEGIN -->
-## 测试结果
+## RS485 / CAN 通信验证（2026-10-22）
 
 | 日期 | 提交（测试基线） | 测试项目 | 规模 | 结果 | 日志 |
 | --- | --- | --- | --- | --- | --- |
@@ -43,7 +63,7 @@ STM32F407ZG开发板、SHT30、UTS-T02串口适配器、UTC-T01 CAN适配器与f
 flowchart LR
     MCU["STM32F407ZG<br/>霸天虎 V2"] <-->|"I2C1 · PB8 SCL / PB9 SDA"| S["SHT30<br/>3V3 / GND"]
     MCU -->|"USART1 · PA9 / J80<br/>115200 8N1"| U["板载 CH340<br/>PC 采集串口"]
-    MCU <-->|"USART2 · PA2 TX / PA3 RX<br/>PC0 控制方向 · 115200 8N1"| R["板载 RS485 收发器<br/>A / B / 共地 → USB-RS485 → PC"]
+    MCU <-->|"USART2 · PA2 TX / PA3 RX<br/>PC0 控制方向 · Modbus 115200 8E1"| R["板载 RS485 收发器<br/>A / B / 共地 → USB-RS485 → PC"]
     MCU <-->|"CAN2 · PB13 TX / PB12 RX<br/>500 kbit/s"| C["板载 CAN 收发器 · J13<br/>CANH / CANL / 共地 → USB-CAN → PC"]
 ```
 
@@ -63,7 +83,7 @@ RS485专项实测：红色PA3为接收，橙色PA2为发送；PC0控制收发方
 
 ```text
 温湿度传感器 → 周期采集 → 最新数据 → 串口上报电脑
-电脑发起请求 → RS485 / CAN → 校验请求 → 返回应答
+电脑发起请求 → Modbus RTU / RS485 / CAN → 校验请求 → 返回数据快照
 程序运行监控 → 记录故障、判断运行状态 → 控制看门狗刷新
 
 独立FreeRTOS固件：采集任务 → 单格邮箱保留最新值 → 上报任务
@@ -76,6 +96,7 @@ RS485专项实测：红色PA3为接收，橙色PA2为发送；PC0控制收发方
 | 内容 | 入口 |
 | --- | --- |
 | 接线、编译下载、PC工具和测试命令 | [运行说明](docs/BUILD.md) |
+| Modbus RTU 帧、CRC与异常响应 | [协议核心](Middlewares/Modbus/Src/mb_rtu.c) · [业务映射](Application/Src/app_modbus_registers.c) |
 | RS485收发状态与时间判断 | [应用源码](Application/Src/app_rs485_service.c) |
 | CAN请求校验与温湿度编码 | [协议源码](Application/Src/app_can_protocol.c) |
 | CAN接收队列 | [队列源码](BSP/Src/bsp_can_rx_queue.c) |
@@ -87,6 +108,6 @@ RS485专项实测：红色PA3为接收，橙色PA2为发送；PC0控制收发方
 
 ## 工程组织与许可
 
-初始化与中断入口放在Core，业务流程放在Application，器件驱动放在Components，板级适配放在BSP；Drivers保留ST官方库，Middlewares提供独立实验使用的FreeRTOS内核，Tests/Tools提供主机侧检查与PC工具。
+初始化与中断入口放在Core，业务流程放在Application，器件驱动放在Components，板级适配放在BSP；Drivers保留ST官方库，Middlewares提供Modbus RTU协议核心与FreeRTOS内核，Tests/Tools提供主机侧检查与PC工具。
 
 第三方代码与许可见[THIRD_PARTY.md](THIRD_PARTY.md)。自编部分尚未另行授予通用开源许可证，供求职展示与审阅。

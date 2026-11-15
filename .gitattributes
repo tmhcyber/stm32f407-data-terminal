@@ -1,0 +1,9 @@
+* text=auto
+*.c text eol=lf
+*.h text eol=lf
+*.s text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.ps1 text eol=lf
+*.uvprojx text eol=lf
+evidence/modbus/** -text -whitespace

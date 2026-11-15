@@ -1,0 +1,45 @@
+{
+  "first_reading": {
+    "round": 1,
+    "temperature_c": 29.71,
+    "humidity_rh": 41.47,
+    "quality": "valid",
+    "registers": [
+      2971,
+      4147,
+      1
+    ],
+    "host_utc": "2026-11-15T03:42:00.781556+00:00",
+    "elapsed_s": 0.018761499999527587,
+    "round_trip_ms": 6.591400000615977
+  },
+  "last_reading": {
+    "round": 600,
+    "temperature_c": 29.85,
+    "humidity_rh": 41.48,
+    "quality": "valid",
+    "registers": [
+      2985,
+      4148,
+      1
+    ],
+    "host_utc": "2026-11-15T03:43:00.856608+00:00",
+    "elapsed_s": 60.09381130000111,
+    "round_trip_ms": 6.256599997868761
+  },
+  "request_span_s": 60.07504980000158,
+  "round_trip_ms": {
+    "min": 5.54539999939152,
+    "median": 5.8342499996797414,
+    "p95": 6.748899999365676,
+    "max": 33.42979999797535
+  },
+  "temperature_c_range": [
+    29.71,
+    29.85
+  ],
+  "humidity_rh_range": [
+    41.39,
+    41.83
+  ]
+}

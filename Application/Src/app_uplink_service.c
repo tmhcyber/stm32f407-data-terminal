@@ -5,6 +5,44 @@
 static App_DataSnapshot_t s_latest_snapshot;
 static App_UplinkMessage_t s_pending_message;
 static char s_tx_buffer[APP_UPLINK_TEXT_BUFFER_SIZE];
+#if APP_DIAGNOSTICS_ENABLED
+static App_Diagnostic_t s_diagnostic;
+static uint8_t s_diagnostic_pending, s_diagnostic_active;
+static uint32_t s_diagnostic_report_at, s_diagnostic_attempt_at;
+int App_UplinkService_DiagnosticDue(uint32_t now_ms)
+{
+  if ((uint32_t)(now_ms - s_diagnostic_report_at) < APP_DIAGNOSTIC_PERIOD_MS) return 0;
+  s_diagnostic_report_at = now_ms;
+  return 1;
+}
+void App_UplinkService_SubmitDiagnostic(const App_Diagnostic_t *record)
+{
+  if (s_diagnostic_pending != 0U) ++g_app_uplink_service_report.diagnostic_replaced;
+  s_diagnostic = *record;
+  s_diagnostic_pending = 1U;
+}
+static void App_UplinkService_TryDiagnostic(uint32_t now_ms)
+{
+  uint32_t length;
+  BSP_UART_Status_t status;
+  if ((s_diagnostic_pending == 0U) ||
+      ((uint32_t)(now_ms - s_diagnostic_attempt_at) < APP_DIAGNOSTIC_PERIOD_MS)) return;
+  s_diagnostic_attempt_at = now_ms;
+  if (!App_Diagnostic_Format(&s_diagnostic, s_tx_buffer, sizeof(s_tx_buffer), &length)) {
+    ++g_app_uplink_service_report.diagnostic_format_errors;
+    s_diagnostic_pending = 0U;
+    return;
+  }
+  status = BSP_UART1_WriteAsync((const uint8_t *)s_tx_buffer, (uint16_t)length);
+  if (status == BSP_UART_STATUS_OK) {
+    ++g_app_uplink_service_report.diagnostic_started;
+    s_diagnostic_active = 1U;
+    s_diagnostic_pending = 0U;
+    g_app_uplink_service_report.state = APP_UPLINK_SERVICE_STATE_SENDING;
+  } else if (status == BSP_UART_STATUS_BUSY) ++g_app_uplink_service_report.diagnostic_busy;
+  else ++g_app_uplink_service_report.diagnostic_errors;
+}
+#endif
 static uint8_t s_retry_waiting;
 static uint32_t s_last_start_attempt_at_ms;
 
@@ -30,6 +68,16 @@ static void App_UplinkService_ClearReport(void)
   g_app_uplink_service_report.coalesced_count = 0U;
   g_app_uplink_service_report.tx_busy_count = 0U;
   g_app_uplink_service_report.tx_error_count = 0U;
+  g_app_uplink_service_report.diagnostic_started = 0U;
+  g_app_uplink_service_report.diagnostic_completed = 0U;
+  g_app_uplink_service_report.diagnostic_busy = 0U;
+  g_app_uplink_service_report.diagnostic_errors = 0U;
+  g_app_uplink_service_report.diagnostic_format_errors = 0U;
+  g_app_uplink_service_report.diagnostic_replaced = 0U;
+#if APP_DIAGNOSTICS_ENABLED
+  s_diagnostic_pending = s_diagnostic_active = 0U;
+  s_diagnostic_report_at = s_diagnostic_attempt_at = 0U;
+#endif
 }
 
 static void App_UplinkService_SetPending(
@@ -71,6 +119,15 @@ static void App_UplinkService_HandleTxEvent(
   }
 
   g_app_uplink_service_report.state = APP_UPLINK_SERVICE_STATE_IDLE;
+#if APP_DIAGNOSTICS_ENABLED
+  if (s_diagnostic_active != 0U) {
+    s_diagnostic_active = 0U;
+    if (tx_event.type == BSP_UART_TX_EVENT_COMPLETE)
+      ++g_app_uplink_service_report.diagnostic_completed;
+    else ++g_app_uplink_service_report.diagnostic_errors;
+    return;
+  }
+#endif
   if (tx_event.type == BSP_UART_TX_EVENT_COMPLETE)
   {
     g_app_uplink_service_report.has_successful_transmission = 1U;
@@ -167,6 +224,9 @@ void App_UplinkService_Process(uint32_t now_ms)
   tx_event = BSP_UART1_TakeTxEvent();
   tx_completed_this_call =
     (uint8_t)(tx_event.type == BSP_UART_TX_EVENT_COMPLETE);
+#if APP_DIAGNOSTICS_ENABLED
+  if (s_diagnostic_active != 0U) tx_completed_this_call = 0U;
+#endif
   App_UplinkService_HandleTxEvent(tx_event);
 
   if (g_app_uplink_service_report.state ==
@@ -192,6 +252,9 @@ void App_UplinkService_Process(uint32_t now_ms)
 
   if (g_app_uplink_service_report.pending_valid == 0U)
   {
+#if APP_DIAGNOSTICS_ENABLED
+    App_UplinkService_TryDiagnostic(now_ms);
+#endif
     return;
   }
 

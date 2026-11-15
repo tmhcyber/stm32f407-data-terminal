@@ -1,4 +1,8 @@
 #include "bsp_rs485.h"
+#include "app_rs485_config.h"
+#if APP_RS485_MODBUS_ENABLED
+#include "bsp_modbus_time.h"
+#endif
 
 #include "stm32f4xx_hal.h"
 
@@ -74,6 +78,7 @@ static void BSP_RS485_ClearState(void)
   s_rx_tail = 0U;
   s_tx_event.type = BSP_RS485_TX_EVENT_NONE;
   s_tx_event.timestamp_ms = 0U;
+  s_tx_event.timestamp_us = 0U;
   s_tx_event.uart_error_flags = 0U;
   s_rx_fault_event.overflow_count = 0U;
   s_rx_fault_event.last_overflow_at_ms = 0U;
@@ -90,11 +95,20 @@ BSP_RS485_Status_t BSP_RS485_Init(void)
   BSP_RS485_ClearState();
   BSP_RS485_InitDirectionPin();
 
+#if APP_RS485_MODBUS_ENABLED
+  if (BSP_ModbusTime_Init() == 0U) return BSP_RS485_STATUS_ERROR;
+#endif
   s_uart2_handle.Instance = USART2;
   s_uart2_handle.Init.BaudRate = 115200U;
+#if APP_RS485_MODBUS_ENABLED
+  /* F4 HAL counts parity in WordLength: 9B+EVEN = 8 data bits + parity. */
+  s_uart2_handle.Init.WordLength = UART_WORDLENGTH_9B;
+  s_uart2_handle.Init.Parity = UART_PARITY_EVEN;
+#else
   s_uart2_handle.Init.WordLength = UART_WORDLENGTH_8B;
-  s_uart2_handle.Init.StopBits = UART_STOPBITS_1;
   s_uart2_handle.Init.Parity = UART_PARITY_NONE;
+#endif
+  s_uart2_handle.Init.StopBits = UART_STOPBITS_1;
   s_uart2_handle.Init.Mode = UART_MODE_TX_RX;
   s_uart2_handle.Init.HwFlowCtl = UART_HWCONTROL_NONE;
   s_uart2_handle.Init.OverSampling = UART_OVERSAMPLING_16;
@@ -201,6 +215,7 @@ BSP_RS485_Status_t BSP_RS485_AbortTransmit(void)
   s_tx_in_progress = 0U;
   s_tx_event.type = BSP_RS485_TX_EVENT_NONE;
   s_tx_event.timestamp_ms = 0U;
+  s_tx_event.timestamp_us = 0U;
   s_tx_event.uart_error_flags = 0U;
   if (primask == 0U)
   {
@@ -248,9 +263,11 @@ BSP_RS485_TxEvent_t BSP_RS485_TakeTxEvent(void)
   __disable_irq();
   event.type = s_tx_event.type;
   event.timestamp_ms = s_tx_event.timestamp_ms;
+  event.timestamp_us = s_tx_event.timestamp_us;
   event.uart_error_flags = s_tx_event.uart_error_flags;
   s_tx_event.type = BSP_RS485_TX_EVENT_NONE;
   s_tx_event.timestamp_ms = 0U;
+  s_tx_event.timestamp_us = 0U;
   s_tx_event.uart_error_flags = 0U;
   if (primask == 0U)
   {
@@ -303,12 +320,18 @@ void BSP_RS485_HandleRxCompleteIRQ(uint32_t timestamp_ms)
 {
   uint8_t queued_count;
   HAL_StatusTypeDef status;
+#if APP_RS485_MODBUS_ENABLED
+  uint32_t completed_us = BSP_ModbusTime_Micros();
+#endif
 
   if (s_initialized == 0U)
   {
     return;
   }
 
+#if APP_RS485_MODBUS_ENABLED
+  if (s_tx_in_progress != 0U) goto rearm_receive; /* Ignore local TX echo. */
+#endif
   queued_count = (uint8_t)(s_rx_head - s_rx_tail);
   if (queued_count >= BSP_RS485_RX_QUEUE_CAPACITY)
   {
@@ -321,9 +344,17 @@ void BSP_RS485_HandleRxCompleteIRQ(uint32_t timestamp_ms)
       s_rx_staging_byte;
     s_rx_queue[s_rx_head & BSP_RS485_RX_QUEUE_MASK].timestamp_ms =
       timestamp_ms;
+#if APP_RS485_MODBUS_ENABLED
+    s_rx_queue[s_rx_head & BSP_RS485_RX_QUEUE_MASK].timestamp_us = completed_us;
+#else
+    s_rx_queue[s_rx_head & BSP_RS485_RX_QUEUE_MASK].timestamp_us = 0U;
+#endif
     ++s_rx_head;
   }
 
+#if APP_RS485_MODBUS_ENABLED
+rearm_receive:
+#endif
   /*
    * HAL may deliver RxCpltCallback before ErrorCallback for the same byte.
    * Starting a new receive here would clear huart->ErrorCode, so let the
@@ -354,6 +385,9 @@ void BSP_RS485_HandleTxCompleteIRQ(uint32_t timestamp_ms)
 
   s_tx_in_progress = 0U;
   s_tx_event.timestamp_ms = timestamp_ms;
+#if APP_RS485_MODBUS_ENABLED
+  s_tx_event.timestamp_us = BSP_ModbusTime_Micros();
+#endif
   s_tx_event.uart_error_flags = 0U;
   s_tx_event.type = BSP_RS485_TX_EVENT_COMPLETE;
 }
@@ -377,6 +411,9 @@ void BSP_RS485_HandleUartErrorIRQ(uint32_t timestamp_ms,
   {
     s_tx_in_progress = 0U;
     s_tx_event.timestamp_ms = timestamp_ms;
+#if APP_RS485_MODBUS_ENABLED
+    s_tx_event.timestamp_us = BSP_ModbusTime_Micros();
+#endif
     s_tx_event.uart_error_flags = uart_error_flags;
     s_tx_event.type = BSP_RS485_TX_EVENT_ERROR;
   }
@@ -394,4 +431,29 @@ void BSP_RS485_HandleUartErrorIRQ(uint32_t timestamp_ms,
 void USART2_IRQHandler(void)
 {
   HAL_UART_IRQHandler(&s_uart2_handle);
+}
+
+uint8_t BSP_RS485_GetQuietTime(uint32_t *now_us)
+{
+#if APP_RS485_MODBUS_ENABLED
+  uint32_t primask;
+  uint8_t quiet = 0U;
+  if ((now_us == 0) || (s_initialized == 0U)) return 0U;
+  primask = __get_PRIMASK();
+  __disable_irq();
+  if ((s_rx_head == s_rx_tail) &&
+      (s_rx_fault_event.overflow_count == 0U) &&
+      (s_rx_fault_event.uart_error_count == 0U) &&
+      ((s_uart2_handle.Instance->SR &
+        (USART_SR_RXNE | USART_SR_ORE | USART_SR_FE | USART_SR_NE | USART_SR_PE)) == 0U))
+  {
+    *now_us = BSP_ModbusTime_Micros();
+    quiet = 1U;
+  }
+  if (primask == 0U) __enable_irq();
+  return quiet;
+#else
+  (void)now_us;
+  return 0U;
+#endif
 }

@@ -4,6 +4,7 @@
 #include <stdint.h>
 
 #include "app_snapshot_text_formatter.h"
+#include "app_diagnostic.h"
 
 #define APP_UPLINK_HEARTBEAT_PERIOD_MS  5000U
 #define APP_UPLINK_RETRY_PERIOD_MS       100U
@@ -42,6 +43,8 @@ typedef struct
   uint32_t coalesced_count;
   uint32_t tx_busy_count;
   uint32_t tx_error_count;
+  uint32_t diagnostic_started, diagnostic_completed, diagnostic_busy;
+  uint32_t diagnostic_errors, diagnostic_format_errors, diagnostic_replaced;
 } App_UplinkServiceReport_t;
 
 extern volatile App_UplinkServiceReport_t g_app_uplink_service_report;
@@ -50,5 +53,9 @@ App_UplinkServiceResult_t App_UplinkService_Init(void);
 App_UplinkServiceResult_t App_UplinkService_SubmitEvent(
   const App_SnapshotEvent_t *event);
 void App_UplinkService_Process(uint32_t now_ms);
+#if APP_DIAGNOSTICS_ENABLED
+int App_UplinkService_DiagnosticDue(uint32_t now_ms);
+void App_UplinkService_SubmitDiagnostic(const App_Diagnostic_t *record);
+#endif
 
 #endif

@@ -1,0 +1,30 @@
+{
+  "port": "COM7",
+  "baudrate": 115200,
+  "bytesize": 8,
+  "parity": "E",
+  "stopbits": 1,
+  "slave": 1,
+  "function": 4,
+  "address": 0,
+  "count": 3,
+  "requested_rounds": 10,
+  "interval_ms": 100,
+  "firmware": {
+    "archive": "../../verified-firmware.zip",
+    "sha256": "22f4f056c90799eec6e02c028cb14a21d2ae47219588528bb80aa10a486adeda"
+  },
+  "started_utc": "2026-11-15T04:24:34.600450+00:00",
+  "attempts": 10,
+  "valid_responses": 10,
+  "errors": 0,
+  "interrupted": false,
+  "qualities": {
+    "not_available": 0,
+    "valid": 10,
+    "stale": 0,
+    "offline": 0
+  },
+  "ended_utc": "2026-11-15T04:24:35.544982+00:00",
+  "duration_s": 0.9445340999991458
+}

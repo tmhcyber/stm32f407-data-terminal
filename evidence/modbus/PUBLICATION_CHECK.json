@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-15",
+  "result": "PASS",
+  "scope": "Public source snapshot verification; board measurements from 2026-11-15 archive",
+  "builds": [
+    {
+      "mode": 0,
+      "diagnostics": 1,
+      "exit_code": 0,
+      "summary": "0 Error(s), 0 Warning(s)",
+      "artifacts_sha256": {
+        "IndustrialTerminal.axf": "553bb8e3c2afec54fe9b19aeedb28b40c53366e2753a867e87bcf78e78a25fab",
+        "IndustrialTerminal.hex": "1f9203edd7467125888d668554f95e51fdfcada20acf3cd9bd032cfdf8e14b47",
+        "IndustrialTerminal.map": "703ed6f43a424252bdd897d8f14777b5a033b1d6113bc0b0bedbb7a96fa41a52"
+      }
+    },
+    {
+      "mode": 1,
+      "diagnostics": 1,
+      "exit_code": 0,
+      "summary": "0 Error(s), 0 Warning(s)",
+      "artifacts_sha256": {
+        "IndustrialTerminal.axf": "e2516872ddeacfb6647b69b04f3d00b11c031580daff82ffb1833c091dd9c3ef",
+        "IndustrialTerminal.hex": "f62914e32b89ebf0580af9b1e8b69d78e83d73f95ec7c6c2ab79954abc1d286d",
+        "IndustrialTerminal.map": "0bc5dbfbc6ec546c27aac6a605a841646dec6563f2fd1ddf4b3e81f840373e00"
+      }
+    }
+  ],
+  "modbus_hex_matches_board_archive": true,
+  "axf_load_segments_match_board_archive": true,
+  "checks": {
+    "production_core_c_assertions": 477,
+    "modbus_c_checks": 168,
+    "bsp_c_checks_by_mode": {
+      "0": 163,
+      "1": 172
+    },
+    "pymodbus_interoperability_cases": 68,
+    "pc_reader_unittests": 3,
+    "diagnostic_macro_modes": [
+      0,
+      1
+    ],
+    "can_diagnostic_scenarios": 16,
+    "can_protocol_transport_queue": "PASS",
+    "source_tool_hashes": 163,
+    "board_readings_reconciled": 920,
+    "board_request_scenarios": 11,
+    "waveform_transactions_redecoded": 10
+  },
+  "commands": [
+    "Tools/run_c_tests.ps1",
+    "python Tools/run_stage6_tests.py",
+    "python Tests/Modbus/check_pymodbus.py",
+    "python -m unittest discover -s Tests/Modbus -p test_*.py -v",
+    "python Tools/build_modbus.py --mode both --diagnostics 1",
+    "python Tools/check_modbus_publication.py"
+  ],
+  "toolchain": "Arm Compiler 5.06 update 7 build 960; STM32F4xx_DFP 2.15.0"
+}

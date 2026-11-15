@@ -1,6 +1,6 @@
 # 构建与演示入口
 
-仓库提供两个Keil构建目标、接线配置、PC观察工具和主机检查入口。最新通信实测已完成RS485一小时36000轮与CAN1800次，完整结果见[验证证据](EVIDENCE.md)。编译产物由本机工具链生成。
+仓库提供两个Keil构建目标、接线配置、PC观察工具和主机检查入口。Modbus实测完成600次连续读取、采集NACK恢复与三通道波形；RS485 PING/PONG完成一小时36000轮，CAN完成1800次。完整结果见[验证证据](EVIDENCE.md)。编译产物由本机工具链生成。
 
 ## 环境
 
@@ -22,6 +22,24 @@
 .\Experiments\FreeRTOS_Queue\Tools\build.ps1 -KeilPath '本机路径\UV4\uVision.com'
 ```
 
+## Modbus 演示配置
+
+ARMCC 5.06 update 7 build 960、STM32F4xx_DFP 2.15.0。设置本机工具链路径后构建：
+
+```powershell
+$env:KEIL_UVISION = 'F:/Keil_v5/UV4/uVision.com'
+.\Tools\build_modbus_demo.ps1
+```
+
+该入口固定 `APP_RS485_MODBUS_ENABLED=1`、`APP_DIAGNOSTICS_ENABLED=1`，输出到新的 `tmp/modbus-build-*/1/`。使用构建得到的 AXF/HEX 按本机 SWD 配置下载并运行。直接在 uVision 打开默认工程时，`APP_RS485_MODBUS_ENABLED=0` 选择原 PING/PONG，诊断默认关闭。
+
+```powershell
+python -m pip install "pymodbus==3.11.4" "pyserial==3.5"
+python Tools/pc_modbus_read.py --port COMx --rounds 600 --interval-ms 100 --output tmp/modbus-demo-new
+```
+
+将 COMx 替换为 USB-RS485 端口；板载 CH340 为另一路 USART1 采集/诊断上行。完整寄存器表、主站参数和帧时序见 [Modbus说明](MODBUS_RTU.md)。[已验固件包](../evidence/modbus/verified-firmware.zip)附固定配置与 SHA256。
+
 ## 已记录的接线
 
 [硬件组成与接线实物](../evidence/hardware-setup.jpg)：STM32F407ZG开发板、SHT30、UTS-T02、UTC-T01及fireDAP。
@@ -30,7 +48,7 @@
 | --- | --- |
 | SHT30 | 3V3/GND，PB8=SCL、PB9=SDA；I2C1 100 kHz，地址 0x44 |
 | USART1 上行 | PA9 经 J80 到板载 CH340；115200 8N1；实际 COM 口需枚举 |
-| RS485 | USART2 PA2=TX、PA3=RX；PC0 高发送、低接收；115200 8N1 |
+| RS485 | USART2 PA2=TX、PA3=RX；PC0 高发送、低接收；Modbus为115200 8E1，PING/PONG为115200 8N1 |
 | CAN2 | PB13=TX、PB12=RX；J13 CANH/CANL，对端共地；500 kbit/s |
 
 开发板 J40：1-2 提供 CAN/485_3V3；RS485 3-5 / 4-6 连接 PA2/PA3；5-7 / 6-8 的 RS232 路径断开。接线顺序：断开全部供电，按对应板型原理图设置跳帽、连接信号线与共地，再为 MCU 和收发器供电。
@@ -51,6 +69,24 @@ python Experiments/FreeRTOS_Queue/Tools/capture_uart.py --port COMx --mode senso
 ```
 
 每次采集使用新的输出目录。sensor-diag模式检查正常采集窗口；故障恢复窗口按累计失败、最近状态与有效序号分别验收。地址故障注入通过当前调试映像的符号定位变量，按[RTOS实验方法](RTOS.md)执行。
+
+## Modbus 离线核验
+
+```powershell
+python Tools/check_modbus_publication.py
+.\Tools\run_c_tests.ps1
+python -m unittest discover -s Tests/Modbus -p 'test_*.py' -v
+python Tests/Modbus/check_pymodbus.py
+python Tools/run_stage6_tests.py
+```
+
+生产 C 测试覆盖 CRC、负温度、地址/数量、异常帧、750/1750 μs 时序边界与 BSP；PyModbus 独立编码/解码核对 68 个场景。诊断脚本检查宏关闭/启用两种配置下的遥测优先与健康计数。两种 RS485 模式全量构建：
+
+```powershell
+python Tools/build_modbus.py --mode both --diagnostics 1
+```
+
+波形重算入口 `Tools/analyze_modbus_waveform.py` 会写入分析 JSON，复算时将 `evidence/modbus/waveform` 复制到新的 tmp 目录，运行 `python Tools/analyze_modbus_waveform.py tmp/波形副本`。
 
 ## 主机侧检查
 

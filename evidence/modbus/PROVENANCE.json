@@ -1,0 +1,96 @@
+{
+  "source_snapshot": "89295543819c98e00e0964dc774c341047af913f",
+  "artifacts": {
+    "normal-600/packets.jsonl": {
+      "original_sha256": "fd65348bc5b9b75b5bf6d303d629bdcab455955a4cdfd1cdc761e08d30f8e044",
+      "published_sha256": "fd65348bc5b9b75b5bf6d303d629bdcab455955a4cdfd1cdc761e08d30f8e044",
+      "processing": "byte-for-byte copy"
+    },
+    "normal-600/readings.jsonl": {
+      "original_sha256": "fddc053a3759636d47d79eb5c7436ce02a945e0f916468a45bbfac6e92965434",
+      "published_sha256": "fddc053a3759636d47d79eb5c7436ce02a945e0f916468a45bbfac6e92965434",
+      "processing": "byte-for-byte copy"
+    },
+    "normal-600/summary.json": {
+      "original_sha256": "aeffd235a66a20c421f1035669020feb45002cb41069d2df1d3359f74eeb55e7",
+      "published_sha256": "cea0a841ebd51c78a4c0c5b0a7051cc1f2b2a5f83e938d23bc2d5fad82f15974",
+      "processing": "metadata projection"
+    },
+    "address-fault/packets.jsonl": {
+      "original_sha256": "012d007d0aec442c1617cca9e036c42799a09f59b520a1e2ac74e118db43434e",
+      "published_sha256": "012d007d0aec442c1617cca9e036c42799a09f59b520a1e2ac74e118db43434e",
+      "processing": "byte-for-byte copy"
+    },
+    "address-fault/readings.jsonl": {
+      "original_sha256": "fd00938c18fecc2739b456c49a8c0f6864c75ae4ddf9a1515a028d5a999a3b76",
+      "published_sha256": "fd00938c18fecc2739b456c49a8c0f6864c75ae4ddf9a1515a028d5a999a3b76",
+      "processing": "byte-for-byte copy"
+    },
+    "address-fault/summary.json": {
+      "original_sha256": "538a01acb990291777e26733e07e567cea311fa9d551312eb4686ba3da9df2fb",
+      "published_sha256": "2ddda2a8629e073b931427abc05f31b16b6f5634dbf85e6b8505e9ea04d7ba36",
+      "processing": "metadata projection"
+    },
+    "fault-analysis.json": {
+      "original_sha256": "5a8d2dc915b707e81b1c166374d126fcb976c92f36c9e0916cd140e59488c267",
+      "published_sha256": "5a8d2dc915b707e81b1c166374d126fcb976c92f36c9e0916cd140e59488c267",
+      "processing": "byte-for-byte copy"
+    },
+    "request-cases.json": {
+      "original_sha256": "d8f673d661c49560260cef49e093b7a11e37e11a2a7d57bb58b260e0d723904d",
+      "published_sha256": "d8f673d661c49560260cef49e093b7a11e37e11a2a7d57bb58b260e0d723904d",
+      "processing": "byte-for-byte copy"
+    },
+    "normal-analysis.json": {
+      "original_sha256": "9c9be35a9c483284b637b6a91142d98ec37da05d10a0d6941f74a6b95e7aee7b",
+      "published_sha256": "8521c0b379923e6a967584350ae45e3895e5cdadb8e23428fe38832cfd48da03",
+      "processing": "metadata projection"
+    },
+    "address-fault-debug.json": {
+      "original_sha256": "8757c02efb957bbfafa9306cc4ddf6473b97a0468ed11ddb30846f2d86e4e819",
+      "published_sha256": "266dada180016365f201449ed509601c2d486f191731ed4940f1fb4207e8f662",
+      "processing": "metadata projection"
+    },
+    "waveform/digital.csv": {
+      "original_sha256": "0b56f6ee29fd04717fcb0cc6285e4ff2006833bf957d4077fd05bbe7ce8c896d",
+      "published_sha256": "0b56f6ee29fd04717fcb0cc6285e4ff2006833bf957d4077fd05bbe7ce8c896d",
+      "processing": "byte-for-byte copy"
+    },
+    "waveform/modbus-3ch.sal": {
+      "original_sha256": "b1c670eeab40f042c8de4bf58f16a1a7ec6d521ddf1496d23b39559834fe7fdd",
+      "published_sha256": "b1c670eeab40f042c8de4bf58f16a1a7ec6d521ddf1496d23b39559834fe7fdd",
+      "processing": "byte-for-byte copy"
+    },
+    "waveform/timing-analysis.json": {
+      "original_sha256": "b6741dc7878a3536b5e207a59741f69f3329efba87fdfb2509d63cfdcd17c281",
+      "published_sha256": "b6741dc7878a3536b5e207a59741f69f3329efba87fdfb2509d63cfdcd17c281",
+      "processing": "byte-for-byte copy"
+    },
+    "waveform/timing.png": {
+      "original_sha256": "b426670cde631bfdfe02cc266cb20eeed16b2f078a59c447463bdeeb1fc096ba",
+      "published_sha256": "b426670cde631bfdfe02cc266cb20eeed16b2f078a59c447463bdeeb1fc096ba",
+      "processing": "byte-for-byte copy"
+    },
+    "waveform/serial/packets.jsonl": {
+      "original_sha256": "d97acbb7f982ac3dd3483386536db0ac08782dbd421848df03d8492d3d46bc53",
+      "published_sha256": "d97acbb7f982ac3dd3483386536db0ac08782dbd421848df03d8492d3d46bc53",
+      "processing": "byte-for-byte copy"
+    },
+    "waveform/serial/readings.jsonl": {
+      "original_sha256": "3719f9c8ff9c1363f386d9e7911b8aafde7dfda1327d66b276e04eeffeb06b80",
+      "published_sha256": "3719f9c8ff9c1363f386d9e7911b8aafde7dfda1327d66b276e04eeffeb06b80",
+      "processing": "byte-for-byte copy"
+    },
+    "waveform/serial/summary.json": {
+      "original_sha256": "b5f23b2ce1069c2e6d743c78b53166b8132b9de8911e51b7336f41e911f8867c",
+      "published_sha256": "619747d24c0a61724dd0172a35975db80f35f81dd7c832f23e938a14df15b74d",
+      "processing": "metadata projection"
+    },
+    "linux-compatible-result.json": {
+      "original_sha256": "e1c761d6dc666b9900c11649c0eb08cf6ad4b8aa2df4ee19a903699e4f45b424",
+      "published_sha256": "12c7645e7793d46b0e76e20d06e8bf05c9ac0bb2468f1d4725416e827289ea5d",
+      "processing": "metadata projection"
+    }
+  },
+  "firmware_members": "AXF, HEX and MAP copied byte-for-byte; PROFILE.json contains portable profile metadata"
+}

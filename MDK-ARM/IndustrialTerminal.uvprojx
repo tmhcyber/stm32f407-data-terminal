@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Core\Inc;..\Application\Inc;..\BSP\Inc;..\Components\SHT30\Inc;..\Drivers\CMSIS\Include;..\Drivers\CMSIS\Device\ST\STM32F4xx\Include;..\Drivers\STM32F4xx_HAL_Driver\Inc</IncludePath>
+              <IncludePath>..\Core\Inc;..\Application\Inc;..\BSP\Inc;..\Components\SHT30\Inc;..\Middlewares\Modbus\Inc;..\Drivers\CMSIS\Include;..\Drivers\CMSIS\Device\ST\STM32F4xx\Include;..\Drivers\STM32F4xx_HAL_Driver\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -424,6 +424,11 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
+              <FileName>bsp_modbus_time.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\Src\bsp_modbus_time.c</FilePath>
+            </File>
+            <File>
               <FileName>bsp_can_rx_queue.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\Src\bsp_can_rx_queue.c</FilePath>
@@ -476,6 +481,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Modbus</GroupName>
+          <Files>
+            <File>
+              <FileName>mb_rtu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Modbus\Src\mb_rtu.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Components</GroupName>
           <Files>
             <File>
@@ -488,6 +503,16 @@
         <Group>
           <GroupName>Application</GroupName>
           <Files>
+            <File>
+              <FileName>app_modbus_registers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Application\Src\app_modbus_registers.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_modbus_service.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Application\Src\app_modbus_service.c</FilePath>
+            </File>
             <File>
               <FileName>app_bringup.c</FileName>
               <FileType>1</FileType>
@@ -524,6 +549,11 @@
               <FilePath>..\Application\Src\app_snapshot_text_formatter.c</FilePath>
             </File>
             <File>
+              <FileName>app_diagnostic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Application\Src\app_diagnostic.c</FilePath>
+            </File>
+            <File>
               <FileName>app_uplink_service.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Application\Src\app_uplink_service.c</FilePath>
@@ -558,6 +588,16 @@
         <Group>
           <GroupName>STM32F4xx_HAL_Driver</GroupName>
           <Files>
+            <File>
+              <FileName>stm32f4xx_hal_tim_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c</FilePath>
+            </File>
             <File>
               <FileName>stm32f4xx_hal_can.c</FileName>
               <FileType>1</FileType>

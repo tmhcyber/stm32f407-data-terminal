@@ -1,0 +1,44 @@
+{
+  "transitions": [
+    {
+      "round": 1,
+      "elapsed_s": 0.018302000000403496,
+      "host_utc": "2026-11-15T03:45:21.721897+00:00",
+      "temperature_c": 30.12,
+      "humidity_rh": 41.32,
+      "quality": "valid"
+    },
+    {
+      "round": 60,
+      "elapsed_s": 5.934702599999582,
+      "host_utc": "2026-11-15T03:45:27.638298+00:00",
+      "temperature_c": 30.12,
+      "humidity_rh": 41.29,
+      "quality": "stale"
+    },
+    {
+      "round": 80,
+      "elapsed_s": 7.940550200000871,
+      "host_utc": "2026-11-15T03:45:29.644146+00:00",
+      "temperature_c": 30.12,
+      "humidity_rh": 41.29,
+      "quality": "offline"
+    },
+    {
+      "round": 188,
+      "elapsed_s": 18.781133299999055,
+      "host_utc": "2026-11-15T03:45:40.484729+00:00",
+      "temperature_c": 30.1,
+      "humidity_rh": 41.12,
+      "quality": "valid"
+    }
+  ],
+  "held_values_during_fault": [
+    [
+      3012,
+      4129
+    ]
+  ],
+  "held_values_constant": true,
+  "final_quality": "valid"
+}

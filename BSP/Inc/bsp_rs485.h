@@ -19,6 +19,7 @@ typedef struct
 {
   uint8_t byte;
   uint32_t timestamp_ms;
+  uint32_t timestamp_us; /* Modbus: TIM2 character-completion timestamp. */
 } BSP_RS485_RxByteEvent_t;
 
 typedef enum
@@ -32,6 +33,7 @@ typedef struct
 {
   BSP_RS485_TxEventType_t type;
   uint32_t timestamp_ms;
+  uint32_t timestamp_us;
   uint32_t uart_error_flags;
 } BSP_RS485_TxEvent_t;
 
@@ -52,6 +54,11 @@ uint8_t BSP_RS485_TakeRxByte(BSP_RS485_RxByteEvent_t *event);
 BSP_RS485_TxEvent_t BSP_RS485_TakeTxEvent(void);
 BSP_RS485_RxFaultEvent_t BSP_RS485_TakeRxFaultEvent(void);
 uint8_t BSP_RS485_FlushRx(void);
+
+/* Modbus: atomically observe RX queue/fault mailbox empty, no UART RXNE or
+ * pending receive error, and obtain current time. Does not consume events.
+ */
+uint8_t BSP_RS485_GetQuietTime(uint32_t *now_us);
 
 /* Shared HAL callback dispatch hooks. Application code must not call these. */
 void BSP_RS485_HandleRxCompleteIRQ(uint32_t timestamp_ms);

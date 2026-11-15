@@ -110,3 +110,42 @@ $canQueueExecutable = Join-Path $outputDirectory 'can_rx_queue.exe'
 if ($LASTEXITCODE -ne 0) { throw 'CAN RX queue test compilation failed.' }
 & $canQueueExecutable
 if ($LASTEXITCODE -ne 0) { throw 'CAN RX queue tests failed.' }
+
+# Execute Modbus production C (including its real DataService adapter).
+$modbusExecutable = Join-Path $outputDirectory 'modbus.exe'
+& $clangPath '-std=c99' '-Wall' '-Wextra' '-Werror' '-pedantic' '-O0' '-g' `
+    '-I' (Join-Path $projectRoot 'Application\Inc') `
+    '-I' (Join-Path $projectRoot 'BSP\Inc') `
+    '-I' (Join-Path $projectRoot 'Middlewares\Modbus\Inc') `
+    (Join-Path $projectRoot 'Middlewares\Modbus\Src\mb_rtu.c') `
+    (Join-Path $projectRoot 'Application\Src\app_modbus_registers.c') `
+    (Join-Path $projectRoot 'Application\Src\app_modbus_service.c') `
+    (Join-Path $projectRoot 'Application\Src\app_data_service.c') `
+    (Join-Path $projectRoot 'Tests\Modbus\test_modbus.c') '-o' $modbusExecutable
+if ($LASTEXITCODE -ne 0) { throw 'Modbus C test compilation failed.' }
+& $modbusExecutable
+if ($LASTEXITCODE -ne 0) { throw 'Modbus C tests failed.' }
+
+# Packet bridge for an independent PyModbus decoder check (no hardware).
+$bridgeExecutable = Join-Path $outputDirectory 'modbus_bridge.exe'
+& $clangPath '-std=c99' '-Wall' '-Wextra' '-Werror' '-pedantic' '-O0' `
+    '-I' (Join-Path $projectRoot 'Application\Inc') `
+    '-I' (Join-Path $projectRoot 'Middlewares\Modbus\Inc') `
+    (Join-Path $projectRoot 'Middlewares\Modbus\Src\mb_rtu.c') `
+    (Join-Path $projectRoot 'Application\Src\app_modbus_registers.c') `
+    (Join-Path $projectRoot 'Tests\Modbus\interop_bridge.c') '-o' $bridgeExecutable
+if ($LASTEXITCODE -ne 0) { throw 'Modbus interoperability bridge compilation failed.' }
+
+foreach ($rs485Mode in @(0, 1)) {
+    $bspExecutable = Join-Path $outputDirectory "modbus_bsp_$rs485Mode.exe"
+    & $clangPath '-std=c99' '-Wall' '-Wextra' '-Werror' '-pedantic' '-O0' '-g' `
+        "-DAPP_RS485_MODBUS_ENABLED=$rs485Mode" `
+        '-I' (Join-Path $projectRoot 'Tests\Modbus\fakes') `
+        '-I' (Join-Path $projectRoot 'Core\Inc') `
+        '-I' (Join-Path $projectRoot 'BSP\Inc') `
+        (Join-Path $projectRoot 'BSP\Src\bsp_modbus_time.c') `
+        (Join-Path $projectRoot 'Tests\Modbus\test_modbus_bsp.c') '-o' $bspExecutable
+    if ($LASTEXITCODE -ne 0) { throw "RS485 BSP mode $rs485Mode compilation failed." }
+    & $bspExecutable
+    if ($LASTEXITCODE -ne 0) { throw "RS485 BSP mode $rs485Mode tests failed." }
+}

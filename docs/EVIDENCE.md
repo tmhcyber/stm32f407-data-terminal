@@ -2,6 +2,18 @@
 
 验证采用“实板通信日志 + 固件计数/波形 + 主机侧自动化检查”三类证据。每份记录注明日期、配置、统计对象与版本；最新通信结果附完整原文、脚本快照及SHA256核验。
 
+## 2026-11-15 Modbus RTU 与诊断集成
+
+| 场景 | 结果 | 证据 |
+| --- | --- | --- |
+| 正常读取 | 600/600，0错误，115200 8E1 | [逐轮日志](../evidence/modbus/normal-600/readings.jsonl) |
+| 边界/异常输入 | 11个场景通过，后续正常读取恢复 | [请求与应答](../evidence/modbus/request-cases.json) |
+| SHT30地址NACK | 320/320读取；质量1→2→3→1 | [状态变化](../evidence/modbus/fault-analysis.json) |
+| 方向释放 | 10组停止位后6.02～6.14 μs；80/110字节一致 | [波形与方法](../evidence/modbus/README.md) |
+| Linux网关兼容 | 30 s；29遥测/6诊断入库，29遥测获MQTT确认 | [结果](../evidence/modbus/linux-compatible-result.json) |
+
+本组使用Modbus＋诊断固件，代码、产物与证据由[发布清单](../evidence/modbus/MANIFEST.json)逐项绑定。
+
 ## 2026-10-22通信与采集验证
 
 | 场景 | 结果 | 证据入口 |

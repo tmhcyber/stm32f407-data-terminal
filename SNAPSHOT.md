@@ -1,5 +1,11 @@
 # 版本与实测固件
 
+## Modbus 集成版：v1.1-modbus
+
+2026-11-15 Modbus＋诊断配置，输入寄存器读取、异常恢复与方向波形实测。[源码/产物清单](evidence/modbus/MANIFEST.json)绑定编译输入，[实测报告](evidence/modbus/README.md)提供配置与原始记录。`python Tools/check_modbus_publication.py` 可核对所有文件。
+
+## 原 RS485 / CAN 基线：v1.0-bench
+
 `v1.0-bench` 固定2026-10-22通信测试对应的源码、PC工具和完整验证记录，作为本项目的可下载复现入口。
 
 | 对象 | 对应标识 |

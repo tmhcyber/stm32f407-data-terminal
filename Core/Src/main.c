@@ -2,6 +2,8 @@
 #include "app_bringup.h"
 #include "app_data_service.h"
 #include "app_rs485_service.h"
+#include "app_rs485_config.h"
+#include "app_modbus_service.h"
 #include "app_sht30_collector.h"
 #include "app_snapshot_consumer.h"
 #include "app_system_monitor.h"
@@ -27,6 +29,7 @@ volatile App_UplinkServiceResult_t g_app_uplink_init_status;
 volatile App_UplinkServiceResult_t g_app_uplink_submit_status;
 volatile uint8_t g_app_uplink_heartbeat_test_hold_collection;
 volatile App_RS485ServiceResult_t g_app_rs485_init_status;
+volatile uint8_t g_app_modbus_init_ok;
 volatile BSP_SystemTimingStatus_t g_bsp_system_timing_init_status;
 volatile App_SystemMonitorResult_t g_app_system_monitor_init_status;
 volatile App_SystemMonitorResult_t g_app_system_monitor_process_status;
@@ -153,7 +156,11 @@ int main(void)
 #else
   BSP_CAN_Loopback_Init();
 #endif
+#if APP_RS485_MODBUS_ENABLED
+  g_app_modbus_init_ok = App_ModbusService_Init();
+#else
   g_app_rs485_init_status = App_RS485Service_Init();
+#endif
   App_Bringup_RunOnce();
   App_DataService_Init();
 #if APP_CAN_EXTERNAL_TEST
@@ -221,7 +228,11 @@ int main(void)
       (uint8_t)(g_bsp_system_timing_init_status ==
                 BSP_SYSTEM_TIMING_STATUS_OK);
 
+#if APP_RS485_MODBUS_ENABLED
+    App_ModbusService_Process();
+#else
     App_RS485Service_Process(now_ms);
+#endif
 #if APP_CAN_EXTERNAL_TEST
     BSP_CAN_LinkTest_Process(HAL_GetTick());
 #else
@@ -244,6 +255,19 @@ int main(void)
       service_completed_at_cycles - service_started_at_cycles;
 
     service_started_at_cycles = BSP_SystemTiming_GetCycles();
+#if APP_DIAGNOSTICS_ENABLED
+    if (App_UplinkService_DiagnosticDue(now_ms)) {
+      App_SystemMonitorReport_t monitor_report;
+      App_WatchdogGateReport_t gate_report;
+      App_Diagnostic_t diagnostic;
+      if (App_SystemMonitor_GetReport(&monitor_report) == APP_SYSTEM_MONITOR_RESULT_OK) {
+        gate_report = g_app_watchdog_gate_report;
+        App_Diagnostic_Map(&diagnostic, &g_bsp_system_boot_report,
+                           &monitor_report, &gate_report, now_ms);
+        App_UplinkService_SubmitDiagnostic(&diagnostic);
+      }
+    }
+#endif
     App_UplinkService_Process(now_ms);
     service_completed_at_cycles = BSP_SystemTiming_GetCycles();
     timing.uplink_cycles =
