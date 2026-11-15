@@ -16,7 +16,7 @@
 
 在 uVision 中 Rebuild 后查看构建日志。裸机输出位于根 `Output/`；RTOS 输出位于实验的 `Output/`。首次构建时创建对应输出目录，在本机选择 DAP 型号与 SWD 设置；uVision 将调试配置保存在本机 `.uvoptx` / `.uvguix` 文件中。
 
-也可在根目录执行 RTOS 构建 helper（展示副本将原硬编码 Keil 路径改为参数）：
+也可在根目录执行 RTOS 构建脚本，通过参数指定本机 Keil 路径：
 
 ```powershell
 .\Experiments\FreeRTOS_Queue\Tools\build.ps1 -KeilPath '本机路径\UV4\uVision.com'
