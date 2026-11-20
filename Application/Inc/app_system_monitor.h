@@ -105,6 +105,10 @@ App_SystemMonitorResult_t App_SystemMonitor_Process(
   const App_SystemTimingSample_t *timing,
   const App_SystemHealthInputs_t *health,
   uint32_t now_ms);
+App_SystemMonitorResult_t App_SystemMonitor_ProcessTaskTiming(
+  uint32_t timing_reasons,
+  const App_SystemHealthInputs_t *health,
+  uint32_t now_ms);
 App_SystemMonitorResult_t App_SystemMonitor_GetReport(
   App_SystemMonitorReport_t *report);
 

@@ -288,23 +288,12 @@ App_SystemMonitorResult_t App_SystemMonitor_Init(
   return APP_SYSTEM_MONITOR_RESULT_OK;
 }
 
-App_SystemMonitorResult_t App_SystemMonitor_Process(
-  const App_SystemTimingSample_t *timing,
+static App_SystemMonitorResult_t App_SystemMonitor_UpdateHealth(
   const App_SystemHealthInputs_t *health,
   uint32_t now_ms)
 {
   uint32_t active_reasons;
 
-  if (s_initialized == 0U)
-  {
-    return APP_SYSTEM_MONITOR_RESULT_NOT_INITIALIZED;
-  }
-  if ((timing == 0) || (health == 0))
-  {
-    return APP_SYSTEM_MONITOR_RESULT_INVALID_ARGUMENT;
-  }
-
-  App_SystemMonitor_UpdateTiming(timing, now_ms);
   if ((s_report.startup_completed == 0U) &&
       (((health->has_valid_data != 0U) &&
         (health->has_completed_tx != 0U)) ||
@@ -326,6 +315,49 @@ App_SystemMonitorResult_t App_SystemMonitor_Process(
   App_SystemMonitor_UpdateState(active_reasons, now_ms);
   App_SystemMonitor_Publish();
   return APP_SYSTEM_MONITOR_RESULT_OK;
+}
+
+App_SystemMonitorResult_t App_SystemMonitor_Process(
+  const App_SystemTimingSample_t *timing,
+  const App_SystemHealthInputs_t *health,
+  uint32_t now_ms)
+{
+  if (s_initialized == 0U)
+  {
+    return APP_SYSTEM_MONITOR_RESULT_NOT_INITIALIZED;
+  }
+  if ((timing == 0) || (health == 0))
+  {
+    return APP_SYSTEM_MONITOR_RESULT_INVALID_ARGUMENT;
+  }
+  App_SystemMonitor_UpdateTiming(timing, now_ms);
+  return App_SystemMonitor_UpdateHealth(health, now_ms);
+}
+
+App_SystemMonitorResult_t App_SystemMonitor_ProcessTaskTiming(
+  uint32_t timing_reasons,
+  const App_SystemHealthInputs_t *health,
+  uint32_t now_ms)
+{
+  if (s_initialized == 0U)
+  {
+    return APP_SYSTEM_MONITOR_RESULT_NOT_INITIALIZED;
+  }
+  if (health == 0)
+  {
+    return APP_SYSTEM_MONITOR_RESULT_INVALID_ARGUMENT;
+  }
+  if ((timing_reasons & APP_SYSTEM_HEALTH_REASON_LOOP_HARD_OVERRUN) != 0U)
+  {
+    ++s_report.hard_overrun_count;
+    s_report.last_hard_overrun_at_ms = now_ms;
+  }
+  if ((timing_reasons & APP_SYSTEM_HEALTH_REASON_LOOP_WARNING) != 0U)
+  {
+    ++s_report.warning_count;
+    s_report.last_warning_at_ms = now_ms;
+  }
+  return App_SystemMonitor_UpdateHealth(health, now_ms);
 }
 
 App_SystemMonitorResult_t App_SystemMonitor_GetReport(

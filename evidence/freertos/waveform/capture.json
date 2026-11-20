@@ -1,0 +1,43 @@
+{
+  "started_utc": "2026-11-20T04:11:05.196112+00:00",
+  "app_version": "2.4.46",
+  "device_type": "LOGIC",
+  "is_simulation": false,
+  "channels": [
+    0,
+    1,
+    2
+  ],
+  "sample_rate_hz": 8000000,
+  "duration_s": 3,
+  "glitch_filters": [],
+  "serial_summary": {
+    "baudrate": 115200,
+    "bytesize": 8,
+    "parity": "E",
+    "stopbits": 1,
+    "slave": 1,
+    "function": 4,
+    "address": 0,
+    "count": 3,
+    "requested_rounds": 10,
+    "interval_ms": 100,
+    "firmware": {
+      "axf_sha256": "fd17f9d18c1666c4d7fe82d88f676e2d0ee1e8d646575e3a109fff1a9e8c0e8d"
+    },
+    "started_utc": "2026-11-20T04:11:05.782748+00:00",
+    "attempts": 10,
+    "valid_responses": 10,
+    "errors": 0,
+    "interrupted": false,
+    "qualities": {
+      "not_available": 0,
+      "valid": 10,
+      "stale": 0,
+      "offline": 0
+    },
+    "ended_utc": "2026-11-20T04:11:06.723690+00:00",
+    "duration_s": 0.940938499999902
+  },
+  "ended_utc": "2026-11-20T04:11:08.820042+00:00"
+}

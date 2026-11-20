@@ -1,6 +1,6 @@
 # 构建与演示入口
 
-仓库提供两个Keil构建目标、接线配置、PC观察工具和主机检查入口。Modbus实测完成600次连续读取、采集NACK恢复与三通道波形；RS485 PING/PONG完成一小时36000轮，CAN完成1800次。完整结果见[验证证据](EVIDENCE.md)。编译产物由本机工具链生成。
+仓库提供裸机终端、FreeRTOS 四任务终端和独立最新值邮箱实验。接线、构建、PC 观察和实板结果按对应固件记录。 [验证证据](EVIDENCE.md)
 
 ## 环境
 
@@ -9,18 +9,28 @@
 - PC Python 3；串口观察需 pyserial，`python -m pip install pyserial`。相关解析器测试使用标准库 unittest，RTOS 测试使用 pytest。
 - 固件逻辑主机测试使用Clang；实板另验证物理链路、采集与应用响应。
 
-## 两个目标
+## Keil 目标
 
 1. 裸机：打开 `MDK-ARM/IndustrialTerminal.uvprojx`，选择 `IndustrialTerminal`。当前入口 `Core/Src/main.c` 的 `APP_CAN_EXTERNAL_TEST=1` 使用外部 CAN / HSE 25 MHz；0 为原静默回环入口。初始化只有一个 CAN2 所有者。
-2. RTOS：打开 `Experiments/FreeRTOS_Queue/MDK-ARM/FreeRTOS_Queue.uvprojx`，选择 `FreeRTOS_Queue`。使用仓库共享BSP、SHT30、HAL/CMSIS与内核。
+2. 四任务终端：同一工程选择 `IndustrialTerminal_RTOS`，固定启用 Modbus 和诊断上行。输出位于 `Output/RTOS/` 和 `Listings/RTOS/`。
+3. 最新值邮箱：打开 `Experiments/FreeRTOS_Queue/MDK-ARM/FreeRTOS_Queue.uvprojx`，选择 `FreeRTOS_Queue`。该目标的产物在实验自己的 `Output/`。
 
-在 uVision 中 Rebuild 后查看构建日志。裸机输出位于根 `Output/`；RTOS 输出位于实验的 `Output/`。首次构建时创建对应输出目录，在本机选择 DAP 型号与 SWD 设置；uVision 将调试配置保存在本机 `.uvoptx` / `.uvguix` 文件中。
+在 uVision 中 Rebuild 后查看构建日志。裸机产物位于根 `Output/`。下载前在本机选择 DAP 型号和 SWD 设置。
 
-也可在根目录执行 RTOS 构建脚本，通过参数指定本机 Keil 路径：
+独立邮箱实验可通过参数指定本机 Keil 路径。
 
 ```powershell
 .\Experiments\FreeRTOS_Queue\Tools\build.ps1 -KeilPath '本机路径\UV4\uVision.com'
 ```
+
+## FreeRTOS 四任务终端
+
+```powershell
+python Tools/build_rtos.py --keil '本机路径\UV4\uVision.com'
+python Tools/check_freertos_publication.py
+```
+
+构建脚本同样支持 `KEIL_UVISION`，在 `tmp/rtos-build-*/` 输出 AXF、HEX、MAP、构建日志及编译依赖哈希。烧录 [已验 HEX](../evidence/freertos/IndustrialTerminal_RTOS.hex) 或自行构建的 HEX，按下文接线。Modbus 主站选择地址 1、115200 8E1、功能码 04、起址 0、数量 3。CAN 和 USART1 可与 Modbus 同时观察。进行 IWDG 重启验证时，打开板载 CH340 串口前取消 RTS 置位，使启动选择保持在 Flash。 [并行实测与异常恢复](../evidence/freertos/README.md)
 
 ## Modbus 演示配置
 
@@ -57,12 +67,12 @@ CAN目标拓扑为两端各120Ω。实测短线连接及USB-CAN端接配置见�
 
 ## 演示选择
 
-裸机终端与FreeRTOS采集目标分别构建、下载。选定目标后先运行正常窗口，并在测试记录中注明对应固件。
+选定目标后先运行正常窗口，并在测试记录中注明对应固件。
 
 - 裸机 USART1：`python Tools/pc_uplink_receiver.py --help` 查看串口观察参数。
 - RS485：`python Tools/pc_rs485_ping_pong.py --help`；请求为 `V1|PING\r\n`，响应为 `V1|PONG\r\n`。自定义CRLF协议采用100 ms字节间超时。HSE25MHz版已完成1000轮及一小时36000轮通信，执行版本与原始日志见验证记录。
 - CAN：PCAN-View 正常模式、500 kbit/s，标准数据帧 ID=123h、DLC=1、Data=01；观察 322h / 5 字节响应。缺ACK专项采用对端Listen-only和手动触发的受控恢复，方法与结果见[专项验证](EVIDENCE.md#专项诊断与恢复验证)。
-- RTOS：`python Experiments/FreeRTOS_Queue/Tools/capture_uart.py --list`；选择实际端口观察 v4 正常窗。
+- 最新值邮箱实验：`python Experiments/FreeRTOS_Queue/Tools/capture_uart.py --list`，选择实际端口观察 v4 正常窗。
 
 ```powershell
 python Experiments/FreeRTOS_Queue/Tools/capture_uart.py --port COMx --mode sensor-diag --seconds 40 --min-samples 10 --output tmp/rtos-new --firmware Experiments/FreeRTOS_Queue/Output/FreeRTOS_Queue.axf

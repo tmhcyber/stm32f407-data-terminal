@@ -12,7 +12,6 @@
 #define BSP_SYSTEM_DIAGNOSTICS_CCM_SRAM_SIZE     0x00010000UL
 #define BSP_SYSTEM_DIAGNOSTICS_BASIC_FRAME_SIZE  32UL
 #define BSP_SYSTEM_DIAGNOSTICS_FP_FRAME_SIZE     104UL
-#define BSP_SYSTEM_DIAGNOSTICS_FP_CORE_OFFSET    72UL
 
 static uint8_t BSP_SystemDiagnostics_RangeIsInside(uint32_t start,
                                                    uint32_t length,
@@ -182,7 +181,6 @@ uint32_t BSP_SystemDiagnostics_EvaluateFrame(uint32_t original_sp,
 {
   uint32_t reject_reasons = BSP_SYSTEM_DIAGNOSTICS_FRAME_REJECT_NONE;
   uint32_t frame_size;
-  uint32_t core_offset;
 
   if (core_frame_sp != NULL)
   {
@@ -202,12 +200,10 @@ uint32_t BSP_SystemDiagnostics_EvaluateFrame(uint32_t original_sp,
   if ((exc_return & BSP_SYSTEM_DIAGNOSTICS_EXC_RETURN_BASIC_FRAME) != 0U)
   {
     frame_size = BSP_SYSTEM_DIAGNOSTICS_BASIC_FRAME_SIZE;
-    core_offset = 0U;
   }
   else
   {
     frame_size = BSP_SYSTEM_DIAGNOSTICS_FP_FRAME_SIZE;
-    core_offset = BSP_SYSTEM_DIAGNOSTICS_FP_CORE_OFFSET;
   }
 
   if (BSP_SystemDiagnostics_FrameRangeIsInsideRam(original_sp,
@@ -219,7 +215,8 @@ uint32_t BSP_SystemDiagnostics_EvaluateFrame(uint32_t original_sp,
   if ((reject_reasons == BSP_SYSTEM_DIAGNOSTICS_FRAME_REJECT_NONE) &&
       (core_frame_sp != NULL))
   {
-    *core_frame_sp = original_sp + core_offset;
+    /* PM0214 exception frame: floating-point storage follows xPSR. */
+    *core_frame_sp = original_sp;
   }
 
   return reject_reasons;

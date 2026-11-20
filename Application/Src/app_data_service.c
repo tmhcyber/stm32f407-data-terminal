@@ -1,5 +1,10 @@
 #include "app_data_service.h"
 
+#if APP_RTOS_ENABLED
+#include "FreeRTOS.h"
+#include "task.h"
+#endif
+
 static volatile App_DataPoint_t s_points[APP_DATA_POINT_COUNT];
 static volatile uint32_t s_snapshot_version;
 static volatile uint32_t s_initialized;
@@ -7,12 +12,24 @@ static uint32_t s_next_sequence;
 
 static void App_DataService_BeginWrite(void)
 {
+#if APP_RTOS_ENABLED
+  if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
+  {
+    taskENTER_CRITICAL();
+  }
+#endif
   ++s_snapshot_version;
 }
 
 static void App_DataService_EndWrite(void)
 {
   ++s_snapshot_version;
+#if APP_RTOS_ENABLED
+  if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
+  {
+    taskEXIT_CRITICAL();
+  }
+#endif
 }
 
 static void App_DataService_SetInitialPoint(
@@ -131,14 +148,13 @@ App_DataResult_t App_DataService_PublishValues(
     }
   }
 
+  App_DataService_BeginWrite();
   ++s_next_sequence;
   if (s_next_sequence == 0U)
   {
     ++s_next_sequence;
   }
   sequence = s_next_sequence;
-
-  App_DataService_BeginWrite();
 
   for (index = 0U; index < update_count; ++index)
   {
@@ -211,10 +227,12 @@ App_DataResult_t App_DataService_UpdateSourceQuality(
 App_DataResult_t App_DataService_GetSnapshot(
   App_DataSnapshot_t *snapshot)
 {
-  uint32_t attempt;
   uint32_t index;
+#if !APP_RTOS_ENABLED
+  uint32_t attempt;
   uint32_t version_before;
   uint32_t version_after;
+#endif
 
   if (snapshot == 0)
   {
@@ -226,6 +244,23 @@ App_DataResult_t App_DataService_GetSnapshot(
     return APP_DATA_RESULT_NOT_INITIALIZED;
   }
 
+#if APP_RTOS_ENABLED
+  if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
+  {
+    taskENTER_CRITICAL();
+  }
+  for (index = 0U; index < APP_DATA_POINT_COUNT; ++index)
+  {
+    App_DataService_CopyPoint(&snapshot->points[index], &s_points[index]);
+  }
+  snapshot->snapshot_version = s_snapshot_version;
+  snapshot->point_count = APP_DATA_POINT_COUNT;
+  if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
+  {
+    taskEXIT_CRITICAL();
+  }
+  return APP_DATA_RESULT_OK;
+#else
   for (attempt = 0U; attempt < APP_DATA_SNAPSHOT_MAX_RETRIES; ++attempt)
   {
     version_before = s_snapshot_version;
@@ -250,4 +285,5 @@ App_DataResult_t App_DataService_GetSnapshot(
   }
 
   return APP_DATA_RESULT_BUSY;
+#endif
 }

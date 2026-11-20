@@ -1,4 +1,5 @@
 #include "bsp_rs485.h"
+#include "bsp_service_notify.h"
 #include "app_rs485_config.h"
 #if APP_RS485_MODBUS_ENABLED
 #include "bsp_modbus_time.h"
@@ -319,6 +320,7 @@ uint8_t BSP_RS485_FlushRx(void)
 void BSP_RS485_HandleRxCompleteIRQ(uint32_t timestamp_ms)
 {
   uint8_t queued_count;
+  uint8_t event_ready = 0U;
   HAL_StatusTypeDef status;
 #if APP_RS485_MODBUS_ENABLED
   uint32_t completed_us = BSP_ModbusTime_Micros();
@@ -332,6 +334,7 @@ void BSP_RS485_HandleRxCompleteIRQ(uint32_t timestamp_ms)
 #if APP_RS485_MODBUS_ENABLED
   if (s_tx_in_progress != 0U) goto rearm_receive; /* Ignore local TX echo. */
 #endif
+  event_ready = 1U;
   queued_count = (uint8_t)(s_rx_head - s_rx_tail);
   if (queued_count >= BSP_RS485_RX_QUEUE_CAPACITY)
   {
@@ -372,7 +375,9 @@ rearm_receive:
     s_rx_fault_event.last_uart_error_at_ms = timestamp_ms;
     s_rx_fault_event.last_uart_error_flags = HAL_UART_GetError(
       &s_uart2_handle);
+    event_ready = 1U;
   }
+  if (event_ready != 0U) BSP_ServiceNotify_CommunicationFromISR();
 }
 
 void BSP_RS485_HandleTxCompleteIRQ(uint32_t timestamp_ms)
@@ -390,6 +395,7 @@ void BSP_RS485_HandleTxCompleteIRQ(uint32_t timestamp_ms)
 #endif
   s_tx_event.uart_error_flags = 0U;
   s_tx_event.type = BSP_RS485_TX_EVENT_COMPLETE;
+  BSP_ServiceNotify_CommunicationFromISR();
 }
 
 void BSP_RS485_HandleUartErrorIRQ(uint32_t timestamp_ms,
@@ -426,6 +432,7 @@ void BSP_RS485_HandleUartErrorIRQ(uint32_t timestamp_ms,
     s_rx_fault_event.last_uart_error_flags |= HAL_UART_GetError(
       &s_uart2_handle);
   }
+  BSP_ServiceNotify_CommunicationFromISR();
 }
 
 void USART2_IRQHandler(void)

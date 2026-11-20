@@ -40,6 +40,6 @@ Saleae Logic，8 MS/s，3 s；D0=PA3 RX、D1=PA2 TX、D2=PC0方向。10组事务
 22f4f056c90799eec6e02c028cb14a21d2ae47219588528bb80aa10a486adeda
 ```
 
-[MANIFEST.json](MANIFEST.json)绑定生产源码、工具与证据哈希；[PROVENANCE.json](PROVENANCE.json)记录原始证据与公开副本映射。逐轮报文和波形保留原始字节，汇总中的固件路径转换为仓库相对入口。执行 `python Tools/check_modbus_publication.py` 核验，按[构建说明](../../docs/BUILD.md)复现新记录。
+[MANIFEST.json](MANIFEST.json)绑定 `v1.1-modbus` 的生产源码、工具与证据哈希。[PROVENANCE.json](PROVENANCE.json)记录原始证据与公开副本映射。执行 `python Tools/check_modbus_publication.py` 核验这组实板记录。 [构建说明](../../docs/BUILD.md)
 
 公开源码复验：PING/PONG与Modbus两种模式均全量构建0错误、0警告；Modbus重建HEX与实板归档逐字节一致，AXF可装载程序段一致。生产C、BSP、诊断开关与PyModbus互通检查通过，见[复验记录](PUBLICATION_CHECK.json)。

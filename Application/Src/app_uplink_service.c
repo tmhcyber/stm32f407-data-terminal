@@ -207,21 +207,14 @@ App_UplinkServiceResult_t App_UplinkService_SubmitEvent(
   return APP_UPLINK_SERVICE_RESULT_OK;
 }
 
-void App_UplinkService_Process(uint32_t now_ms)
+static void App_UplinkService_ProcessEvent(uint32_t now_ms,
+                                           BSP_UART_TxEvent_t tx_event)
 {
   App_UplinkTextResult_t format_result;
   BSP_UART_Status_t tx_status;
-  BSP_UART_TxEvent_t tx_event;
   uint32_t output_length;
   uint8_t tx_completed_this_call;
 
-  if (g_app_uplink_service_report.state ==
-      APP_UPLINK_SERVICE_STATE_NOT_INITIALIZED)
-  {
-    return;
-  }
-
-  tx_event = BSP_UART1_TakeTxEvent();
   tx_completed_this_call =
     (uint8_t)(tx_event.type == BSP_UART_TX_EVENT_COMPLETE);
 #if APP_DIAGNOSTICS_ENABLED
@@ -308,5 +301,22 @@ void App_UplinkService_Process(uint32_t now_ms)
     {
       ++g_app_uplink_service_report.tx_error_count;
     }
+  }
+}
+
+void App_UplinkService_Process(uint32_t now_ms)
+{
+  if (g_app_uplink_service_report.state != APP_UPLINK_SERVICE_STATE_NOT_INITIALIZED)
+  {
+    App_UplinkService_ProcessEvent(now_ms, BSP_UART1_TakeTxEvent());
+  }
+}
+
+void App_UplinkService_ProcessCurrent(uint32_t (*get_tick_ms)(void))
+{
+  if (g_app_uplink_service_report.state != APP_UPLINK_SERVICE_STATE_NOT_INITIALIZED)
+  {
+    BSP_UART_TxEvent_t event = BSP_UART1_TakeTxEvent();
+    App_UplinkService_ProcessEvent(get_tick_ms(), event);
   }
 }

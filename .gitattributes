@@ -7,4 +7,6 @@
 *.ps1 text eol=lf
 *.uvprojx text eol=lf
 evidence/modbus/** -text -whitespace
+evidence/freertos/** -text -whitespace
+evidence/freertos/README.md text eol=lf whitespace
 *.pdf binary

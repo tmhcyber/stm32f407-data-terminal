@@ -3,6 +3,12 @@
 #include "bsp_system_diagnostics.h"
 #include "bsp_can_link_test.h"
 
+#if APP_RTOS_ENABLED
+#include "FreeRTOS.h"
+#include "task.h"
+void xPortSysTickHandler(void);
+#endif
+
 extern const uint8_t * const g_bsp_system_diagnostics_fault_stack_top;
 
 void NMI_Handler(void)
@@ -50,21 +56,29 @@ __asm void UsageFault_Handler(void)
   B       Fault_Handler_Common
 }
 
+#if !APP_RTOS_ENABLED
 void SVC_Handler(void)
-{
-}
-
-void DebugMon_Handler(void)
 {
 }
 
 void PendSV_Handler(void)
 {
 }
+#endif
+
+void DebugMon_Handler(void)
+{
+}
 
 void SysTick_Handler(void)
 {
   HAL_IncTick();
+#if APP_RTOS_ENABLED
+  if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
+  {
+    xPortSysTickHandler();
+  }
+#endif
 }
 
 void CAN2_RX0_IRQHandler(void)

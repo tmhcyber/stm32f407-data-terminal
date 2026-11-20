@@ -53,6 +53,7 @@ App_UplinkServiceResult_t App_UplinkService_Init(void);
 App_UplinkServiceResult_t App_UplinkService_SubmitEvent(
   const App_SnapshotEvent_t *event);
 void App_UplinkService_Process(uint32_t now_ms);
+void App_UplinkService_ProcessCurrent(uint32_t (*get_tick_ms)(void));
 #if APP_DIAGNOSTICS_ENABLED
 int App_UplinkService_DiagnosticDue(uint32_t now_ms);
 void App_UplinkService_SubmitDiagnostic(const App_Diagnostic_t *record);

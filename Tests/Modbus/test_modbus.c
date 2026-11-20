@@ -211,6 +211,13 @@ static void Service(void)
   CHECK(write_count==1 && transmitted_length==11);
   CHECK(memcmp(transmitted,known_reply,11)==0);
   Complete(now+1100); CHECK(g_app_modbus_report.responses_completed==1);
+  ResetService(); Publish(25340); Enqueue(read_all,3000);
+  now+=MB_RTU_RX_END_US;
+  CHECK(App_ModbusService_ProcessBudget(3)==3 && write_count==0);
+  CHECK(App_ModbusService_ProcessBudget(0)==0 && write_count==0);
+  CHECK(App_ModbusService_ProcessBudget(3)==3 && write_count==0);
+  CHECK(App_ModbusService_ProcessBudget(2)==2 && write_count==1);
+  Complete(now+1100);
   CHECK(App_DataService_UpdateSourceQuality(APP_DATA_SOURCE_SHT30,APP_DATA_QUALITY_OFFLINE,APP_DATA_STATUS_NACK,20)==APP_DATA_RESULT_OK);
   Deliver(read_all,now+3000); CHECK(write_count==2 && transmitted[8]==3 && transmitted[4]==0xE6);
   Complete(now+1100); Publish(-12345); Deliver(read_all,now+3000);

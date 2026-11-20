@@ -69,7 +69,7 @@ uint8_t App_ModbusService_Init(void)
   return 1U;
 }
 
-void App_ModbusService_Process(void)
+uint32_t App_ModbusService_ProcessBudget(uint32_t byte_limit)
 {
   BSP_RS485_RxByteEvent_t byte;
   BSP_RS485_RxFaultEvent_t fault;
@@ -77,7 +77,7 @@ void App_ModbusService_Process(void)
   uint16_t length, response_length;
   uint32_t now_us;
   uint32_t budget;
-  if (g_app_modbus_report.initialized == 0U) return;
+  if (g_app_modbus_report.initialized == 0U) return 0U;
   fault = BSP_RS485_TakeRxFaultEvent();
   if ((fault.overflow_count != 0U) || (fault.uart_error_count != 0U))
   {
@@ -87,10 +87,10 @@ void App_ModbusService_Process(void)
   }
   /* Consume actual TC before wall time: a delayed loop does not turn an
    * on-time hardware completion into a transmit timeout. */
+  now_us = BSP_ModbusTime_Micros();
   tx = BSP_RS485_TakeTxEvent();
   if (g_app_modbus_report.transmitting != 0U)
   {
-    now_us = BSP_ModbusTime_Micros();
     if (tx.type != BSP_RS485_TX_EVENT_NONE)
     {
       if ((tx.type == BSP_RS485_TX_EVENT_COMPLETE) &&
@@ -109,24 +109,24 @@ void App_ModbusService_Process(void)
       g_app_modbus_report.transmitting = 0U;
       MB_RTU_RxReset(&g_app_modbus_receiver, BSP_ModbusTime_Micros());
     }
-    if (g_app_modbus_report.transmitting != 0U) return;
+    if (g_app_modbus_report.transmitting != 0U) return 0U;
   }
   /* A continuous invalid stream cannot monopolize the main loop. */
-  for (budget = 0U; budget < BSP_RS485_RX_QUEUE_CAPACITY; ++budget)
+  for (budget = 0U; budget < byte_limit; ++budget)
   {
     if (BSP_RS485_TakeRxByte(&byte) == 0U) break;
     MB_RTU_RxByte(&g_app_modbus_receiver, byte.byte, byte.timestamp_us);
   }
-  if (BSP_RS485_GetQuietTime(&now_us) == 0U) return;
+  if (BSP_RS485_GetQuietTime(&now_us) == 0U) return budget;
   length = MB_RTU_RxTake(&g_app_modbus_receiver, now_us);
-  if (length == 0U) return;
+  if (length == 0U) return budget;
   ++g_app_modbus_report.frames;
   response_length = MB_RTU_Handle(g_app_modbus_receiver.bytes, length,
     MODBUS_SLAVE, ReadInput, 0, s_response, sizeof(s_response));
   if (response_length == 0U)
   {
     ++g_app_modbus_report.silent_frames;
-    return;
+    return budget;
   }
   if ((s_response[1] & 0x80U) != 0U) ++g_app_modbus_report.exceptions;
   s_tx_started_us = BSP_ModbusTime_Micros();
@@ -140,4 +140,10 @@ void App_ModbusService_Process(void)
     ++g_app_modbus_report.tx_errors;
     MB_RTU_RxReset(&g_app_modbus_receiver, BSP_ModbusTime_Micros());
   }
+  return budget;
+}
+
+void App_ModbusService_Process(void)
+{
+  (void)App_ModbusService_ProcessBudget(BSP_RS485_RX_QUEUE_CAPACITY);
 }

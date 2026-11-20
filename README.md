@@ -2,13 +2,13 @@
 
 陶铭浩 · 2027届 · 嵌入式软件 / MCU固件方向
 
-**从 SHT30 采集温湿度，通过 Modbus RTU、RS485、CAN 对外提供数据；用质量状态、Fault 现场与看门狗健康门控处理异常。**
+**STM32F407 数据采集终端。支持裸机和 FreeRTOS 四任务构建，通过 Modbus RTU、CAN 和 USART1 提供温湿度、数据质量与故障诊断。**
 
 `C` · `STM32 HAL` · `Cortex-M4` · `Modbus RTU` · `RS485 半双工` · `CAN` · `I2C` · `FreeRTOS` · `波形调试`
 
-我负责RS485状态、超时与恢复规则设计，编写CAN请求校验、温湿度编码及环形队列入出队逻辑，完成实板联调；独立定位主循环与接收中断时间交错引发的无符号下溢故障。在FreeRTOS固件中，我选择最新值邮箱策略，编写采集、换算、发布与失败记录流程。
+我根据数据新鲜度选择单格覆盖邮箱，编写 FreeRTOS 测量、换算、发布及失败记录逻辑。我也设计了 RS485 超时与恢复规则，编写 CAN 请求校验、编码和队列核心逻辑，并独立定位主循环与接收中断时间交错引发的无符号下溢故障。
 
-**运行演示：** 按[构建与接线](docs/BUILD.md)运行 `Tools/build_modbus_demo.ps1`，下载 Modbus＋诊断配置，再用通用主站读取温湿度与数据质量。[协议与实测](docs/MODBUS_RTU.md) · [个人贡献](docs/CONTRIBUTIONS.md) · [5页作品集](portfolio/project-portfolio.pdf)
+**运行演示**　用 `python Tools/build_rtos.py` 构建四任务终端，烧录后用通用 Modbus 主站读取温湿度和数据质量。 [构建与接线](docs/BUILD.md#freertos-四任务终端) · [个人贡献](docs/CONTRIBUTIONS.md) · [五页作品集](portfolio/project-portfolio.pdf)
 
 ## 我的主要工作
 
@@ -20,6 +20,19 @@
 - **Modbus需求与硬件接入：** 确定通用主站读取温湿度与质量状态的目标，完成USB-RS485及逻辑分析仪接入；项目取得**600/600次正常读取**、采集故障恢复及三通道方向波形记录。
 
 [设计决策与个人贡献](docs/CONTRIBUTIONS.md)提供实现入口和验证依据。
+
+## FreeRTOS 四任务终端
+
+采集任务发布一致快照，通信任务处理 Modbus 和 CAN，上报任务发送遥测与诊断，监控任务跟踪各任务进度并集中控制 IWDG。USART2 保留 TIM2 微秒时基与 TC 方向控制，ISR 登记事件后再通知相应任务。
+
+| 实板场景 | 2026-11-20 结果 |
+| --- | --- |
+| 双总线并行与采集上报 | 61.5 s 内取得 Modbus **600/600**、CAN **60/60** 有效应答、61 条遥测与 12 条诊断 |
+| 传感器 NACK 和恢复 | **320/320** 次读取成功，质量随采集状态从有效转为陈旧、离线，再恢复到有效 |
+| 任务停滞与异常现场 | 通信、采集和上报分别验证停止喂狗与自动重启，基本及浮点扩展 PSP 帧均成功恢复故障 PC |
+| Linux 网关 | 30 s 内 29 条遥测与 6 条诊断全部入库，29 条遥测全部获 MQTT 确认 |
+
+[任务架构](docs/RTOS.md#四任务数据采集终端) · [实板对照与恢复记录](evidence/freertos/README.md) · [烧录验证过的 HEX](evidence/freertos/IndustrialTerminal_RTOS.hex)
 
 ## Modbus RTU 实板成果（2026-11-15）
 
@@ -92,7 +105,7 @@ RS485专项实测：红色PA3为接收，橙色PA2为发送；PC0控制收发方
 独立FreeRTOS固件：采集任务 → 单格邮箱保留最新值 → 上报任务
 ```
 
-裸机终端与FreeRTOS采集目标分别编译、下载。裸机承担采集、双总线通信和故障诊断；FreeRTOS目标实现采集与上报任务的数据交换。
+裸机和四任务终端共享采集、通信及诊断模块。独立邮箱目标保留最新值策略的对照实验。
 
 ## 模块与源码入口
 
@@ -104,7 +117,7 @@ RS485专项实测：红色PA3为接收，橙色PA2为发送；PC0控制收发方
 | CAN请求校验与温湿度编码 | [协议源码](Application/Src/app_can_protocol.c) |
 | CAN接收队列 | [队列源码](BSP/Src/bsp_can_rx_queue.c) |
 | 异常记录与看门狗刷新条件 | [运行健康判断](Application/Src/app_watchdog_gate.c) |
-| FreeRTOS采集与上报 | [任务源码](Experiments/FreeRTOS_Queue/Application/Src/app_queue_experiment.c) · [设计与实测](docs/RTOS.md) |
+| FreeRTOS任务调度与数据交换 | [四任务源码](Core/Src/app_rtos_runtime.c) · [邮箱源码](Experiments/FreeRTOS_Queue/Application/Src/app_queue_experiment.c) · [设计与实测](docs/RTOS.md) |
 | 实板日志、波形和测试条件 | [验证证据](docs/EVIDENCE.md) |
 | 具体职责与设计取舍 | [贡献说明](docs/CONTRIBUTIONS.md) |
 | 项目作品集 | [5页PDF](portfolio/project-portfolio.pdf) |

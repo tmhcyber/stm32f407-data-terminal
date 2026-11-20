@@ -46,6 +46,7 @@ extern volatile uint32_t g_bsp_can_link_hold_rx_processing;
  */
 void BSP_CAN_LinkTest_Init(void);
 void BSP_CAN_LinkTest_Process(uint32_t now_ms);
+uint8_t BSP_CAN_LinkTest_ProcessOne(uint32_t now_ms);
 void BSP_CAN_LinkTest_RX0_IRQHandler(void);
 /* Optional application callback injected by Core, invoked from main loop.
  * Returns 0 for no response, otherwise 1..8 bytes to transmit on ID 322.

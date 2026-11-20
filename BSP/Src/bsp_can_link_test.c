@@ -1,4 +1,5 @@
 #include "bsp_can_link_test.h"
+#include "bsp_service_notify.h"
 #include "bsp_can_rx_queue.h"
 #include "stm32f4xx_hal.h"
 
@@ -67,6 +68,7 @@ void BSP_CAN_LinkTest_RX0_IRQHandler(void)
       ++g_bsp_can_link_report.rx_queue_drop_count;
     else ++g_bsp_can_link_report.rx_enqueued_count;
   }
+  BSP_ServiceNotify_CommunicationFromISR();
 }
 
 void BSP_CAN_LinkTest_SetRequestHandler(BSP_CAN_RequestHandler_t handler)
@@ -229,10 +231,11 @@ static void Link_Send(uint32_t id, uint8_t first, uint8_t second, uint32_t now_m
   Link_SendData(id, data, 2U, now_ms);
 }
 
-void BSP_CAN_LinkTest_Process(uint32_t now_ms)
+uint8_t BSP_CAN_LinkTest_ProcessOne(uint32_t now_ms)
 {
   uint32_t shift, tsr, i;
   BSP_CAN_QueueFrame_t frame;
+  uint8_t consumed = 0U;
   if (g_bsp_can_link_recover_request != 0U) {
     g_bsp_can_link_recover_request = 0U;
     if ((g_bsp_can_link_report.state == BSP_CAN_LINK_FAILED) &&
@@ -257,19 +260,19 @@ void BSP_CAN_LinkTest_Process(uint32_t now_ms)
       CLEAR_BIT(CAN2->MCR, CAN_MCR_SLEEP);
       s_recovery_started_at_ms = now_ms;
       g_bsp_can_link_report.state = BSP_CAN_LINK_RECOVER_INIT;
-      return;
+      return 0U;
     }
   }
   if ((g_bsp_can_link_report.state == BSP_CAN_LINK_RECOVER_INIT) ||
       (g_bsp_can_link_report.state == BSP_CAN_LINK_RECOVER_START)) {
     g_bsp_can_link_send_request = 0U;
     Link_RecoverProcess(now_ms);
-    return;
+    return 0U;
   }
   if ((g_bsp_can_link_report.state == BSP_CAN_LINK_NOT_RUN) ||
-      (g_bsp_can_link_report.state == BSP_CAN_LINK_FAILED)) return;
+      (g_bsp_can_link_report.state == BSP_CAN_LINK_FAILED)) return 0U;
   if (s_rx_failed != 0U) {
-    Link_Fail(BSP_CAN_LINK_ERROR_RX); return;
+    Link_Fail(BSP_CAN_LINK_ERROR_RX); return 0U;
   }
   g_bsp_can_link_report.last_esr = s_can.Instance->ESR;
   if (g_bsp_can_link_report.state == BSP_CAN_LINK_WAIT_TX) {
@@ -279,18 +282,19 @@ void BSP_CAN_LinkTest_Process(uint32_t now_ms)
     g_bsp_can_link_report.last_tsr = tsr;
     if ((tsr & (CAN_TSR_RQCP0 << shift)) != 0U) {
       if ((tsr & (CAN_TSR_TXOK0 << shift)) == 0U) {
-        Link_Fail(BSP_CAN_LINK_ERROR_TX); return;
+        Link_Fail(BSP_CAN_LINK_ERROR_TX); return 0U;
       }
       s_can.Instance->TSR = CAN_TSR_RQCP0 << shift;
       ++g_bsp_can_link_report.tx_ok_count;
       g_bsp_can_link_report.state = BSP_CAN_LINK_READY;
     } else if ((uint32_t)(now_ms - s_started_at_ms) >= 100U) {
-      Link_Fail(BSP_CAN_LINK_ERROR_TX_TIMEOUT); return;
+      Link_Fail(BSP_CAN_LINK_ERROR_TX_TIMEOUT); return 0U;
     }
   }
-  /* One queued frame per loop; ISR is the only reader of hardware RX FIFO. */
+  /* ISR is the only reader of the hardware FIFO. Count each consumed frame. */
   if ((g_bsp_can_link_hold_rx_processing == 0U) &&
       (BSP_CAN_QueuePop(&frame) != 0U)) {
+    consumed = 1U;
     ++g_bsp_can_link_report.rx_count;
     g_bsp_can_link_report.last_rx_id = frame.id;
     g_bsp_can_link_report.last_rx_dlc = frame.dlc;
@@ -320,4 +324,10 @@ void BSP_CAN_LinkTest_Process(uint32_t now_ms)
     g_bsp_can_link_send_request = 0U;
     Link_Send(0x321U, 1U, 2U, now_ms);
   }
+  return consumed;
+}
+
+void BSP_CAN_LinkTest_Process(uint32_t now_ms)
+{
+  (void)BSP_CAN_LinkTest_ProcessOne(now_ms);
 }

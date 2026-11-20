@@ -2,18 +2,25 @@
 from pathlib import Path
 import hashlib
 import json
+import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
+SOURCE_TAG = 'v1.1-modbus'
 def sha(data):
     return hashlib.sha256(data).hexdigest()
 
 def main():
     manifest = json.loads((ROOT / 'evidence/modbus/MANIFEST.json').read_text(encoding='utf-8'))
     for name, expected in manifest['sources_sha256_lf'].items():
-        actual = sha((ROOT / name).read_bytes().replace(b'\r\n', b'\n'))
+        source = ROOT / name
+        actual = sha(source.read_bytes().replace(b'\r\n', b'\n')) if source.is_file() else None
+        if actual != expected and (ROOT / '.git').exists():
+            pinned = subprocess.run(['git', 'show', f'{SOURCE_TAG}:{name}'], cwd=ROOT,
+                                    capture_output=True, check=True).stdout
+            actual = sha(pinned.replace(b'\r\n', b'\n'))
         if actual != expected:
-            raise ValueError('source mismatch: ' + name)
+            raise ValueError(f'source mismatch: {name}. Verify using {SOURCE_TAG}.')
     for name, expected in manifest['evidence_sha256'].items():
         if sha((ROOT / name).read_bytes()) != expected:
             raise ValueError('evidence mismatch: ' + name)

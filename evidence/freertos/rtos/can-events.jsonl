@@ -1,0 +1,182 @@
+{"event": "start", "transport": "can", "utc": "2026-11-20T04:08:26.309015+00:00", "monotonic_s": 22124.3586587}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:26.357644+00:00", "monotonic_s": 22124.4072852}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 200, 10, 64], "device_timestamp_us": 22124408640, "utc": "2026-11-20T04:08:26.359894+00:00", "monotonic_s": 22124.4095323}
+{"event": "round", "round": 1, "elapsed_s": 2.5800000003073364e-05, "rtt_ms": 2.3854999999457505, "status": "ok", "quality": 1, "temperature_c": 27.6, "humidity_rh": 26.24, "utc": "2026-11-20T04:08:26.359973+00:00", "monotonic_s": 22124.4096052}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:27.358134+00:00", "monotonic_s": 22125.407774}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 202, 10, 64], "device_timestamp_us": 22125409484, "utc": "2026-11-20T04:08:27.360690+00:00", "monotonic_s": 22125.4103309}
+{"event": "round", "round": 2, "elapsed_s": 1.0005109999983688, "rtt_ms": 2.691699999559205, "status": "ok", "quality": 1, "temperature_c": 27.62, "humidity_rh": 26.24, "utc": "2026-11-20T04:08:27.360765+00:00", "monotonic_s": 22125.4103965}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:28.358172+00:00", "monotonic_s": 22126.4078089}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 200, 10, 66], "device_timestamp_us": 22126409646, "utc": "2026-11-20T04:08:28.360344+00:00", "monotonic_s": 22126.4099811}
+{"event": "round", "round": 3, "elapsed_s": 2.000562399996852, "rtt_ms": 2.2759000021324027, "status": "ok", "quality": 1, "temperature_c": 27.6, "humidity_rh": 26.26, "utc": "2026-11-20T04:08:28.360400+00:00", "monotonic_s": 22126.4100317}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:29.357938+00:00", "monotonic_s": 22127.4075815}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 200, 10, 66], "device_timestamp_us": 22127409509, "utc": "2026-11-20T04:08:29.359398+00:00", "monotonic_s": 22127.4090345}
+{"event": "round", "round": 4, "elapsed_s": 3.0003101999973296, "rtt_ms": 1.5784000024723355, "status": "ok", "quality": 1, "temperature_c": 27.6, "humidity_rh": 26.26, "utc": "2026-11-20T04:08:29.359450+00:00", "monotonic_s": 22127.4090825}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:30.358176+00:00", "monotonic_s": 22128.407814}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 200, 10, 63], "device_timestamp_us": 22128410012, "utc": "2026-11-20T04:08:30.359679+00:00", "monotonic_s": 22128.4093139}
+{"event": "round", "round": 5, "elapsed_s": 4.000562599998375, "rtt_ms": 1.604699999006698, "status": "ok", "quality": 1, "temperature_c": 27.6, "humidity_rh": 26.23, "utc": "2026-11-20T04:08:30.359729+00:00", "monotonic_s": 22128.4093625}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:31.357706+00:00", "monotonic_s": 22129.4073484}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 200, 10, 67], "device_timestamp_us": 22129409661, "utc": "2026-11-20T04:08:31.359165+00:00", "monotonic_s": 22129.4087998}
+{"event": "round", "round": 6, "elapsed_s": 5.000084799998149, "rtt_ms": 1.5638000004400965, "status": "ok", "quality": 1, "temperature_c": 27.6, "humidity_rh": 26.27, "utc": "2026-11-20T04:08:31.359210+00:00", "monotonic_s": 22129.4088417}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:32.357900+00:00", "monotonic_s": 22130.4075453}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 200, 10, 74], "device_timestamp_us": 22130409994, "utc": "2026-11-20T04:08:32.360171+00:00", "monotonic_s": 22130.4098132}
+{"event": "round", "round": 7, "elapsed_s": 6.000252399997407, "rtt_ms": 2.4340000018128194, "status": "ok", "quality": 1, "temperature_c": 27.6, "humidity_rh": 26.34, "utc": "2026-11-20T04:08:32.360249+00:00", "monotonic_s": 22130.4098811}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:33.357712+00:00", "monotonic_s": 22131.4073542}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 75], "device_timestamp_us": 22131409857, "utc": "2026-11-20T04:08:33.360204+00:00", "monotonic_s": 22131.4098441}
+{"event": "round", "round": 8, "elapsed_s": 7.000090999998065, "rtt_ms": 2.618900001834845, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.35, "utc": "2026-11-20T04:08:33.360272+00:00", "monotonic_s": 22131.4099034}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:34.357895+00:00", "monotonic_s": 22132.4075374}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 72], "device_timestamp_us": 22132409976, "utc": "2026-11-20T04:08:34.360103+00:00", "monotonic_s": 22132.4097429}
+{"event": "round", "round": 9, "elapsed_s": 8.000273199999356, "rtt_ms": 2.340099999855738, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.32, "utc": "2026-11-20T04:08:34.360177+00:00", "monotonic_s": 22132.4098118}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:35.358019+00:00", "monotonic_s": 22133.4076622}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 205, 10, 77], "device_timestamp_us": 22133410180, "utc": "2026-11-20T04:08:35.360493+00:00", "monotonic_s": 22133.4101329}
+{"event": "round", "round": 10, "elapsed_s": 9.000394699996832, "rtt_ms": 2.601899999717716, "status": "ok", "quality": 1, "temperature_c": 27.65, "humidity_rh": 26.37, "utc": "2026-11-20T04:08:35.360559+00:00", "monotonic_s": 22133.4101906}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:36.358075+00:00", "monotonic_s": 22134.4077186}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 83], "device_timestamp_us": 22134410342, "utc": "2026-11-20T04:08:36.360792+00:00", "monotonic_s": 22134.4104363}
+{"event": "round", "round": 11, "elapsed_s": 10.00043839999853, "rtt_ms": 2.875300000596326, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.43, "utc": "2026-11-20T04:08:36.360876+00:00", "monotonic_s": 22134.4105082}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:37.357871+00:00", "monotonic_s": 22135.4075133}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 202, 10, 84], "device_timestamp_us": 22135410461, "utc": "2026-11-20T04:08:37.360083+00:00", "monotonic_s": 22135.4097239}
+{"event": "round", "round": 12, "elapsed_s": 11.000248499996815, "rtt_ms": 2.3448000029020477, "status": "ok", "quality": 1, "temperature_c": 27.62, "humidity_rh": 26.44, "utc": "2026-11-20T04:08:37.360155+00:00", "monotonic_s": 22135.4097867}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:38.357763+00:00", "monotonic_s": 22136.4074066}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 202, 10, 89], "device_timestamp_us": 22136410665, "utc": "2026-11-20T04:08:38.360311+00:00", "monotonic_s": 22136.4099529}
+{"event": "round", "round": 13, "elapsed_s": 12.000139599997055, "rtt_ms": 2.6840999998967163, "status": "ok", "quality": 1, "temperature_c": 27.62, "humidity_rh": 26.49, "utc": "2026-11-20T04:08:38.360386+00:00", "monotonic_s": 22136.410018}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:39.358082+00:00", "monotonic_s": 22137.4077297}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 86], "device_timestamp_us": 22137411040, "utc": "2026-11-20T04:08:39.359528+00:00", "monotonic_s": 22137.4091621}
+{"event": "round", "round": 14, "elapsed_s": 13.000446099998953, "rtt_ms": 1.5615999982401263, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.46, "utc": "2026-11-20T04:08:39.359569+00:00", "monotonic_s": 22137.4092011}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:40.358109+00:00", "monotonic_s": 22138.4077552}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 205, 10, 87], "device_timestamp_us": 22138411373, "utc": "2026-11-20T04:08:40.359542+00:00", "monotonic_s": 22138.4091778}
+{"event": "round", "round": 15, "elapsed_s": 14.000471799998195, "rtt_ms": 1.612399999430636, "status": "ok", "quality": 1, "temperature_c": 27.65, "humidity_rh": 26.47, "utc": "2026-11-20T04:08:40.359647+00:00", "monotonic_s": 22138.409281}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:41.358051+00:00", "monotonic_s": 22139.4076932}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 90], "device_timestamp_us": 22139411407, "utc": "2026-11-20T04:08:41.359466+00:00", "monotonic_s": 22139.4090987}
+{"event": "round", "round": 16, "elapsed_s": 15.000428599996667, "rtt_ms": 1.5083000034792349, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.5, "utc": "2026-11-20T04:08:41.359498+00:00", "monotonic_s": 22139.4091292}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:42.358092+00:00", "monotonic_s": 22140.4077339}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 99], "device_timestamp_us": 22140411483, "utc": "2026-11-20T04:08:42.360623+00:00", "monotonic_s": 22140.4102659}
+{"event": "round", "round": 17, "elapsed_s": 16.000470299997687, "rtt_ms": 2.6744000024336856, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.59, "utc": "2026-11-20T04:08:42.360706+00:00", "monotonic_s": 22140.4103379}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:43.358081+00:00", "monotonic_s": 22141.4077226}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 205, 10, 92], "device_timestamp_us": 22141411602, "utc": "2026-11-20T04:08:43.359567+00:00", "monotonic_s": 22141.4092043}
+{"event": "round", "round": 18, "elapsed_s": 17.00046239999938, "rtt_ms": 1.6047999997681472, "status": "ok", "quality": 1, "temperature_c": 27.65, "humidity_rh": 26.52, "utc": "2026-11-20T04:08:43.359630+00:00", "monotonic_s": 22141.4092635}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:44.357859+00:00", "monotonic_s": 22142.4075012}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 96], "device_timestamp_us": 22142411550, "utc": "2026-11-20T04:08:44.359314+00:00", "monotonic_s": 22142.4089507}
+{"event": "round", "round": 19, "elapsed_s": 18.000238299999182, "rtt_ms": 1.5677999981562607, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.56, "utc": "2026-11-20T04:08:44.359369+00:00", "monotonic_s": 22142.4090024}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:45.358099+00:00", "monotonic_s": 22143.407744}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 96], "device_timestamp_us": 22143412053, "utc": "2026-11-20T04:08:45.360340+00:00", "monotonic_s": 22143.4099799}
+{"event": "round", "round": 20, "elapsed_s": 19.00047419999828, "rtt_ms": 2.3707000000285916, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.56, "utc": "2026-11-20T04:08:45.360407+00:00", "monotonic_s": 22143.4100385}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:46.357717+00:00", "monotonic_s": 22144.4073648}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 99], "device_timestamp_us": 22144411703, "utc": "2026-11-20T04:08:46.360494+00:00", "monotonic_s": 22144.4101435}
+{"event": "round", "round": 21, "elapsed_s": 20.000085099996795, "rtt_ms": 2.9704000007768627, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.59, "utc": "2026-11-20T04:08:46.360619+00:00", "monotonic_s": 22144.4102548}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:47.357850+00:00", "monotonic_s": 22145.4074957}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 205, 10, 100], "device_timestamp_us": 22145412078, "utc": "2026-11-20T04:08:47.360079+00:00", "monotonic_s": 22145.4097184}
+{"event": "round", "round": 22, "elapsed_s": 21.000228099997912, "rtt_ms": 2.3576999992656056, "status": "ok", "quality": 1, "temperature_c": 27.65, "humidity_rh": 26.6, "utc": "2026-11-20T04:08:47.360147+00:00", "monotonic_s": 22145.4097792}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:48.358007+00:00", "monotonic_s": 22146.4076508}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 205, 10, 103], "device_timestamp_us": 22146412538, "utc": "2026-11-20T04:08:48.360231+00:00", "monotonic_s": 22146.4098717}
+{"event": "round", "round": 23, "elapsed_s": 22.00038129999666, "rtt_ms": 2.3643000022275373, "status": "ok", "quality": 1, "temperature_c": 27.65, "humidity_rh": 26.63, "utc": "2026-11-20T04:08:48.360308+00:00", "monotonic_s": 22146.4099413}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:49.357767+00:00", "monotonic_s": 22147.4074102}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 103], "device_timestamp_us": 22147412444, "utc": "2026-11-20T04:08:49.360723+00:00", "monotonic_s": 22147.410364}
+{"event": "round", "round": 24, "elapsed_s": 23.000141699998494, "rtt_ms": 3.0943999990995508, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.63, "utc": "2026-11-20T04:08:49.360799+00:00", "monotonic_s": 22147.4104305}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:50.357985+00:00", "monotonic_s": 22148.407628}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 97], "device_timestamp_us": 22148412819, "utc": "2026-11-20T04:08:50.359444+00:00", "monotonic_s": 22148.4090799}
+{"event": "round", "round": 25, "elapsed_s": 24.00035999999818, "rtt_ms": 1.570799999171868, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.57, "utc": "2026-11-20T04:08:50.359493+00:00", "monotonic_s": 22148.4091246}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:51.357842+00:00", "monotonic_s": 22149.4074848}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 103], "device_timestamp_us": 22149412810, "utc": "2026-11-20T04:08:51.359269+00:00", "monotonic_s": 22149.4089041}
+{"event": "round", "round": 26, "elapsed_s": 25.00021779999952, "rtt_ms": 1.537099997221958, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.63, "utc": "2026-11-20T04:08:51.359316+00:00", "monotonic_s": 22149.4089478}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:52.357784+00:00", "monotonic_s": 22150.4074286}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 98], "device_timestamp_us": 22150412972, "utc": "2026-11-20T04:08:52.359256+00:00", "monotonic_s": 22150.4088947}
+{"event": "round", "round": 27, "elapsed_s": 26.00015799999892, "rtt_ms": 1.608700000360841, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.58, "utc": "2026-11-20T04:08:52.359330+00:00", "monotonic_s": 22150.408963}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:53.357744+00:00", "monotonic_s": 22151.4073883}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 205, 10, 101], "device_timestamp_us": 22151413176, "utc": "2026-11-20T04:08:53.359981+00:00", "monotonic_s": 22151.4096172}
+{"event": "round", "round": 28, "elapsed_s": 27.000121999997646, "rtt_ms": 2.355200002057245, "status": "ok", "quality": 1, "temperature_c": 27.65, "humidity_rh": 26.61, "utc": "2026-11-20T04:08:53.360039+00:00", "monotonic_s": 22151.4096701}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:54.357888+00:00", "monotonic_s": 22152.4075315}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 98], "device_timestamp_us": 22152413509, "utc": "2026-11-20T04:08:54.360667+00:00", "monotonic_s": 22152.4103065}
+{"event": "round", "round": 29, "elapsed_s": 28.000260699998762, "rtt_ms": 2.906599998823367, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.58, "utc": "2026-11-20T04:08:54.360728+00:00", "monotonic_s": 22152.4103597}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:55.357766+00:00", "monotonic_s": 22153.4074104}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 96], "device_timestamp_us": 22153413670, "utc": "2026-11-20T04:08:55.360311+00:00", "monotonic_s": 22153.4099482}
+{"event": "round", "round": 30, "elapsed_s": 29.00014309999824, "rtt_ms": 2.6634999994712416, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.56, "utc": "2026-11-20T04:08:55.360368+00:00", "monotonic_s": 22153.4100001}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:56.357913+00:00", "monotonic_s": 22154.4075607}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 100], "device_timestamp_us": 22154414003, "utc": "2026-11-20T04:08:56.359373+00:00", "monotonic_s": 22154.4090126}
+{"event": "round", "round": 31, "elapsed_s": 30.000285599999188, "rtt_ms": 1.5906999979051761, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.6, "utc": "2026-11-20T04:08:56.359438+00:00", "monotonic_s": 22154.4090702}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:57.358176+00:00", "monotonic_s": 22155.4078214}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 93], "device_timestamp_us": 22155414335, "utc": "2026-11-20T04:08:57.359639+00:00", "monotonic_s": 22155.4092759}
+{"event": "round", "round": 32, "elapsed_s": 31.00054949999685, "rtt_ms": 1.583299999765586, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.53, "utc": "2026-11-20T04:08:57.359694+00:00", "monotonic_s": 22155.4093266}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:58.357929+00:00", "monotonic_s": 22156.407575}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 98], "device_timestamp_us": 22156414070, "utc": "2026-11-20T04:08:58.359351+00:00", "monotonic_s": 22156.408988}
+{"event": "round", "round": 33, "elapsed_s": 32.00029689999792, "rtt_ms": 1.551500001369277, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.58, "utc": "2026-11-20T04:08:58.359410+00:00", "monotonic_s": 22156.4090426}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:08:59.357900+00:00", "monotonic_s": 22157.4075435}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 97], "device_timestamp_us": 22157413848, "utc": "2026-11-20T04:08:59.359372+00:00", "monotonic_s": 22157.4090073}
+{"event": "round", "round": 34, "elapsed_s": 33.00027499999851, "rtt_ms": 1.582199998665601, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.57, "utc": "2026-11-20T04:08:59.359418+00:00", "monotonic_s": 22157.40905}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:00.357868+00:00", "monotonic_s": 22158.4075114}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 101], "device_timestamp_us": 22158413540, "utc": "2026-11-20T04:09:00.359512+00:00", "monotonic_s": 22158.4091483}
+{"event": "round", "round": 35, "elapsed_s": 34.00024299999859, "rtt_ms": 1.760799998010043, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.61, "utc": "2026-11-20T04:09:00.359566+00:00", "monotonic_s": 22158.409198}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:01.357921+00:00", "monotonic_s": 22159.4075648}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 95], "device_timestamp_us": 22159413147, "utc": "2026-11-20T04:09:01.359517+00:00", "monotonic_s": 22159.409154}
+{"event": "round", "round": 36, "elapsed_s": 35.00028939999902, "rtt_ms": 1.7198999994434416, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.55, "utc": "2026-11-20T04:09:01.359571+00:00", "monotonic_s": 22159.4092031}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:02.357888+00:00", "monotonic_s": 22160.4075307}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 205, 10, 95], "device_timestamp_us": 22160412797, "utc": "2026-11-20T04:09:02.360092+00:00", "monotonic_s": 22160.4097291}
+{"event": "round", "round": 37, "elapsed_s": 36.00026789999902, "rtt_ms": 2.3159999982453883, "status": "ok", "quality": 1, "temperature_c": 27.65, "humidity_rh": 26.55, "utc": "2026-11-20T04:09:02.360145+00:00", "monotonic_s": 22160.4097768}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:03.357968+00:00", "monotonic_s": 22161.4076067}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 203, 10, 95], "device_timestamp_us": 22161412788, "utc": "2026-11-20T04:09:03.359479+00:00", "monotonic_s": 22161.4091148}
+{"event": "round", "round": 38, "elapsed_s": 37.000348999998096, "rtt_ms": 1.6255000009550713, "status": "ok", "quality": 1, "temperature_c": 27.63, "humidity_rh": 26.55, "utc": "2026-11-20T04:09:03.359537+00:00", "monotonic_s": 22161.4091693}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:04.358002+00:00", "monotonic_s": 22162.4076459}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 205, 10, 93], "device_timestamp_us": 22162412651, "utc": "2026-11-20T04:09:04.360954+00:00", "monotonic_s": 22162.4105906}
+{"event": "round", "round": 39, "elapsed_s": 38.000385199997254, "rtt_ms": 3.064500000618864, "status": "ok", "quality": 1, "temperature_c": 27.65, "humidity_rh": 26.53, "utc": "2026-11-20T04:09:04.361011+00:00", "monotonic_s": 22162.4106422}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:05.358043+00:00", "monotonic_s": 22163.4076823}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 205, 10, 89], "device_timestamp_us": 22163412514, "utc": "2026-11-20T04:09:05.359503+00:00", "monotonic_s": 22163.409138}
+{"event": "round", "round": 40, "elapsed_s": 39.00042739999844, "rtt_ms": 1.5625000014551915, "status": "ok", "quality": 1, "temperature_c": 27.65, "humidity_rh": 26.49, "utc": "2026-11-20T04:09:05.359553+00:00", "monotonic_s": 22163.4091849}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:06.357839+00:00", "monotonic_s": 22164.4074843}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 97], "device_timestamp_us": 22164411951, "utc": "2026-11-20T04:09:06.359310+00:00", "monotonic_s": 22164.4089474}
+{"event": "round", "round": 41, "elapsed_s": 40.00020399999994, "rtt_ms": 1.6080999994301237, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.57, "utc": "2026-11-20T04:09:06.359375+00:00", "monotonic_s": 22164.4090082}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:07.357952+00:00", "monotonic_s": 22165.4075969}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 100], "device_timestamp_us": 22165412112, "utc": "2026-11-20T04:09:07.360449+00:00", "monotonic_s": 22165.4100907}
+{"event": "round", "round": 42, "elapsed_s": 41.00032669999928, "rtt_ms": 2.6426000003993977, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.6, "utc": "2026-11-20T04:09:07.360532+00:00", "monotonic_s": 22165.410167}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:08.357924+00:00", "monotonic_s": 22166.4075704}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 205, 10, 95], "device_timestamp_us": 22166411890, "utc": "2026-11-20T04:09:08.359414+00:00", "monotonic_s": 22166.4090538}
+{"event": "round", "round": 43, "elapsed_s": 42.00029859999995, "rtt_ms": 1.6301999967254233, "status": "ok", "quality": 1, "temperature_c": 27.65, "humidity_rh": 26.55, "utc": "2026-11-20T04:09:08.359491+00:00", "monotonic_s": 22166.4091252}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:09.357936+00:00", "monotonic_s": 22167.4075806}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 100], "device_timestamp_us": 22167411540, "utc": "2026-11-20T04:09:09.360496+00:00", "monotonic_s": 22167.4101403}
+{"event": "round", "round": 44, "elapsed_s": 43.000299299998005, "rtt_ms": 2.730200001678895, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.6, "utc": "2026-11-20T04:09:09.360592+00:00", "monotonic_s": 22167.4102254}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:10.358107+00:00", "monotonic_s": 22168.407752}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 205, 10, 100], "device_timestamp_us": 22168411403, "utc": "2026-11-20T04:09:10.360654+00:00", "monotonic_s": 22168.4102999}
+{"event": "round", "round": 45, "elapsed_s": 44.000477099998534, "rtt_ms": 2.713699999731034, "status": "ok", "quality": 1, "temperature_c": 27.65, "humidity_rh": 26.6, "utc": "2026-11-20T04:09:10.360754+00:00", "monotonic_s": 22168.410387}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:11.357892+00:00", "monotonic_s": 22169.4075348}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 208, 10, 98], "device_timestamp_us": 22169410668, "utc": "2026-11-20T04:09:11.360108+00:00", "monotonic_s": 22169.4097437}
+{"event": "round", "round": 46, "elapsed_s": 45.00026739999885, "rtt_ms": 2.3279999986698385, "status": "ok", "quality": 1, "temperature_c": 27.68, "humidity_rh": 26.58, "utc": "2026-11-20T04:09:11.360157+00:00", "monotonic_s": 22169.4097891}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:12.358168+00:00", "monotonic_s": 22170.4078107}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 103], "device_timestamp_us": 22170410617, "utc": "2026-11-20T04:09:12.359633+00:00", "monotonic_s": 22170.4092689}
+{"event": "round", "round": 47, "elapsed_s": 46.000547599996935, "rtt_ms": 1.5761000031488948, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.63, "utc": "2026-11-20T04:09:12.359685+00:00", "monotonic_s": 22170.4093175}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:13.358026+00:00", "monotonic_s": 22171.4076696}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 208, 10, 106], "device_timestamp_us": 22171410394, "utc": "2026-11-20T04:09:13.360567+00:00", "monotonic_s": 22171.4102075}
+{"event": "round", "round": 48, "elapsed_s": 47.00039819999802, "rtt_ms": 2.68560000040452, "status": "ok", "quality": 1, "temperature_c": 27.68, "humidity_rh": 26.66, "utc": "2026-11-20T04:09:13.360646+00:00", "monotonic_s": 22171.4102783}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:14.357979+00:00", "monotonic_s": 22172.4076217}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 103], "device_timestamp_us": 22172410130, "utc": "2026-11-20T04:09:14.359433+00:00", "monotonic_s": 22172.4090676}
+{"event": "round", "round": 49, "elapsed_s": 48.00035669999852, "rtt_ms": 1.5583999993395992, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.63, "utc": "2026-11-20T04:09:14.359477+00:00", "monotonic_s": 22172.4091083}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:15.358083+00:00", "monotonic_s": 22173.4077258}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 205, 10, 104], "device_timestamp_us": 22173410206, "utc": "2026-11-20T04:09:15.359550+00:00", "monotonic_s": 22173.4091869}
+{"event": "round", "round": 50, "elapsed_s": 49.00045889999819, "rtt_ms": 1.5893000017968006, "status": "ok", "quality": 1, "temperature_c": 27.65, "humidity_rh": 26.64, "utc": "2026-11-20T04:09:15.359611+00:00", "monotonic_s": 22173.4092447}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:16.357869+00:00", "monotonic_s": 22174.4075143}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 109], "device_timestamp_us": 22174409728, "utc": "2026-11-20T04:09:16.359360+00:00", "monotonic_s": 22174.4089964}
+{"event": "round", "round": 51, "elapsed_s": 50.00024329999724, "rtt_ms": 1.6219000026467256, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.69, "utc": "2026-11-20T04:09:16.359427+00:00", "monotonic_s": 22174.4090582}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:17.358200+00:00", "monotonic_s": 22175.4078484}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 112], "device_timestamp_us": 22175410145, "utc": "2026-11-20T04:09:17.361187+00:00", "monotonic_s": 22175.4108326}
+{"event": "round", "round": 52, "elapsed_s": 51.000556699997105, "rtt_ms": 3.1677000006311573, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.72, "utc": "2026-11-20T04:09:17.361288+00:00", "monotonic_s": 22175.4109218}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:18.357746+00:00", "monotonic_s": 22176.407391}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 116], "device_timestamp_us": 22176409880, "utc": "2026-11-20T04:09:18.360014+00:00", "monotonic_s": 22176.4096564}
+{"event": "round", "round": 53, "elapsed_s": 52.000117199997476, "rtt_ms": 2.4408999997831415, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.76, "utc": "2026-11-20T04:09:18.360122+00:00", "monotonic_s": 22176.4097584}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:19.358001+00:00", "monotonic_s": 22177.4076463}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 119], "device_timestamp_us": 22177410085, "utc": "2026-11-20T04:09:19.359446+00:00", "monotonic_s": 22177.4090814}
+{"event": "round", "round": 54, "elapsed_s": 53.0003704999981, "rtt_ms": 1.5631999995093793, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.79, "utc": "2026-11-20T04:09:19.359495+00:00", "monotonic_s": 22177.4091274}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:20.357791+00:00", "monotonic_s": 22178.4074336}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 122], "device_timestamp_us": 22178409820, "utc": "2026-11-20T04:09:20.360451+00:00", "monotonic_s": 22178.410089}
+{"event": "round", "round": 55, "elapsed_s": 54.00016829999731, "rtt_ms": 2.7828000020235777, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.82, "utc": "2026-11-20T04:09:20.360513+00:00", "monotonic_s": 22178.4101446}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:21.358140+00:00", "monotonic_s": 22179.4077829}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 125], "device_timestamp_us": 22179409981, "utc": "2026-11-20T04:09:21.360359+00:00", "monotonic_s": 22179.4099995}
+{"event": "round", "round": 56, "elapsed_s": 55.00051789999998, "rtt_ms": 2.3510999999416526, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.85, "utc": "2026-11-20T04:09:21.360431+00:00", "monotonic_s": 22179.4100639}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:22.358110+00:00", "monotonic_s": 22180.4077523}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 209, 10, 129], "device_timestamp_us": 22180410015, "utc": "2026-11-20T04:09:22.360314+00:00", "monotonic_s": 22180.409951}
+{"event": "round", "round": 57, "elapsed_s": 56.00048959999913, "rtt_ms": 2.316699999937555, "status": "ok", "quality": 1, "temperature_c": 27.69, "humidity_rh": 26.89, "utc": "2026-11-20T04:09:22.360368+00:00", "monotonic_s": 22180.4099994}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:23.357959+00:00", "monotonic_s": 22181.4076002}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 206, 10, 125], "device_timestamp_us": 22181409793, "utc": "2026-11-20T04:09:23.360189+00:00", "monotonic_s": 22181.4098254}
+{"event": "round", "round": 58, "elapsed_s": 57.00033699999767, "rtt_ms": 2.3526000004494563, "status": "ok", "quality": 1, "temperature_c": 27.66, "humidity_rh": 26.85, "utc": "2026-11-20T04:09:23.360251+00:00", "monotonic_s": 22181.4098836}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:24.357907+00:00", "monotonic_s": 22182.4075494}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 208, 10, 127], "device_timestamp_us": 22182409528, "utc": "2026-11-20T04:09:24.359368+00:00", "monotonic_s": 22182.4090043}
+{"event": "round", "round": 59, "elapsed_s": 58.000277499999356, "rtt_ms": 1.5840999985812232, "status": "ok", "quality": 1, "temperature_c": 27.68, "humidity_rh": 26.87, "utc": "2026-11-20T04:09:24.359424+00:00", "monotonic_s": 22182.4090566}
+{"event": "tx", "id": 291, "type": 0, "dlc": 1, "data": [1], "utc": "2026-11-20T04:09:25.358094+00:00", "monotonic_s": 22183.4077362}
+{"event": "rx", "id": 802, "type": 0, "dlc": 5, "data": [1, 10, 208, 10, 128], "device_timestamp_us": 22183409818, "utc": "2026-11-20T04:09:25.360289+00:00", "monotonic_s": 22183.4099273}
+{"event": "round", "round": 60, "elapsed_s": 59.00046849999853, "rtt_ms": 2.3360000013781246, "status": "ok", "quality": 1, "temperature_c": 27.68, "humidity_rh": 26.88, "utc": "2026-11-20T04:09:25.360367+00:00", "monotonic_s": 22183.4100022}
+{"event": "summary", "send_attempts": 60, "requests": 60, "successes": 60, "timeouts": 0, "errors": 0, "missed_slots": 0, "completed": true, "reason": "", "max_start_lateness_ms": 0.5625999983749352, "elapsed_s": 59.02298569999766, "rtt_p50_ms": 2.316699999937555, "rtt_p95_ms": 2.9704000007768627, "rtt_max_ms": 3.1677000006311573, "rtt_scope": "PC write through validated receive; includes USB/OS/logging", "periodic_target_met": true, "board_health_verified": false, "utc": "2026-11-20T04:09:25.507706+00:00", "monotonic_s": 22183.557352}

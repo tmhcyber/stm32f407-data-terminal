@@ -1,0 +1,19 @@
+{
+  "send_attempts": 60,
+  "requests": 60,
+  "successes": 60,
+  "timeouts": 0,
+  "errors": 0,
+  "missed_slots": 0,
+  "completed": true,
+  "reason": "",
+  "max_start_lateness_ms": 22.274999999353895,
+  "elapsed_s": 59.079475899998215,
+  "rtt_p50_ms": 2.4053999986790586,
+  "rtt_p95_ms": 3.2066999992821366,
+  "rtt_max_ms": 22.17459999883431,
+  "rtt_scope": "PC write through validated receive; includes USB/OS/logging",
+  "periodic_target_met": true,
+  "board_health_verified": false,
+  "events_sha256": "241032efed7df85d08027a00e126495dda61a48df1813386d9b2d88bb8aecca3"
+}

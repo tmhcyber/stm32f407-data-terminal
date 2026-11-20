@@ -15,6 +15,7 @@
 #include "bsp_can_loopback.h"
 #include "bsp_can_link_test.h"
 #include "app_can_service.h"
+#include "app_rtos_runtime.h"
 
 /* 1: external fixed-frame experiment; 0: original HSI silent loopback.
  * Rebuild and reset after changing. Never initialize both CAN2 owners.
@@ -42,6 +43,7 @@ BSP_SystemBootReport_t g_bsp_system_boot_report;
 
 static App_SnapshotConsumer_t s_app_snapshot_consumer;
 
+#if !APP_RTOS_ENABLED
 static void App_SystemMonitor_FillHealthInputs(
   App_SystemHealthInputs_t *health)
 {
@@ -69,8 +71,9 @@ static void App_SystemMonitor_FillHealthInputs(
   health->uplink_error_count =
     g_app_uplink_service_report.tx_error_count;
 }
+#endif
 
-static void App_SnapshotEvent_ReportProcess(void)
+void App_SnapshotEvent_ReportProcess(void)
 {
   App_SnapshotEvent_t event;
   App_DataResult_t result;
@@ -92,7 +95,7 @@ static void App_SnapshotEvent_ReportProcess(void)
   g_app_uplink_submit_status = App_UplinkService_SubmitEvent(&event);
 }
 
-static void App_SystemWatchdog_Process(uint32_t now_ms)
+void App_SystemWatchdog_Process(uint32_t now_ms)
 {
   App_SystemMonitorReport_t monitor_report;
   App_SystemMonitorResult_t monitor_report_status;
@@ -145,8 +148,10 @@ static void App_SystemWatchdog_Process(uint32_t now_ms)
 
 int main(void)
 {
+#if !APP_RTOS_ENABLED
   uint8_t has_previous_loop_start;
   uint32_t previous_loop_start_cycles;
+#endif
 
   BSP_SystemDiagnostics_CaptureBootReport(&g_bsp_system_boot_report);
   BSP_SystemDiagnostics_EnableConfigurableFaults();
@@ -195,6 +200,10 @@ int main(void)
     APP_WATCHDOG_GATE_RESULT_NOT_INITIALIZED;
   g_app_watchdog_gate_refresh_record_status =
     APP_WATCHDOG_GATE_RESULT_NOT_INITIALIZED;
+#if APP_RTOS_ENABLED
+  App_RTOS_Run((uint8_t)(g_app_uplink_init_status != APP_UPLINK_SERVICE_RESULT_OK));
+  Error_Handler();
+#else
   g_bsp_system_watchdog_init_status = BSP_SystemWatchdog_Init();
   if (g_bsp_system_watchdog_init_status !=
       BSP_SYSTEM_WATCHDOG_STATUS_OK)
@@ -268,7 +277,7 @@ int main(void)
       }
     }
 #endif
-    App_UplinkService_Process(now_ms);
+    App_UplinkService_ProcessCurrent(HAL_GetTick);
     service_completed_at_cycles = BSP_SystemTiming_GetCycles();
     timing.uplink_cycles =
       service_completed_at_cycles - service_started_at_cycles;
@@ -284,6 +293,7 @@ int main(void)
       now_ms);
     App_SystemWatchdog_Process(HAL_GetTick());
   }
+#endif
 }
 
 void Error_Handler(void)

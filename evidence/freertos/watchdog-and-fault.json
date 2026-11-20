@@ -1,0 +1,132 @@
+[
+  {
+    "scenario": "communication",
+    "passed": true,
+    "reboot_observed_s": 2.1295750999997836,
+    "reset_reasons": 18,
+    "first_hold": {
+      "tick": 24556,
+      "stalled_mask": 1,
+      "decision": 2,
+      "refresh_completed_count": 98,
+      "last_successful_refresh_at_ms": 24501
+    },
+    "second_hold": {
+      "tick": 24908,
+      "stalled_mask": 1,
+      "decision": 2,
+      "refresh_completed_count": 98,
+      "last_successful_refresh_at_ms": 24501
+    }
+  },
+  {
+    "scenario": "collector",
+    "passed": true,
+    "reboot_observed_s": 2.026267799999914,
+    "reset_reasons": 18,
+    "first_hold": {
+      "tick": 1009,
+      "stalled_mask": 2,
+      "decision": 2,
+      "refresh_completed_count": 3,
+      "last_successful_refresh_at_ms": 751
+    },
+    "second_hold": {
+      "tick": 1364,
+      "stalled_mask": 2,
+      "decision": 2,
+      "refresh_completed_count": 3,
+      "last_successful_refresh_at_ms": 751
+    }
+  },
+  {
+    "scenario": "uplink",
+    "passed": true,
+    "reboot_observed_s": 2.0049808000003395,
+    "reset_reasons": 18,
+    "first_hold": {
+      "tick": 1011,
+      "stalled_mask": 4,
+      "decision": 2,
+      "refresh_completed_count": 3,
+      "last_successful_refresh_at_ms": 751
+    },
+    "second_hold": {
+      "tick": 1367,
+      "stalled_mask": 4,
+      "decision": 2,
+      "refresh_completed_count": 3,
+      "last_successful_refresh_at_ms": 751
+    }
+  },
+  {
+    "scenario": "basic_psp",
+    "passed": true,
+    "reboot_observed_s": 2.023477800001274,
+    "reset_reasons": 18,
+    "exc_return": 4294967293,
+    "pc": 134218204,
+    "original_sp": 536880168,
+    "core_frame_sp": 536880168,
+    "frame_valid": 1,
+    "cfsr": 65536,
+    "serial_diagnostics": [
+      {
+        "d": "1",
+        "up_ms": "5000",
+        "reset_captured": "1",
+        "reset_raw": "0x24000000",
+        "reset_reasons": "0x00000012",
+        "fault_status": "1",
+        "fault_type": "4",
+        "frame_valid": "1",
+        "frame_reject": "0x00000000",
+        "pc": "0x080001DC",
+        "cfsr": "0x00010000",
+        "hfsr": "0x00000000",
+        "monitor_valid": "1",
+        "health": "1",
+        "active": "0x00000000",
+        "observed": "0x00000000",
+        "watchdog_initialized": "1",
+        "watchdog": "0",
+        "latched": "0x00000000"
+      }
+    ]
+  },
+  {
+    "scenario": "float_psp",
+    "passed": true,
+    "reboot_observed_s": 1.937357200000406,
+    "reset_reasons": 18,
+    "exc_return": 4294967277,
+    "pc": 134218204,
+    "original_sp": 536880096,
+    "core_frame_sp": 536880096,
+    "frame_valid": 1,
+    "cfsr": 65536,
+    "serial_diagnostics": [
+      {
+        "d": "1",
+        "up_ms": "5000",
+        "reset_captured": "1",
+        "reset_raw": "0x24000000",
+        "reset_reasons": "0x00000012",
+        "fault_status": "1",
+        "fault_type": "4",
+        "frame_valid": "1",
+        "frame_reject": "0x00000000",
+        "pc": "0x080001DC",
+        "cfsr": "0x00010000",
+        "hfsr": "0x00000000",
+        "monitor_valid": "1",
+        "health": "1",
+        "active": "0x00000000",
+        "observed": "0x00000000",
+        "watchdog_initialized": "1",
+        "watchdog": "0",
+        "latched": "0x00000000"
+      }
+    ]
+  }
+]

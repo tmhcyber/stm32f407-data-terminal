@@ -1,4 +1,5 @@
 #include "bsp_uart.h"
+#include "bsp_service_notify.h"
 
 #include "bsp_rs485.h"
 
@@ -138,6 +139,7 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *uart_handle)
     s_uart1_tx_in_progress = 0U;
     s_uart1_tx_event.timestamp_ms = HAL_GetTick();
     s_uart1_tx_event.type = BSP_UART_TX_EVENT_COMPLETE;
+    BSP_ServiceNotify_UplinkFromISR();
     return;
   }
 
@@ -172,6 +174,7 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *uart_handle)
     s_uart1_tx_in_progress = 0U;
     s_uart1_tx_event.timestamp_ms = HAL_GetTick();
     s_uart1_tx_event.type = BSP_UART_TX_EVENT_ERROR;
+    BSP_ServiceNotify_UplinkFromISR();
     return;
   }
 

@@ -1,0 +1,28 @@
+{
+  "baudrate": 115200,
+  "bytesize": 8,
+  "parity": "E",
+  "stopbits": 1,
+  "slave": 1,
+  "function": 4,
+  "address": 0,
+  "count": 3,
+  "requested_rounds": 600,
+  "interval_ms": 100,
+  "firmware": {
+    "axf_sha256": "fd17f9d18c1666c4d7fe82d88f676e2d0ee1e8d646575e3a109fff1a9e8c0e8d"
+  },
+  "started_utc": "2026-11-20T04:08:26.232416+00:00",
+  "attempts": 600,
+  "valid_responses": 600,
+  "errors": 0,
+  "interrupted": false,
+  "qualities": {
+    "not_available": 0,
+    "valid": 600,
+    "stale": 0,
+    "offline": 0
+  },
+  "ended_utc": "2026-11-20T04:09:26.342737+00:00",
+  "duration_s": 60.11031870000079
+}

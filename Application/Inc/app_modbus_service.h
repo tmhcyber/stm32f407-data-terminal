@@ -20,4 +20,5 @@ typedef struct
 extern volatile App_ModbusReport_t g_app_modbus_report;
 uint8_t App_ModbusService_Init(void);
 void App_ModbusService_Process(void);
+uint32_t App_ModbusService_ProcessBudget(uint32_t byte_limit);
 #endif

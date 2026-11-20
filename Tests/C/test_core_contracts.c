@@ -983,6 +983,12 @@ static void TestUplinkServiceStartErrorRetriesAndRecovers(void)
   CHECK(g_app_uplink_service_report.tx_error_count == 1U);
 }
 
+static uint32_t TickAfterTakingTxEvent(void)
+{
+  CHECK(g_fake_uart_tx_event.type == BSP_UART_TX_EVENT_NONE);
+  return 146U;
+}
+
 static void TestUplinkServiceTransportErrorAndInitFailure(void)
 {
   App_SnapshotEvent_t event;
@@ -995,7 +1001,7 @@ static void TestUplinkServiceTransportErrorAndInitFailure(void)
   App_UplinkService_Process(100U);
   g_fake_uart_tx_event.type = BSP_UART_TX_EVENT_ERROR;
   g_fake_uart_tx_event.timestamp_ms = 145U;
-  App_UplinkService_Process(145U);
+  App_UplinkService_ProcessCurrent(TickAfterTakingTxEvent);
   CHECK(g_app_uplink_service_report.state ==
         APP_UPLINK_SERVICE_STATE_IDLE);
   CHECK(g_app_uplink_service_report.tx_error_count == 1U);
@@ -1139,7 +1145,14 @@ static void TestSystemDiagnosticsFrameValidation(void)
                                                  0U,
                                                  &core_frame_sp);
   CHECK(reasons == BSP_SYSTEM_DIAGNOSTICS_FRAME_REJECT_NONE);
-  CHECK(core_frame_sp == 0x10001048UL);
+  CHECK(core_frame_sp == 0x10001000UL);
+
+  reasons = BSP_SystemDiagnostics_EvaluateFrame(0x2001FFE0UL,
+                                                 0xFFFFFFEDUL,
+                                                 0U,
+                                                 &core_frame_sp);
+  CHECK((reasons & BSP_SYSTEM_DIAGNOSTICS_FRAME_REJECT_OUT_OF_RANGE) != 0U);
+  CHECK(core_frame_sp == 0U);
 
   reasons = BSP_SystemDiagnostics_EvaluateFrame(0x20001002UL,
                                                  0xFFFFFFF9UL,
@@ -1333,6 +1346,26 @@ static void TestSystemMonitorWarningRecovery(void)
         APP_SYSTEM_HEALTH_REASON_NONE);
   CHECK(g_app_system_monitor_report.observed_reasons ==
         APP_SYSTEM_HEALTH_REASON_LOOP_WARNING);
+}
+
+static void TestSystemMonitorTaskTimingRecovery(void)
+{
+  const uint32_t fault_at = UINT32_MAX - 500U;
+  App_SystemHealthInputs_t health = MakeHealthySystemInputs(fault_at);
+
+  CHECK(App_SystemMonitor_Init(25000000U, 2U, fault_at - 100U) ==
+        APP_SYSTEM_MONITOR_RESULT_OK);
+  CHECK(App_SystemMonitor_ProcessTaskTiming(
+          APP_SYSTEM_HEALTH_REASON_LOOP_HARD_OVERRUN, &health, fault_at) ==
+        APP_SYSTEM_MONITOR_RESULT_OK);
+  CHECK(g_app_system_monitor_report.active_reasons ==
+        APP_SYSTEM_HEALTH_REASON_LOOP_HARD_OVERRUN);
+  (void)App_SystemMonitor_ProcessTaskTiming(0U, &health, fault_at + 999U);
+  CHECK(g_app_system_monitor_report.active_reasons ==
+        APP_SYSTEM_HEALTH_REASON_LOOP_HARD_OVERRUN);
+  (void)App_SystemMonitor_ProcessTaskTiming(0U, &health, fault_at + 1000U);
+  CHECK(g_app_system_monitor_report.active_reasons ==
+        APP_SYSTEM_HEALTH_REASON_NONE);
 }
 
 static void TestSystemMonitorStartupInvalidAndTickWrap(void)
@@ -1928,6 +1961,7 @@ int main(void)
   TestSystemMonitorReportContract();
   TestSystemMonitorUserDesignedLifecycle();
   TestSystemMonitorWarningRecovery();
+  TestSystemMonitorTaskTimingRecovery();
   TestSystemMonitorStartupInvalidAndTickWrap();
   TestSystemMonitorUplinkErrorNeedsCompletionToRecover();
   TestSystemMonitorFreshnessAndTxSilenceBoundaries();
