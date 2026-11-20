@@ -16,7 +16,7 @@ typedef struct
   uint16_t quality;
 } App_ModbusSample_t;
 
-/* Pure register mapping; implemented by Codex at the user's request.
+/* Pure register mapping for Modbus input registers 0..2.
  * Protocol addresses 0/1/2 = temperature/humidity/quality.
  * Success: output quantity host-order uint16_t registers; return MB_EX_NONE.
  * Temperature: signed centi-C encoded in uint16_t two's complement.

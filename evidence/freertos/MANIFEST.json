@@ -24,7 +24,7 @@
     "Application/Inc/app_can_service.h": "aca25ef8dcc22c5edcec4b1f1625a44eaa7b167e9eee0a262212456592c0c490",
     "Application/Inc/app_data_service.h": "20afc2b9606e06772142012832a147b94c5849e89eebd2978ef8cb962651c110",
     "Application/Inc/app_diagnostic.h": "bc199dbfedf74deda5918855e3560cb2cc55874e10a73819e44d8312a9262f01",
-    "Application/Inc/app_modbus_registers.h": "13c1d7eb17c53d6c94fbbd0838af018c49a1c56dceca967e1c44f69ceacc9a65",
+    "Application/Inc/app_modbus_registers.h": "cf6e9f0ca2a324db8ab84807a4ced84f95e0a338d292e35252be6d6ec881b87c",
     "Application/Inc/app_modbus_service.h": "38eced8341201a700be130b9c9626d11cd2682cf84d15fd276d43d658228e059",
     "Application/Inc/app_rs485_service.h": "0d46c0b953ccaa8e0b23e39ca49eab9ddecc189977e6781f8533d3a1a127991a",
     "Application/Inc/app_sht30_bringup.h": "7be64c5cc68f9780c45a72cdaf6e9993e0a642b023211d6c1a3c17f6d2aa004f",

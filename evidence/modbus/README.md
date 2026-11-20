@@ -7,7 +7,7 @@
 | 项目 | 条件与结果 | 原始记录 |
 | --- | --- | --- |
 | 正常读取 | 600/600，0通信错误；10 Hz设置，60.120 s | [收发](normal-600/packets.jsonl) · [逐轮](normal-600/readings.jsonl) · [汇总](normal-600/summary.json) |
-| 往返时间 | 中位5.834 ms，P95 6.749 ms，最大33.430 ms；含Windows/USB/库等待 | [统计](normal-analysis.json) |
+| 往返时间 | 中位 5.834 ms，P95 6.749 ms，最大 33.430 ms（PC 端到端往返） | [统计](normal-analysis.json) |
 | 请求边界与异常 | 11场景通过；各场景后正常读取恢复 | [请求/应答](request-cases.json) |
 | 采集异常与恢复 | 320/320读取成功；192有效、20陈旧、108离线 | [收发](address-fault/packets.jsonl) · [逐轮](address-fault/readings.jsonl) · [汇总](address-fault/summary.json) |
 
@@ -28,7 +28,7 @@ Saleae Logic，8 MS/s，3 s；D0=PA3 RX、D1=PA2 TX、D2=PC0方向。10组事务
 | 请求结束至应答开始静默 | 1975.84～2047.97 μs |
 | 采样分辨率 | 0.125 μs |
 
-停止位端点采用同次采集中UART边沿拟合位宽；测量条件为本表采样设置。[原始SAL](waveform/modbus-3ch.sal) · [边沿CSV](waveform/digital.csv) · [逐组分析](waveform/timing-analysis.json) · [PC包](waveform/serial/packets.jsonl)。分析脚本为 `Tools/analyze_modbus_waveform.py`。
+停止位端点采用同次采集中 UART 边沿拟合位宽计算。[原始SAL](waveform/modbus-3ch.sal) · [边沿CSV](waveform/digital.csv) · [逐组分析](waveform/timing-analysis.json) · [PC包](waveform/serial/packets.jsonl)。分析脚本为 `Tools/analyze_modbus_waveform.py`。
 
 ## Linux网关与版本
 

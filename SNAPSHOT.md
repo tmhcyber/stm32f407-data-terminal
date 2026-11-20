@@ -1,5 +1,9 @@
 # 版本与实测固件
 
+## FreeRTOS 四任务终端（2026-11-20）
+
+基于 `IndustrialTerminal_RTOS` 目标的四任务终端，固定启用 Modbus 与诊断上行，已完成并行双总线压测、传感器 NACK 恢复、三类任务停滞 IWDG 复位、基本/FPU 扩展 PSP Fault 取证及 Linux 网关兼容验证。详见[实板报告](evidence/freertos/README.md)、[源码与证据清单](evidence/freertos/MANIFEST.json)与[已验 HEX](evidence/freertos/IndustrialTerminal_RTOS.hex)，运行 `python Tools/check_freertos_publication.py` 可核对全部哈希与记录。
+
 ## Modbus 集成版：v1.1-modbus
 
 2026-11-15 Modbus＋诊断配置，输入寄存器读取、异常恢复与方向波形实测。[源码/产物清单](evidence/modbus/MANIFEST.json)绑定编译输入，[实测报告](evidence/modbus/README.md)提供配置与原始记录。`python Tools/check_modbus_publication.py` 可核对所有文件。
@@ -35,7 +39,7 @@
 | 两份AXF共同的可装载段SHA256 | `169129b8d73db1d7629b29fe712cc44fec4974c663d2bb2cffe1de32dc64fc5c` |
 | 可装载段 | 地址`0x08000000`；文件内容27512字节；内存大小31688字节；共1段 |
 
-[构建与二进制对比记录](docs/TestRecords/2026-10-23_tag_rebuild/README.md)保存方法、参数及机器可读结果。本次执行离线构建和文件对比，通信性能结果来自2026-10-22实板记录。
+[构建与二进制对比记录](docs/TestRecords/2026-10-23_tag_rebuild/README.md)保存编译参数与程序段对比结果。
 
 ## 复现入口
 
@@ -46,6 +50,6 @@ cd stm32f407-data-terminal
 
 按[构建与接线说明](docs/BUILD.md)编译并下载裸机目标，再用`Tools/pc_rs485_ping_pong.py`、`Tools/pc_can_request_bench.py`或组合运行工具采集新日志。每次新构建的固件单独计算校验值；上述AXF指纹标识2026-10-22的实测映像。
 
-主机侧自动化记录按Python检查、C断言和CAN场景分别统计，BSP/HAL等硬件接口以替身隔离。生产C 477项断言引用同日已执行记录，详见[主机记录](docs/TestRecords/2026-10-22_host_01/README.md)。
+主机侧自动化检查按 Python 测试、生产 C 断言和 CAN 诊断场景分类统计，详见[主机记录](docs/TestRecords/2026-10-22_host_01/README.md)。
 
 [构建与运行](docs/BUILD.md) · [验证证据](docs/EVIDENCE.md) · [个人贡献](docs/CONTRIBUTIONS.md)

@@ -6,7 +6,7 @@ date: 2026-10-22
 timezone: Asia/Taipei (UTC+8)
 commit: 9688122d073a383f3bc2858e00d9f71bcc8efaed + dirty
 board: 野火 STM32F407ZG 霸天虎 V2
-adapter: RS485系统CH343/COM7，历史型号记录UTS-T02，本次系统CH343/COM7；CAN实物UTC-T01，驱动PCAN-USB
+adapter: RS485为UTS-T02 USB-RS485（系统识别 CH343 / COM7）；CAN实物UTC-T01，驱动PCAN-USB
 indicators: 现场观察：指示灯正常亮
 baudrate: RS485及UART 115200 bit/s 8N1；经典CAN 500 kbit/s标准数据帧
 script_version_sha256: 见metadata.json各项header及scripts/快照；离线核验脚本SHA256见verification.json
@@ -46,6 +46,6 @@ UART在约3603.971秒内记录3605条完整报文，解析错误0，温湿度质
 
 ## 测量对象与工程追溯
 
-本次长测统计PC请求应答和UART采集上行，板端内部诊断计数采用相应专项的Watch证据。固件由Keil编译下载，AXF哈希与执行脚本记录在测试头中；测试基线9688122+dirty表示当时工作区状态，归档提交由Git历史管理。
+本次长测记录 PC 请求应答和 UART 采集上行，板端内部诊断计数见相应专项 Watch 证据。固件由 Keil 编译下载，AXF 哈希、执行脚本与 Git 基线记录在测试头中。
 
 项目围绕状态规则、通信参数、边界验收和故障诊断建立验证闭环；个人负责的核心逻辑、设计决策及实板工作见[项目贡献](../../../docs/CONTRIBUTIONS.md)。[主机侧自动化检查记录](../2026-10-22_host_01/README.md)提供协议、边界和生产逻辑的分项检查。

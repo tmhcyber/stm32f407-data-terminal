@@ -63,7 +63,7 @@ python Tools/pc_modbus_read.py --port COMx --rounds 600 --interval-ms 100 --outp
 
 开发板 J40：1-2 提供 CAN/485_3V3；RS485 3-5 / 4-6 连接 PA2/PA3；5-7 / 6-8 的 RS232 路径断开。接线顺序：断开全部供电，按对应板型原理图设置跳帽、连接信号线与共地，再为 MCU 和收发器供电。
 
-CAN目标拓扑为两端各120Ω。实测短线连接及USB-CAN端接配置见对应测试记录；扩展拓扑时按总线两端配置端接电阻。引脚分配：PB12/PB13选择CAN功能，关闭复用的板载音频功能；PA2选择RS485发送功能，关闭复用的以太网MDIO功能。
+CAN目标拓扑为两端各120Ω。台架连接与端接配置见对应测试记录；扩展拓扑时按总线两端配置端接电阻。引脚分配：PB12/PB13选择CAN功能，关闭复用的板载音频功能；PA2选择RS485发送功能，关闭复用的以太网MDIO功能。
 
 ## 演示选择
 
@@ -115,7 +115,7 @@ clang -std=c99 -Wall -Wextra -Werror -I Experiments/FreeRTOS_Queue/Tests/fakes -
 .\tmp\freertos_queue_task_tests.exe
 ```
 
-主机侧C检查以BSP/HAL、I2C、队列和UART替身隔离硬件，覆盖生产逻辑；Python覆盖协议工具、参考模型及日志解析。软件与实板证据按测试日期、版本和测量对象组织，见[验证记录](EVIDENCE.md)。
+主机侧 C 测试直接编译并校验生产业务源码，Python 测试覆盖协议工具、参考模型及日志解析；实板测试验证物理链路与应用应答，详见[验证记录](EVIDENCE.md)。
 
 ## 通信量化复现
 

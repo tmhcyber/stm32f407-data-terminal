@@ -7,7 +7,7 @@
 # commit: 9688122d073a383f3bc2858e00d9f71bcc8efaed
 # dirty_worktree: true
 # board: 野火 STM32F407ZG 霸天虎 V2
-# adapter: USB-RS485转换器，系统CH343/COM7；历史型号记录UTS-T02
+# adapter: UTS-T02 USB-RS485（系统识别 CH343 / COM7）
 # indicators: 现场观察：指示灯正常亮
 # baudrate: 115200 bit/s，8N1
 # script_version_sha256: {"Tools/communication_bench.py": "dd18e7d25c806401bf80a8824713ac2f2c13e1dffe97782a1a4b7234ed909d88", "Tools/pc_can_request_bench.py": "9dee054becebe8751de62508cf0b1db218a401daf49b5a9a9311bc4bbdfb9d19", "Tools/pc_rs485_ping_pong.py": "9a1e95ced0c40a169742c5b54e684e9dea0e8fff00992dac92e01ff3b69d54b0", "Tools/run_communication_session.py": "9ba789a88612b9722e500a6330fb17ed251cadebe0538782cb36ac6a1c32dad4"}
