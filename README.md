@@ -8,7 +8,7 @@
 
 我根据数据新鲜度选择单格覆盖邮箱，编写 FreeRTOS 测量、换算、发布及失败记录逻辑。我也设计了 RS485 超时与恢复规则，编写 CAN 请求校验、编码和队列核心逻辑，独立定位主循环与接收中断时间交错引发的无符号下溢故障，并完成 Modbus 寄存器范围校验、CRC 排障对照与主站实操读取。
 
-**运行演示**　用 `python Tools/build_rtos.py` 构建四任务终端，烧录后用通用 Modbus 主站读取温湿度和数据质量。 [构建与接线](docs/BUILD.md#freertos-四任务终端) · [个人贡献](docs/CONTRIBUTIONS.md) · [五页作品集](portfolio/project-portfolio.pdf)
+**运行演示**　用 `python Tools/build_rtos.py` 构建四任务终端，烧录后用通用 Modbus 主站读取温湿度和数据质量。 [构建与接线](docs/BUILD.md#freertos-四任务终端) · [个人贡献](docs/CONTRIBUTIONS.md) · [六页作品集](portfolio/project-portfolio.pdf)
 
 ## 我的主要工作
 
@@ -120,7 +120,7 @@ RS485专项实测：红色PA3为接收，橙色PA2为发送；PC0控制收发方
 | FreeRTOS任务调度与数据交换 | [四任务源码](Core/Src/app_rtos_runtime.c) · [邮箱源码](Experiments/FreeRTOS_Queue/Application/Src/app_queue_experiment.c) · [设计与实测](docs/RTOS.md) |
 | 实板日志、波形和测试条件 | [验证证据](docs/EVIDENCE.md) |
 | 具体职责与设计取舍 | [贡献说明](docs/CONTRIBUTIONS.md) |
-| 项目作品集 | [5页PDF](portfolio/project-portfolio.pdf) |
+| 项目作品集 | [6页PDF](portfolio/project-portfolio.pdf) |
 
 ## 工程组织与许可
 
